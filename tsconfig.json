@@ -2,6 +2,6 @@
   "extends": "@tsconfig/recommended/tsconfig.json",
   "include": ["src", "types"],
   "compilerOptions": {
-    "module": "esnext",
+    "module": "esnext"
   }
 }
