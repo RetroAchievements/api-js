@@ -1,6 +1,4 @@
-export const sum = (a: number, b: number) => {
-  if ("development" === process.env.NODE_ENV) {
-    console.log("dev only output");
-  }
-  return a + b;
-};
+// This file is the single public-facing API of the entire library.
+
+export * from "./game";
+export * from "./utils/public";

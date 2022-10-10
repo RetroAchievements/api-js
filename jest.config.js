@@ -4,6 +4,13 @@ module.exports = {
   testPathIgnorePatterns: [
     "<rootDir>[/\\\\](node_modules|.next|.docusaurus|cypress)[/\\\\]"
   ],
+  collectCoverageFrom: [
+    "src/**/*.{ts,tsx}",
+    "!src/**/*.model.ts",
+    "!src/**/index.ts",
+    "!src/test/**/*.ts",
+    "!src/__playground.ts"
+  ],
 
   projects: [
     {
@@ -13,7 +20,7 @@ module.exports = {
       },
       testMatch: ["<rootDir>/src/**/*.test.ts"],
       transform: {
-        "&.+\\.(ts|tsx)$": "@swc/jest"
+        "^.+\\.(ts|tsx)$": "@swc/jest"
       },
       coverageThreshold: {
         global: {
@@ -22,14 +29,7 @@ module.exports = {
           lines: 100,
           statements: 100
         }
-      },
-      collectCoverageFrom: [
-        "src/**/*.{ts,tsx}",
-        "!src/**/*.model.ts",
-        "!src/**/index.ts",
-        "!src/test/**/*.ts",
-        "!src/__playground.ts"
-      ]
+      }
     }
   ]
 };
