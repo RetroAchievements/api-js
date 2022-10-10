@@ -13,6 +13,20 @@ import type { GetAchievementCountResponse } from "./models";
  * page on the RetroAchievements.org website. For example, Dragster's
  * URL is https://retroachievements.org/game/14402. We can see from the
  * URL that the game ID is "14402".
+ *
+ * @example
+ * ```
+ * const achievementCount = await getAchievementCount(
+ *   authorization,
+ *   14402
+ * );
+ * ```
+ *
+ * @returns An object containing a gameID and a list of
+ * achievementIDs.
+ * ```
+ * { gameID: 14402, achievementIDs: [1,2,3,4,5] }
+ * ```
  */
 export const getAchievementCount = async (
   authorization: AuthObject,
