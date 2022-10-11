@@ -1,7 +1,5 @@
 import unfetch from "isomorphic-unfetch";
 
-import { camelCaseKeys } from "./camelCaseKeys";
-
 /**
  * Fetch an HTTP resource. This is publicly exposed in the
  * event you would like to access an endpoint that this
@@ -24,10 +22,8 @@ export const call = async <
 >(config: {
   url: string;
 }) => {
-  const rawResponse = await unfetch(config.url);
-  const responseJson = (await rawResponse.json()) as T;
+  const { url } = config;
 
-  // The RA API unfortunately returns all object keys in
-  // PascalCase. We have to convert them.
-  return camelCaseKeys(responseJson);
+  const rawResponse = await unfetch(url);
+  return (await rawResponse.json()) as T;
 };
