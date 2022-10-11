@@ -51,7 +51,7 @@ describe("Function: getAchievementDistribution", () => {
 
     // ACT
     const response = await getAchievementDistribution(authorization, {
-      gameID: 14_402
+      gameId: 14_402
     });
 
     // ASSERT
@@ -91,7 +91,7 @@ describe("Function: getAchievementDistribution", () => {
 
     // ACT
     const response = await getAchievementDistribution(authorization, {
-      gameID: 14_402,
+      gameId: 14_402,
       flags: AchievementDistributionFlags.UnofficialAchievements
     });
 
@@ -134,7 +134,7 @@ describe("Function: getAchievementDistribution", () => {
 
     // ACT
     const response = await getAchievementDistribution(authorization, {
-      gameID: 14_402,
+      gameId: 14_402,
       hardcore: true
     });
 
@@ -174,7 +174,7 @@ describe("Function: getAchievementDistribution", () => {
 
     // ACT
     const response = await getAchievementDistribution(authorization, {
-      gameID: 14_402,
+      gameId: 14_402,
       hardcore: false
     });
 

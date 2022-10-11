@@ -9,6 +9,7 @@ describe("Util: camelCaseKeys", () => {
   it("converts object keys to camel case", () => {
     // ARRANGE
     const sampleObject = {
+      ID: 1,
       GameID: 14_402,
       AchievementIDs: [1, 2, 3, 4, 5],
       SomeKey: "someValue",
@@ -22,8 +23,9 @@ describe("Util: camelCaseKeys", () => {
 
     // ASSERT
     expect(sanitizedObject).toEqual({
-      gameID: 14_402,
-      achievementIDs: [1, 2, 3, 4, 5],
+      id: 1,
+      gameId: 14_402,
+      achievementIds: [1, 2, 3, 4, 5],
       someKey: "someValue",
       someNestedObject: {
         anotherKey: "anotherValue"

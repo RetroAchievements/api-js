@@ -1,3 +1,5 @@
+/* eslint-disable sonarjs/prefer-immediate-return */
+
 import type { CamelCaseObjectKeys } from "./models";
 
 /**
@@ -26,6 +28,18 @@ export const camelCaseKeys = <T extends object>(originalValue: T) => {
   return newObject as CamelCaseObjectKeys<T>;
 };
 
+// Perform a handful of hacky operations to get us close to camelCase.
 const naiveCamelCase = (originalValue: string) => {
-  return `${originalValue.charAt(0).toLowerCase()}${originalValue.slice(1)}`;
+  // "GameID" --> "gameID"
+  const withFirstToLowerCase = `${originalValue
+    .charAt(0)
+    .toLowerCase()}${originalValue.slice(1)}`;
+
+  // "ID" --> "Id"
+  const withCamelizedId = withFirstToLowerCase.replace(/ID/g, "Id");
+
+  // "iD" --> "id"
+  const withLowerCaseIdFixed = withCamelizedId.replace(/iD/g, "id");
+
+  return withLowerCaseIdFixed;
 };
