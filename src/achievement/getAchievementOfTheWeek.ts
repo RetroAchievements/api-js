@@ -1,9 +1,5 @@
-import {
-  apiBaseUrl,
-  buildRequestUrl,
-  call,
-  camelCaseKeys
-} from "../utils/internal";
+import type { CommonCallOptions } from "../utils/internal";
+import { apiBaseUrl, buildRequestUrl, call } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type { GetAchievementOfTheWeekResponse } from "./models";
 
@@ -52,13 +48,54 @@ import type { GetAchievementOfTheWeekResponse } from "./models";
  * }
  * ```
  */
-export const getAchievementOfTheWeek = async (authorization: AuthObject) => {
+export const getAchievementOfTheWeek = async (
+  authorization: AuthObject,
+  options?: CommonCallOptions
+) => {
+  const isPropertyCleaningEnabled = options?.isPropertyCleaningEnabled ?? true;
+
   const url = buildRequestUrl(
     apiBaseUrl,
     "/API_GetAchievementOfTheWeek.php",
     authorization
   );
 
-  const response = await call<GetAchievementOfTheWeekResponse>({ url });
-  return camelCaseKeys(response);
+  const rawResponse = await call<GetAchievementOfTheWeekResponse>({ url });
+
+  return isPropertyCleaningEnabled ? cleanProperties(rawResponse) : rawResponse;
+};
+
+const cleanProperties = (rawResponse: GetAchievementOfTheWeekResponse) => {
+  return {
+    achievement: {
+      id: Number(rawResponse.Achievement.ID),
+      title: rawResponse.Achievement.Title,
+      description: rawResponse.Achievement.Description,
+      points: Number(rawResponse.Achievement.Points),
+      trueRatio: Number(rawResponse.Achievement.TrueRatio),
+      author: rawResponse.Achievement.Author,
+      dateCreated: rawResponse.Achievement.DateCreated,
+      dateModified: rawResponse.Achievement.DateModified
+    },
+    console: {
+      id: Number(rawResponse.Console.ID),
+      title: rawResponse.Console.Title
+    },
+    forumTopic: {
+      id: Number(rawResponse.ForumTopic.ID)
+    },
+    game: {
+      id: Number(rawResponse.Game.ID),
+      title: rawResponse.Game.Title
+    },
+    startAt: rawResponse.StartAt,
+    totalPlayers: Number(rawResponse.TotalPlayers),
+    unlocks: rawResponse.Unlocks.map((rawUnlock) => ({
+      user: rawUnlock.User,
+      raPoints: Number(rawUnlock.RAPoints),
+      dateAwarded: rawUnlock.DateAwarded,
+      hardcoreMode: rawUnlock.HardcoreMode === "1" ? true : false
+    })),
+    unlocksCount: Number(rawResponse.UnlocksCount)
+  };
 };

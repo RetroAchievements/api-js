@@ -2,7 +2,6 @@ import { rest } from "msw";
 import { setupServer } from "msw/node";
 
 import { apiBaseUrl } from "../utils/internal";
-import { camelCaseKeys } from "../utils/internal/camelCaseKeys";
 import { buildAuthorization } from "../utils/public";
 import { getAchievementCount } from "./getAchievementCount";
 import type { GetAchievementCountResponse } from "./models";
@@ -20,7 +19,7 @@ describe("Function: getAchievementCount", () => {
     expect(getAchievementCount).toBeDefined();
   });
 
-  it("given a game ID, retrieves the list of achievement IDs associated with the game", async () => {
+  it("given a game ID, retrieves the list of achievement IDs associated with the game and cleans properties by default", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
@@ -39,9 +38,41 @@ describe("Function: getAchievementCount", () => {
     );
 
     // ACT
-    const response = await getAchievementCount(authorization, { gameID: 8 });
+    const response = await getAchievementCount(authorization, { gameId: 8 });
 
     // ASSERT
-    expect(response).toEqual(camelCaseKeys(mockResponse));
+    expect(response).toEqual({
+      gameId: 8,
+      achievementIds: [1, 2, 3, 4, 5]
+    });
+  });
+
+  it("given the user has disabled cleaning, returns the raw response", async () => {
+    // ARRANGE
+    const authorization = buildAuthorization({
+      userName: "mockUserName",
+      webApiKey: "mockWebApiKey"
+    });
+
+    const mockResponse: GetAchievementCountResponse = {
+      GameID: 8,
+      AchievementIDs: [1, 2, 3, 4, 5]
+    };
+
+    server.use(
+      rest.get(`${apiBaseUrl}/API_GetAchievementCount.php`, (_, res, ctx) =>
+        res(ctx.json(mockResponse))
+      )
+    );
+
+    // ACT
+    const response = await getAchievementCount(
+      authorization,
+      { gameId: 8 },
+      { isPropertyCleaningEnabled: false }
+    );
+
+    // ASSERT
+    expect(response).toEqual(mockResponse);
   });
 });

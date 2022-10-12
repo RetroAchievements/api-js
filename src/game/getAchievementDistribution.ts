@@ -13,17 +13,17 @@ import type {
  * @param authorization An object containing your userName and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param options.gameId The unique game ID. If you are unsure, open the
+ * @param payload.gameId The unique game ID. If you are unsure, open the
  * game's page on the RetroAchievements.org website. For example, Dragster's
  * URL is https://retroachievements.org/game/14402. We can see from the
  * URL that the game ID is "14402".
  *
- * @param options.flags Optional. By default, only official achievement
+ * @param payload.flags Optional. By default, only official achievement
  * tallies are returned in the response. Import the `AchievementDistributionFlags`
  * enum for possible values. This lets you see the count of players who have
  * unlocked unofficial achievements.
  *
- * @param options.hardcore Optional. By default, set to false, with both
+ * @param payload.hardcore Optional. By default, set to false, with both
  * softcore and hardcore tallies returned in the response. If this option
  * is set to true, only hardcore unlocks will be included in the totals.
  *
@@ -57,13 +57,13 @@ import type {
  */
 export const getAchievementDistribution = async (
   authorization: AuthObject,
-  options: {
+  payload: {
     gameId: number;
     flags?: AchievementDistributionFlags;
     hardcore?: boolean;
   }
 ) => {
-  const { gameId, flags, hardcore } = options;
+  const { gameId, flags, hardcore } = payload;
 
   const queryParams: Record<string, any> = { i: gameId };
 
