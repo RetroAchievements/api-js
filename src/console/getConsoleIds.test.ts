@@ -1,7 +1,9 @@
+/* eslint-disable sonarjs/no-duplicate-string */
+
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 
-import { apiBaseUrl, camelizeArrayObjects } from "../utils/internal";
+import { apiBaseUrl } from "../utils/internal";
 import { buildAuthorization } from "../utils/public";
 import { getConsoleIds } from "./getConsoleIds";
 import type { GetConsoleIdsResponse } from "./models";
@@ -19,7 +21,7 @@ describe("Function: getConsoleIds", () => {
     expect(getConsoleIds).toBeDefined();
   });
 
-  it("retrieves a list of console IDs and their names", async () => {
+  it("retrieves a list of console IDs and their names and cleans properties by default", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
@@ -42,6 +44,38 @@ describe("Function: getConsoleIds", () => {
     const response = await getConsoleIds(authorization);
 
     // ASSERT
-    expect(response).toEqual(camelizeArrayObjects(mockResponse));
+    expect(response).toEqual([
+      { id: 1, name: "Mega Drive" },
+      { id: 2, name: "Nintendo 64" },
+      { id: 3, name: "SNES" }
+    ]);
+  });
+
+  it("given the user has disabled cleaning, returns the raw response", async () => {
+    // ARRANGE
+    const authorization = buildAuthorization({
+      userName: "mockUserName",
+      webApiKey: "mockWebApiKey"
+    });
+
+    const mockResponse: GetConsoleIdsResponse = [
+      { ID: "1", Name: "Mega Drive" },
+      { ID: "2", Name: "Nintendo 64" },
+      { ID: "3", Name: "SNES" }
+    ];
+
+    server.use(
+      rest.get(`${apiBaseUrl}/API_GetConsoleIDs.php`, (_, res, ctx) =>
+        res(ctx.json(mockResponse))
+      )
+    );
+
+    // ACT
+    const response = await getConsoleIds(authorization, {
+      isPropertyCleaningEnabled: false
+    });
+
+    // ASSERT
+    expect(response).toEqual(mockResponse);
   });
 });

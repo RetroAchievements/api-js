@@ -1,6 +1,6 @@
 /* eslint-disable sonarjs/prefer-immediate-return */
 
-import type { CamelCaseObjectKeys } from "./models";
+import type { CamelCasedPropertiesDeep } from "type-fest";
 
 /**
  * Given an object, iterate over its keys and convert them from
@@ -9,23 +9,25 @@ import type { CamelCaseObjectKeys } from "./models";
 export const camelCaseKeys = <T extends object>(originalValue: T) => {
   const newObject: any = {};
 
-  for (const [key, value] of Object.entries(originalValue)) {
-    const camelCasedKey = naiveCamelCase(key);
-    newObject[camelCasedKey] = value;
+  if (Array.isArray(originalValue)) {
+    const camelizedArray = [];
 
-    if (typeof value === "object" && !Array.isArray(value)) {
-      const sanitizedNestedObject: any = {};
-
-      for (const [nestedKey, nestedValue] of Object.entries(value)) {
-        const nestedCamelCasedKey = naiveCamelCase(nestedKey);
-        sanitizedNestedObject[nestedCamelCasedKey] = nestedValue;
-      }
-
-      newObject[camelCasedKey] = sanitizedNestedObject;
+    for (const entity of originalValue) {
+      const camelizedEntity: any = camelCaseKeys(entity);
+      camelizedArray.push(camelizedEntity);
     }
+
+    return camelizedArray as CamelCasedPropertiesDeep<T>;
+  } else if (typeof originalValue === "object") {
+    for (const [key, value] of Object.entries(originalValue)) {
+      const camelCasedKey = naiveCamelCase(key);
+      newObject[camelCasedKey] = camelCaseKeys(value);
+    }
+
+    return newObject as CamelCasedPropertiesDeep<T>;
   }
 
-  return newObject as CamelCaseObjectKeys<T>;
+  return originalValue as CamelCasedPropertiesDeep<T>;
 };
 
 // Perform a handful of hacky operations to get us close to camelCase.
@@ -35,11 +37,8 @@ const naiveCamelCase = (originalValue: string) => {
     .charAt(0)
     .toLowerCase()}${originalValue.slice(1)}`;
 
-  // "ID" --> "Id"
-  const withCamelizedId = withFirstToLowerCase.replace(/ID/g, "Id");
-
   // "iD" --> "id"
-  const withLowerCaseIdFixed = withCamelizedId.replace(/iD/g, "id");
+  const withLowerCaseIdFixed = withFirstToLowerCase.replace(/iD/g, "id");
 
   return withLowerCaseIdFixed;
 };

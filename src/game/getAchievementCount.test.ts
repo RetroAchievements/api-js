@@ -39,7 +39,7 @@ describe("Function: getAchievementCount", () => {
     );
 
     // ACT
-    const response = await getAchievementCount(authorization, { gameId: 8 });
+    const response = await getAchievementCount(authorization, { gameID: 8 });
 
     // ASSERT
     expect(response).toEqual(camelCaseKeys(mockResponse));

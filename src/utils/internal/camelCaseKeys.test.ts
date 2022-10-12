@@ -24,12 +24,29 @@ describe("Util: camelCaseKeys", () => {
     // ASSERT
     expect(sanitizedObject).toEqual({
       id: 1,
-      gameId: 14_402,
-      achievementIds: [1, 2, 3, 4, 5],
+      gameID: 14_402,
+      achievementIDs: [1, 2, 3, 4, 5],
       someKey: "someValue",
       someNestedObject: {
         anotherKey: "anotherValue"
       }
     });
+  });
+
+  it("given a list of PascalCase'd objects, camelizes each one and returns them in a new list", () => {
+    // ARRANGE
+    const originalArray = [
+      { ID: 1, GameID: 1, AchievementIDs: [1, 2, 3, 4, 5] },
+      { ID: 2, GameID: 2, AchievementIDs: [10, 11, 12, 13, 14] }
+    ];
+
+    // ACT
+    const camelized = camelCaseKeys(originalArray);
+
+    // ASSERT
+    expect(camelized).toEqual([
+      { id: 1, gameID: 1, achievementIDs: [1, 2, 3, 4, 5] },
+      { id: 2, gameID: 2, achievementIDs: [10, 11, 12, 13, 14] }
+    ]);
   });
 });

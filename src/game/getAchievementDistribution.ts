@@ -13,7 +13,7 @@ import type {
  * @param authorization An object containing your userName and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param options.gameId The unique game ID. If you are unsure, open the
+ * @param options.gameID The unique game ID. If you are unsure, open the
  * game's page on the RetroAchievements.org website. For example, Dragster's
  * URL is https://retroachievements.org/game/14402. We can see from the
  * URL that the game ID is "14402".
@@ -31,7 +31,7 @@ import type {
  * ```
  * const achievementDistribution = await getAchievementDistribution(
  *   authorization,
- *   { gameId: 14402, hardcore: true }
+ *   { gameID: 14402, hardcore: true }
  * )
  * ```
  *
@@ -58,14 +58,14 @@ import type {
 export const getAchievementDistribution = async (
   authorization: AuthObject,
   options: {
-    gameId: number;
+    gameID: number;
     flags?: AchievementDistributionFlags;
     hardcore?: boolean;
   }
 ) => {
-  const { gameId, flags, hardcore } = options;
+  const { gameID, flags, hardcore } = options;
 
-  const queryParams: Record<string, any> = { i: gameId };
+  const queryParams: Record<string, any> = { i: gameID };
 
   if (flags !== undefined) {
     queryParams["f"] = flags;
