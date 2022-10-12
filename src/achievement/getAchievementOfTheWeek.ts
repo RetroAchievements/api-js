@@ -1,7 +1,9 @@
-import type { CommonCallOptions } from "../utils/internal";
 import { apiBaseUrl, buildRequestUrl, call } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
-import type { GetAchievementOfTheWeekResponse } from "./models";
+import type {
+  AchievementOfTheWeek,
+  GetAchievementOfTheWeekResponse
+} from "./models";
 
 /**
  * A call to this function will retrieve comprehensive
@@ -49,11 +51,8 @@ import type { GetAchievementOfTheWeekResponse } from "./models";
  * ```
  */
 export const getAchievementOfTheWeek = async (
-  authorization: AuthObject,
-  options?: CommonCallOptions
-) => {
-  const isPropertyCleaningEnabled = options?.isPropertyCleaningEnabled ?? true;
-
+  authorization: AuthObject
+): Promise<AchievementOfTheWeek> => {
   const url = buildRequestUrl(
     apiBaseUrl,
     "/API_GetAchievementOfTheWeek.php",
@@ -62,10 +61,12 @@ export const getAchievementOfTheWeek = async (
 
   const rawResponse = await call<GetAchievementOfTheWeekResponse>({ url });
 
-  return isPropertyCleaningEnabled ? cleanProperties(rawResponse) : rawResponse;
+  return cleanProperties(rawResponse);
 };
 
-const cleanProperties = (rawResponse: GetAchievementOfTheWeekResponse) => {
+const cleanProperties = (
+  rawResponse: GetAchievementOfTheWeekResponse
+): AchievementOfTheWeek => {
   return {
     achievement: {
       id: Number(rawResponse.Achievement.ID),

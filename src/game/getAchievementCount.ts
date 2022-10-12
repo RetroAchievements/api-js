@@ -1,11 +1,6 @@
-import {
-  type CommonCallOptions,
-  apiBaseUrl,
-  buildRequestUrl,
-  call
-} from "../utils/internal";
+import { apiBaseUrl, buildRequestUrl, call } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
-import type { GetAchievementCountResponse } from "./models";
+import type { AchievementCount, GetAchievementCountResponse } from "./models";
 
 /**
  * A call to this function will retrieve the list of
@@ -18,12 +13,6 @@ import type { GetAchievementCountResponse } from "./models";
  * game's page on the RetroAchievements.org website. For example, Dragster's
  * URL is https://retroachievements.org/game/14402. We can see from the
  * URL that the game ID is "14402".
- *
- * @param options.isPropertyCleaningEnabled Enabled by default.
- * The RetroAchievements.org API returns PascalCase'd responses
- * that often contain only string-typed values. When this option
- * is enabled, a mapping function is executed to convert keys to
- * be camelCased and cast strings to numbers and/or dates.
  *
  * @example
  * ```
@@ -41,10 +30,8 @@ import type { GetAchievementCountResponse } from "./models";
  */
 export const getAchievementCount = async (
   authorization: AuthObject,
-  payload: { gameId: number },
-  options?: CommonCallOptions
-) => {
-  const isPropertyCleaningEnabled = options?.isPropertyCleaningEnabled ?? true;
+  payload: { gameId: number }
+): Promise<AchievementCount> => {
   const { gameId } = payload;
 
   const url = buildRequestUrl(
@@ -56,10 +43,12 @@ export const getAchievementCount = async (
 
   const rawResponse = await call<GetAchievementCountResponse>({ url });
 
-  return isPropertyCleaningEnabled ? cleanProperties(rawResponse) : rawResponse;
+  return cleanProperties(rawResponse);
 };
 
-const cleanProperties = (rawResponse: GetAchievementCountResponse) => {
+const cleanProperties = (
+  rawResponse: GetAchievementCountResponse
+): AchievementCount => {
   return {
     gameId: rawResponse.GameID,
     achievementIds: rawResponse.AchievementIDs

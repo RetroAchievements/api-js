@@ -1,7 +1,6 @@
-import type { CommonCallOptions } from "../utils/internal";
 import { apiBaseUrl, buildRequestUrl, call } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
-import type { GetConsoleIdsResponse } from "./models";
+import type { ConsoleId, GetConsoleIdsResponse } from "./models";
 
 /**
  * A call to this function will retrieve the complete list
@@ -10,12 +9,6 @@ import type { GetConsoleIdsResponse } from "./models";
  *
  * @param authorization An object containing your userName and webApiKey.
  * This can be constructed with `buildAuthorization()`.
- *
- * @param options.isPropertyCleaningEnabled Enabled by default.
- * The RetroAchievements.org API returns PascalCase'd responses
- * that often contain only string-typed values. When this option
- * is enabled, a mapping function is executed to convert keys to
- * be camelCased and cast strings to numbers and/or dates.
  *
  * @example
  * ```
@@ -29,11 +22,8 @@ import type { GetConsoleIdsResponse } from "./models";
  * ```
  */
 export const getConsoleIds = async (
-  authorization: AuthObject,
-  options?: CommonCallOptions
-) => {
-  const isPropertyCleaningEnabled = options?.isPropertyCleaningEnabled ?? true;
-
+  authorization: AuthObject
+): Promise<ConsoleId[]> => {
   const url = buildRequestUrl(
     apiBaseUrl,
     "/API_GetConsoleIDs.php",
@@ -42,10 +32,10 @@ export const getConsoleIds = async (
 
   const rawResponse = await call<GetConsoleIdsResponse>({ url });
 
-  return isPropertyCleaningEnabled ? cleanProperties(rawResponse) : rawResponse;
+  return cleanProperties(rawResponse);
 };
 
-const cleanProperties = (rawResponse: GetConsoleIdsResponse) => {
+const cleanProperties = (rawResponse: GetConsoleIdsResponse): ConsoleId[] => {
   return rawResponse.map((rawEntity) => ({
     id: Number(rawEntity.ID),
     name: rawEntity.Name

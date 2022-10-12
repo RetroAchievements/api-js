@@ -19,7 +19,7 @@ describe("Function: getAchievementCount", () => {
     expect(getAchievementCount).toBeDefined();
   });
 
-  it("given a game ID, retrieves the list of achievement IDs associated with the game and cleans properties by default", async () => {
+  it("given a game ID, retrieves the list of achievement IDs associated with the game and cleans properties", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
@@ -45,34 +45,5 @@ describe("Function: getAchievementCount", () => {
       gameId: 8,
       achievementIds: [1, 2, 3, 4, 5]
     });
-  });
-
-  it("given the user has disabled cleaning, returns the raw response", async () => {
-    // ARRANGE
-    const authorization = buildAuthorization({
-      userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
-    });
-
-    const mockResponse: GetAchievementCountResponse = {
-      GameID: 8,
-      AchievementIDs: [1, 2, 3, 4, 5]
-    };
-
-    server.use(
-      rest.get(`${apiBaseUrl}/API_GetAchievementCount.php`, (_, res, ctx) =>
-        res(ctx.json(mockResponse))
-      )
-    );
-
-    // ACT
-    const response = await getAchievementCount(
-      authorization,
-      { gameId: 8 },
-      { isPropertyCleaningEnabled: false }
-    );
-
-    // ASSERT
-    expect(response).toEqual(mockResponse);
   });
 });

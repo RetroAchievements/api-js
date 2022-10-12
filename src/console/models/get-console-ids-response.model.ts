@@ -1,3 +1,1 @@
-import type { RawConsoleIdEntity } from "./raw-console-id-entity.model";
-
-export type GetConsoleIdsResponse = readonly RawConsoleIdEntity[];
+export type GetConsoleIdsResponse = readonly { ID: string; Name: string }[];

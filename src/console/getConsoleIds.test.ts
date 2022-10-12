@@ -21,7 +21,7 @@ describe("Function: getConsoleIds", () => {
     expect(getConsoleIds).toBeDefined();
   });
 
-  it("retrieves a list of console IDs and their names and cleans properties by default", async () => {
+  it("retrieves a list of console IDs and their names and cleans properties", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
@@ -49,33 +49,5 @@ describe("Function: getConsoleIds", () => {
       { id: 2, name: "Nintendo 64" },
       { id: 3, name: "SNES" }
     ]);
-  });
-
-  it("given the user has disabled cleaning, returns the raw response", async () => {
-    // ARRANGE
-    const authorization = buildAuthorization({
-      userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
-    });
-
-    const mockResponse: GetConsoleIdsResponse = [
-      { ID: "1", Name: "Mega Drive" },
-      { ID: "2", Name: "Nintendo 64" },
-      { ID: "3", Name: "SNES" }
-    ];
-
-    server.use(
-      rest.get(`${apiBaseUrl}/API_GetConsoleIDs.php`, (_, res, ctx) =>
-        res(ctx.json(mockResponse))
-      )
-    );
-
-    // ACT
-    const response = await getConsoleIds(authorization, {
-      isPropertyCleaningEnabled: false
-    });
-
-    // ASSERT
-    expect(response).toEqual(mockResponse);
   });
 });
