@@ -3,4 +3,5 @@
 export * from "./achievement";
 export * from "./console";
 export * from "./game";
+export * from "./user";
 export * from "./utils/public";
