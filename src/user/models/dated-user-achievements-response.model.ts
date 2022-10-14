@@ -1,4 +1,4 @@
-interface AchievementsEarnedBetweenResponseEntity {
+interface DatedUserAchievementResponseEntity {
   Date: string;
   HardcoreMode: string;
   AchievementID: string;
@@ -16,5 +16,5 @@ interface AchievementsEarnedBetweenResponseEntity {
   GameURL: string;
 }
 
-export type GetAchievementsEarnedBetweenResponse =
-  AchievementsEarnedBetweenResponseEntity[];
+export type DatedUserAchievementsResponse =
+  DatedUserAchievementResponseEntity[];

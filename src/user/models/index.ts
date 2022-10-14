@@ -1,2 +1,2 @@
-export * from "./achievements-earned-between.model";
-export * from "./get-achievements-earned-between-response.model";
+export * from "./dated-user-achievement.model";
+export * from "./dated-user-achievements-response.model";

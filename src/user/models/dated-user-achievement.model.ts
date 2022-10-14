@@ -1,4 +1,4 @@
-export type AchievementsEarnedBetween = {
+export type DatedUserAchievement = {
   date: string;
   hardcoreMode: boolean;
   achievementId: number;

@@ -3,12 +3,12 @@ import { setupServer } from "msw/node";
 
 import { apiBaseUrl } from "../utils/internal";
 import { buildAuthorization } from "../utils/public";
-import { getAchievementsEarnedBetween } from "./getAchievementsEarnedBetween";
+import { getAchievementsEarnedOnDay } from "./getAchievementsEarnedOnDay";
 import type { DatedUserAchievementsResponse } from "./models";
 
 const server = setupServer();
 
-describe("Function: getAchievementsEarnedBetween", () => {
+describe("Function: getAchievementsEarnedOnDay", () => {
   // MSW Setup
   beforeAll(() => server.listen());
   afterEach(() => server.resetHandlers());
@@ -16,10 +16,10 @@ describe("Function: getAchievementsEarnedBetween", () => {
 
   it("is defined #sanity", () => {
     // ASSERT
-    expect(getAchievementsEarnedBetween).toBeDefined();
+    expect(getAchievementsEarnedOnDay).toBeDefined();
   });
 
-  it("retrieves a list of user achievements earned between a set of dates", async () => {
+  it("retrieves a list of user achievements earned on a specified date", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
@@ -48,16 +48,15 @@ describe("Function: getAchievementsEarnedBetween", () => {
 
     server.use(
       rest.get(
-        `${apiBaseUrl}/API_GetAchievementsEarnedBetween.php`,
+        `${apiBaseUrl}/API_GetAchievementsEarnedOnDay.php`,
         (_, res, ctx) => res(ctx.json(mockResponse))
       )
     );
 
     // ACT
-    const response = await getAchievementsEarnedBetween(authorization, {
+    const response = await getAchievementsEarnedOnDay(authorization, {
       userName: "xelnia",
-      fromDate: new Date("2022-10-12"),
-      toDate: new Date("2022-10-13")
+      onDate: new Date("2022-10-12")
     });
 
     // ASSERT
