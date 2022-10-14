@@ -1,4 +1,9 @@
-import { apiBaseUrl, buildRequestUrl, call } from "../utils/internal";
+import {
+  apiBaseUrl,
+  buildRequestUrl,
+  call,
+  serializeProperties
+} from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type { ConsoleId, GetConsoleIdsResponse } from "./models";
 
@@ -32,12 +37,7 @@ export const getConsoleIds = async (
 
   const rawResponse = await call<GetConsoleIdsResponse>({ url });
 
-  return cleanProperties(rawResponse);
-};
-
-const cleanProperties = (rawResponse: GetConsoleIdsResponse): ConsoleId[] => {
-  return rawResponse.map((rawEntity) => ({
-    id: Number(rawEntity.ID),
-    name: rawEntity.Name
-  }));
+  return serializeProperties(rawResponse, {
+    shouldCastToNumbers: ["ID"]
+  });
 };

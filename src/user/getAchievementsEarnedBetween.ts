@@ -1,4 +1,9 @@
-import { apiBaseUrl, buildRequestUrl, call } from "../utils/internal";
+import {
+  apiBaseUrl,
+  buildRequestUrl,
+  call,
+  serializeProperties
+} from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type {
   AchievementsEarnedBetween,
@@ -76,27 +81,8 @@ export const getAchievementsEarnedBetween = async (
 
   const rawResponse = await call<GetAchievementsEarnedBetweenResponse>({ url });
 
-  return cleanProperties(rawResponse);
-};
-
-const cleanProperties = (
-  rawResponse: GetAchievementsEarnedBetweenResponse
-): AchievementsEarnedBetween => {
-  return rawResponse.map((rawAchievement) => ({
-    date: rawAchievement.Date,
-    hardcoreMode: rawAchievement.HardcoreMode === "1" ? true : false,
-    achievementId: Number(rawAchievement.AchievementID),
-    title: rawAchievement.Title,
-    description: rawAchievement.Description,
-    badgeName: rawAchievement.BadgeName,
-    points: Number(rawAchievement.Points),
-    author: rawAchievement.Author,
-    gameTitle: rawAchievement.GameTitle,
-    gameIcon: rawAchievement.GameIcon,
-    gameId: Number(rawAchievement.GameID),
-    consoleName: rawAchievement.ConsoleName,
-    cumulScore: rawAchievement.CumulScore,
-    badgeUrl: rawAchievement.BadgeURL,
-    gameUrl: rawAchievement.GameURL
-  }));
+  return serializeProperties(rawResponse, {
+    shouldCastToNumbers: ["AchievementID", "Points", "GameID"],
+    shouldMapToBooleans: ["HardcoreMode"]
+  });
 };

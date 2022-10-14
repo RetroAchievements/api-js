@@ -1,4 +1,9 @@
-import { apiBaseUrl, buildRequestUrl, call } from "../utils/internal";
+import {
+  apiBaseUrl,
+  buildRequestUrl,
+  call,
+  serializeProperties
+} from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type { AchievementCount, GetAchievementCountResponse } from "./models";
 
@@ -43,14 +48,5 @@ export const getAchievementCount = async (
 
   const rawResponse = await call<GetAchievementCountResponse>({ url });
 
-  return cleanProperties(rawResponse);
-};
-
-const cleanProperties = (
-  rawResponse: GetAchievementCountResponse
-): AchievementCount => {
-  return {
-    gameId: rawResponse.GameID,
-    achievementIds: rawResponse.AchievementIDs
-  };
+  return serializeProperties(rawResponse);
 };
