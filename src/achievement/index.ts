@@ -1,2 +1,2 @@
-export * from "./getAchievementOfTheWeek";
+export * from "./getAchievementUnlocks";
 export * from "./models";
