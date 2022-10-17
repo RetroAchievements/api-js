@@ -5,8 +5,8 @@ import { apiBaseUrl } from "../utils/internal";
 import { buildAuthorization } from "../utils/public";
 import { getAchievementDistribution } from "./getAchievementDistribution";
 import {
-  AchievementDistributionFlags,
-  GetAchievementDistributionResponse
+  type GetAchievementDistributionResponse,
+  AchievementDistributionFlags
 } from "./models";
 
 const server = setupServer();
