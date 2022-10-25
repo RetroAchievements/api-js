@@ -5,11 +5,15 @@ import {
   serializeProperties
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
-import type { GameExtended, GetGameExtendedResponse } from "./models";
+import type {
+  GameInfoAndUserProgress,
+  GetGameInfoAndUserProgressResponse
+} from "./models";
 
 /**
  * A call to this function will retrieve extended metadata
- * about a game, targeted via its unique ID.
+ * about a game, in addition to a user's progress about a game.
+ * This is targeted via a game's unique ID and a given username.
  *
  * @param authorization An object containing your userName and webApiKey.
  * This can be constructed with `buildAuthorization()`.
@@ -19,15 +23,19 @@ import type { GameExtended, GetGameExtendedResponse } from "./models";
  * URL is https://retroachievements.org/game/14402. We can see from the
  * URL that the game ID is "14402".
  *
+ * @param payload.userName The user for which to retrieve the
+ * game progress for.
+ *
  * @example
  * ```
- * const gameExtended = await getGameExtended(
+ * const gameInfoAndUserProgress = await getGameInfoAndUserProgress(
  *   authorization,
- *   { gameId: 14402 }
+ *   { gameId: 14402, userName: "wv_pinball" }
  * )
  * ```
  *
- * @returns An object containing extended metadata about a target game.
+ * @returns An object containing extended metadata about a target game,
+ * with attached progress for a target username.
  * ```json
  * {
  *   id: 14402,
@@ -64,28 +72,35 @@ import type { GameExtended, GetGameExtendedResponse } from "./models";
  *       dateCreated: "2019-07-31 18:49:57",
  *       badgeName: "85541",
  *       displayOrder: 0,
- *       memAddr: "f5c41fa0b5fa0d5fbb8a74c598f18582"
+ *       memAddr: "f5c41fa0b5fa0d5fbb8a74c598f18582",
+ *       dateEarned: '2022-08-23 22:56:38',
+ *       dateEarnedHardcore: '2022-08-23 22:56:38'
  *     }
- *   }
+ *   },
+ *   numAwardedToUser: 12,
+ *   numAwardedToUserHardcore: 12,
+ *   userCompletion: "100.00%",
+ *   userCompletionHardcore: "100.00%"
  * }
  * ```
  */
-export const getGameExtended = async (
+export const getGameInfoAndUserProgress = async (
   authorization: AuthObject,
-  payload: { gameId: number }
-): Promise<GameExtended> => {
-  const { gameId } = payload;
+  payload: { gameId: number; userName: string }
+): Promise<GameInfoAndUserProgress> => {
+  const { gameId, userName } = payload;
 
   const url = buildRequestUrl(
     apiBaseUrl,
-    "/API_GetGameExtended.php",
+    "/API_GetGameInfoAndUserProgress.php",
     authorization,
     {
-      i: gameId
+      g: gameId,
+      u: userName
     }
   );
 
-  const rawResponse = await call<GetGameExtendedResponse>({ url });
+  const rawResponse = await call<GetGameInfoAndUserProgressResponse>({ url });
 
   return serializeProperties(rawResponse, {
     shouldCastToNumbers: [

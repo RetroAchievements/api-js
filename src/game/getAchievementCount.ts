@@ -14,7 +14,7 @@ import type { AchievementCount, GetAchievementCountResponse } from "./models";
  * @param authorization An object containing your userName and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param options.gameId The unique game ID. If you are unsure, open the
+ * @param payload.gameId The unique game ID. If you are unsure, open the
  * game's page on the RetroAchievements.org website. For example, Dragster's
  * URL is https://retroachievements.org/game/14402. We can see from the
  * URL that the game ID is "14402".

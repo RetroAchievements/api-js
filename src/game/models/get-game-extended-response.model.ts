@@ -7,7 +7,7 @@ enum GameExtendedClaimType {
   Collaboration = "1"
 }
 
-interface GameExtendedRawAchievementEntity {
+export interface GameExtendedRawAchievementEntity {
   ID: string;
   NumAwarded: string;
   NumAwardedHardcore: string;
