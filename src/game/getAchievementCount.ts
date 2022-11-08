@@ -27,8 +27,8 @@ import type { AchievementCount, GetAchievementCountResponse } from "./models";
  * );
  * ```
  *
- * @returns An object containing a gameID and a list of
- * achievementIDs.
+ * @returns An object containing a gameId and a list of
+ * achievementIds.
  * ```
  * { gameId: 14402, achievementIds: [1,2,3,4,5] }
  * ```
