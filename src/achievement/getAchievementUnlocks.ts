@@ -32,7 +32,7 @@ import type {
  * const achievementUnlocks = await getAchievementUnlocks(
  *   authorization,
  *   { achievementId: 13876 }
- * )
+ * );
  * ```
  *
  * @returns An array containing metadata about unlocks for

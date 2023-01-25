@@ -24,7 +24,7 @@ import type { GameExtended, GetGameExtendedResponse } from "./models";
  * const gameExtended = await getGameExtended(
  *   authorization,
  *   { gameId: 14402 }
- * )
+ * );
  * ```
  *
  * @returns An object containing extended metadata about a target game.

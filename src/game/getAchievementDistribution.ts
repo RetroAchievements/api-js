@@ -32,7 +32,7 @@ import type {
  * const achievementDistribution = await getAchievementDistribution(
  *   authorization,
  *   { gameId: 14402, hardcore: true }
- * )
+ * );
  * ```
  *
  * @returns A dictionary where the keys represent the earned achievement

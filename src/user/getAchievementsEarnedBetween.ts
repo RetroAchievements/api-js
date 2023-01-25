@@ -35,7 +35,7 @@ import type {
  *     fromDate: new Date("2022-10-12"),
  *     toDate: new Date("2022-10-13")
  *   }
- * )
+ * );
  * ```
  *
  * @returns An array containing metadata about the user

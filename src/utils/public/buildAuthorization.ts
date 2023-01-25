@@ -17,7 +17,7 @@ import type { AuthObject } from "./models";
  * const authorization = buildAuthorization({
  *   userName: "Scott",
  *   webApiKey: "LtjCwW16nJI7cqOyPIQtXk8v1cfF0tmO"
- * })
+ * });
  * ```
  */
 export const buildAuthorization = (options: AuthObject): AuthObject => {

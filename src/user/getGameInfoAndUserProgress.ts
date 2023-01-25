@@ -31,7 +31,7 @@ import type {
  * const gameInfoAndUserProgress = await getGameInfoAndUserProgress(
  *   authorization,
  *   { gameId: 14402, userName: "wv_pinball" }
- * )
+ * );
  * ```
  *
  * @returns An object containing extended metadata about a target game,

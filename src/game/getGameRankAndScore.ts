@@ -31,7 +31,7 @@ import type {
  * const gameRankAndScore = await getGameRankAndScore(
  *   authorization,
  *   { gameId: 14402, type: "latest-masters" }
- * )
+ * );
  * ```
  *
  * @returns An array containing a list of latest masters or

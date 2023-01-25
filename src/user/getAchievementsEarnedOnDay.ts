@@ -34,7 +34,7 @@ import type {
  *     userName: "xelnia",
  *     onDate: new Date("2022-10-13")
  *   }
- * )
+ * );
  * ```
  *
  * @returns An array containing metadata about the user

@@ -30,7 +30,7 @@ import type { GameList, GetGameListResponse } from "./models";
  * const gameList = await getGameList(
  *   authorization,
  *   { consoleId: 1, shouldOnlyRetrieveGamesWithAchievements: true }
- * )
+ * );
  * ```
  *
  * @returns An array containing a list of games for a given consoleId.
