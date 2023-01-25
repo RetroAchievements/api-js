@@ -76,7 +76,7 @@ describe("Function: getGameInfoAndUserProgress", () => {
     server.use(
       rest.get(
         `${apiBaseUrl}/API_GetGameInfoAndUserProgress.php`,
-        (req, res, ctx) => res(ctx.json(mockResponse))
+        (_, res, ctx) => res(ctx.json(mockResponse))
       )
     );
 

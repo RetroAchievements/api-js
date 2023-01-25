@@ -49,7 +49,7 @@ describe("Function: getGame", () => {
     };
 
     server.use(
-      rest.get(`${apiBaseUrl}/API_GetGame.php`, (req, res, ctx) =>
+      rest.get(`${apiBaseUrl}/API_GetGame.php`, (_, res, ctx) =>
         res(ctx.json(mockResponse))
       )
     );

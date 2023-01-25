@@ -32,7 +32,7 @@ describe("Function: getUserPoints", () => {
     };
 
     server.use(
-      rest.get(`${apiBaseUrl}/API_GetUserPoints.php`, (req, res, ctx) =>
+      rest.get(`${apiBaseUrl}/API_GetUserPoints.php`, (_, res, ctx) =>
         res(ctx.json(mockResponse))
       )
     );

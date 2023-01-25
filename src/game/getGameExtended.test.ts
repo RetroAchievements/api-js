@@ -69,7 +69,7 @@ describe("Function: getGameExtended", () => {
     };
 
     server.use(
-      rest.get(`${apiBaseUrl}/API_GetGameExtended.php`, (req, res, ctx) =>
+      rest.get(`${apiBaseUrl}/API_GetGameExtended.php`, (_, res, ctx) =>
         res(ctx.json(mockResponse))
       )
     );
