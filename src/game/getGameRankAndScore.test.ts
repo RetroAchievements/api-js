@@ -38,7 +38,7 @@ describe("Function: getGameRankAndScore", () => {
     ];
 
     server.use(
-      rest.get(`${apiBaseUrl}/API_GetGameRankAndScore.php`, (req, res, ctx) =>
+      rest.get(`${apiBaseUrl}/API_GetGameRankAndScore.php`, (_, res, ctx) =>
         res(ctx.json(mockResponse))
       )
     );

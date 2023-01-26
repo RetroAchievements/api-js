@@ -18,19 +18,26 @@ module.exports = {
     "prettier"
   ],
   rules: {
+    "@typescript-eslint/consistent-type-imports": "error",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/no-var-requires": "off",
-    eqeqeq: "warn",
+
     "import/first": "error",
     "import/newline-after-import": "error",
     "import/no-duplicates": "error",
-    "no-console": "off",
+
+    curly: "error",
     "object-shorthand": "error",
+    "one-var": ["error", "never"],
+    eqeqeq: "error",
+
     "simple-import-sort/exports": "error",
     "simple-import-sort/imports": "error",
+
     "sonarjs/no-unused-collection": "off",
+
     "unicorn/filename-case": "off",
     "unicorn/no-array-callback-reference": "off",
     "unicorn/no-array-for-each": "warn",
