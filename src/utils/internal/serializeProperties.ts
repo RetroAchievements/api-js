@@ -30,7 +30,11 @@ export const serializeProperties = (
       }
 
       if (shouldMapToBooleans?.includes(originalKey)) {
-        sanitizedValue = originalValue === "1" ? true : false;
+        if (originalValue === null) {
+          sanitizedValue = null;
+        } else {
+          sanitizedValue = originalValue === "1" ? true : false;
+        }
       }
 
       cleanedObject = {
