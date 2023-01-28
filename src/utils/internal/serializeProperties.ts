@@ -26,7 +26,7 @@ export const serializeProperties = (
     for (const [originalKey, originalValue] of Object.entries(originalData)) {
       let sanitizedValue = originalValue;
       if (shouldCastToNumbers?.includes(originalKey)) {
-        sanitizedValue = Number(originalValue);
+        sanitizedValue = originalValue === null ? null : Number(originalValue);
       }
 
       if (shouldMapToBooleans?.includes(originalKey)) {

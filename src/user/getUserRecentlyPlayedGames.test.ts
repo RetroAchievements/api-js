@@ -39,7 +39,8 @@ describe("Function: getUserRecentlyPlayedGames", () => {
         NumAchieved: 0,
         ScoreAchieved: 0,
         NumAchievedHardcore: 0,
-        ScoreAchievedHardcore: 0
+        ScoreAchievedHardcore: 0,
+        MyVote: "2"
       }
     ];
 
@@ -69,7 +70,8 @@ describe("Function: getUserRecentlyPlayedGames", () => {
         numAchieved: 0,
         scoreAchieved: 0,
         numAchievedHardcore: 0,
-        scoreAchievedHardcore: 0
+        scoreAchievedHardcore: 0,
+        myVote: 2
       }
     ]);
   });

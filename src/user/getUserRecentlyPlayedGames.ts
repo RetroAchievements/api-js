@@ -87,7 +87,8 @@ export const getUserRecentlyPlayedGames = async (
       "NumAchieved",
       "ScoreAchieved",
       "NumAchievedHardcore",
-      "ScoreAchievedHardcore"
+      "ScoreAchievedHardcore",
+      "MyVote"
     ]
   });
 };

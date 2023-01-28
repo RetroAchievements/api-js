@@ -5,6 +5,7 @@ interface UserRecentlyPlayedGameResponseEntity {
   Title: string;
   ImageIcon: string;
   LastPlayed: string;
+  MyVote: "1" | "2" | "3" | "4" | "5" | null;
   NumPossibleAchievements: string;
   PossibleScore: string;
   NumAchieved: string | number;
