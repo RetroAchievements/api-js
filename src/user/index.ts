@@ -3,6 +3,7 @@ export * from "./getAchievementsEarnedOnDay";
 export * from "./getGameInfoAndUserProgress";
 export * from "./getUserGameRankAndScore";
 export * from "./getUserPoints";
+export * from "./getUserProgress";
 export * from "./getUserRecentlyPlayedGames";
 export * from "./getUserSummary";
 export * from "./models";
