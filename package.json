@@ -1,5 +1,5 @@
 {
-  "name": "retroachievements-api",
+  "name": "@retroachievements/api",
   "description": "A well-tested library that lets you get achievement, user, and game data from RetroAchievements.",
   "keywords": [
     "retroachievements",
@@ -10,12 +10,12 @@
   ],
   "version": "0.0.0-development",
   "main": "dist/index.js",
-  "module": "dist/retroachievements-api.esm.js",
+  "module": "dist/api.esm.js",
   "typings": "dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/index.js",
-      "import": "./dist/retroachievements-api.esm.js"
+      "import": "./dist/api.esm.js"
     }
   },
   "license": "MIT",
@@ -75,11 +75,11 @@
   },
   "size-limit": [
     {
-      "path": "dist/retroachievements-api.cjs.production.min.js",
+      "path": "dist/api.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/retroachievements-api.esm.js",
+      "path": "dist/api.esm.js",
       "limit": "10 KB"
     }
   ],
@@ -107,6 +107,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RetroAchievements/retroachievements-api-js"
-  }
+    "url": "git+https://github.com/RetroAchievements/retroachievements-api-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RetroAchievements/retroachievements-api-js/issues"
+  },
+  "homepage": "https://github.com/RetroAchievements/retroachievements-api-js#readme",
+  "author": "RAWeb Team"
 }
