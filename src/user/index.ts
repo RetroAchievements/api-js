@@ -2,6 +2,7 @@ export * from "./getAchievementsEarnedBetween";
 export * from "./getAchievementsEarnedOnDay";
 export * from "./getGameInfoAndUserProgress";
 export * from "./getUserClaims";
+export * from "./getUserCompletedGames";
 export * from "./getUserGameRankAndScore";
 export * from "./getUserPoints";
 export * from "./getUserProgress";

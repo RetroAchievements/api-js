@@ -37,7 +37,7 @@ import type {
  * @returns An array containing metadata about the user's
  * rank and score for the target game ID. If metadata
  * cannot be found, the array is empty.
- * ```
+ * ```json
  * [
  *   {
  *     user: "xelnia",
