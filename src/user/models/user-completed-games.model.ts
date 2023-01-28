@@ -1,4 +1,4 @@
-interface UserCompletedGame {
+export interface UserCompletedGame {
   gameId: number;
   title: string;
   imageIcon: string;

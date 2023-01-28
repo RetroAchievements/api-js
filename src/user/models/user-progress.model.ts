@@ -1,4 +1,4 @@
-interface UserProgressEntity {
+export interface UserProgressEntity {
   numPossibleAchievements: number;
   possibleScore: number;
   numAchieved: number;

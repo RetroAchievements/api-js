@@ -1,4 +1,4 @@
-interface ReportedGameEntity {
+export interface ReportedGameEntity {
   gameId: number;
   gameTitle: string;
   gameIcon: string;

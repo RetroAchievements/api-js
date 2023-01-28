@@ -1,4 +1,4 @@
-interface RecentlyPlayedGameEntity {
+export interface RecentlyPlayedGameEntity {
   gameId: number;
   consoleId: number;
   consoleName: string;
@@ -7,7 +7,7 @@ interface RecentlyPlayedGameEntity {
   lastPlayed: string;
 }
 
-interface LastActivityEntity {
+export interface LastActivityEntity {
   id: number;
   timestamp: string;
   lastupdate: string;
@@ -17,7 +17,7 @@ interface LastActivityEntity {
   data2: string;
 }
 
-interface LastGameEntity {
+export interface LastGameEntity {
   id: number;
   title: string;
   consoleId: number;
@@ -36,7 +36,7 @@ interface LastGameEntity {
   richPresencePatch: string;
 }
 
-interface AwardedGameEntity {
+export interface AwardedGameEntity {
   numPossibleAchievements: number;
   possibleScore: number;
   numAchieved: number;
@@ -45,7 +45,7 @@ interface AwardedGameEntity {
   scoreAchievedHardcore: number;
 }
 
-interface ExtendedRecentAchievementEntity {
+export interface ExtendedRecentAchievementEntity {
   id: number;
   gameId: number;
   gameTitle: string;

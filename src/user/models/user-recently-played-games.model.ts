@@ -1,4 +1,4 @@
-interface UserRecentlyPlayedGameEntity {
+export interface UserRecentlyPlayedGameEntity {
   gameId: number;
   consoleId: number;
   consoleName: string;

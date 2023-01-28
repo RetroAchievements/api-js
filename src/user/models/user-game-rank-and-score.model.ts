@@ -1,4 +1,4 @@
-interface UserGameRankAndScoreEntity {
+export interface UserGameRankAndScoreEntity {
   user: string;
   totalScore: number;
   lastAward: string;
