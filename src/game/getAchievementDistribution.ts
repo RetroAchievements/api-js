@@ -1,3 +1,4 @@
+import type { ID } from "../utils/internal";
 import { apiBaseUrl, buildRequestUrl, call } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type {
@@ -58,7 +59,7 @@ import type {
 export const getAchievementDistribution = async (
   authorization: AuthObject,
   payload: {
-    gameId: number;
+    gameId: ID;
     flags?: AchievementDistributionFlags;
     hardcore?: boolean;
   }

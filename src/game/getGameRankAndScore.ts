@@ -1,3 +1,4 @@
+import type { ID } from "../utils/internal";
 import {
   apiBaseUrl,
   buildRequestUrl,
@@ -44,7 +45,7 @@ import type {
  */
 export const getGameRankAndScore = async (
   authorization: AuthObject,
-  payload: { gameId: number; type: "latest-masters" | "high-scores" }
+  payload: { gameId: ID; type: "latest-masters" | "high-scores" }
 ): Promise<GameRankAndScoreEntity[]> => {
   const { gameId, type } = payload;
 

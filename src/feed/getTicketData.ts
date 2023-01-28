@@ -1,3 +1,4 @@
+import type { ID } from "../utils/internal";
 import {
   apiBaseUrl,
   buildRequestUrl,
@@ -51,7 +52,7 @@ interface GetTicketDataAllPayloadValues {
  */
 export function getTicketData(
   authorization: AuthObject,
-  payload: { ticketId: string | number }
+  payload: { ticketId: ID }
 ): Promise<TicketEntity>;
 
 /**
@@ -161,7 +162,7 @@ export function getTicketData(
 export function getTicketData(
   authorization: AuthObject,
   payload: {
-    gameId: string | number;
+    gameId: ID;
     isGettingTicketsForUnofficialAchievements?: true;
     shouldReturnTicketsList?: true;
   }
@@ -191,7 +192,7 @@ export function getTicketData(
  */
 export function getTicketData(
   authorization: AuthObject,
-  payload: { achievementId: string | number }
+  payload: { achievementId: ID }
 ): Promise<AchievementTicketStats>;
 
 /**

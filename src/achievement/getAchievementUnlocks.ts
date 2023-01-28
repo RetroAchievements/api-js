@@ -1,3 +1,4 @@
+import type { ID } from "../utils/internal";
 import {
   apiBaseUrl,
   buildRequestUrl,
@@ -50,11 +51,11 @@ import type {
  */
 export const getAchievementUnlocks = async (
   authorization: AuthObject,
-  payload: { achievementId: number; offset?: number; count?: number }
+  payload: { achievementId: ID; offset?: number; count?: number }
 ): Promise<AchievementUnlockEntity[]> => {
   const { achievementId, offset, count } = payload;
 
-  const queryParams: Record<string, number> = { a: achievementId };
+  const queryParams: Record<string, number | string> = { a: achievementId };
 
   if (offset) {
     queryParams.o = offset;

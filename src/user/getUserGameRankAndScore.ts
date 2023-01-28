@@ -1,3 +1,4 @@
+import type { ID } from "../utils/internal";
 import {
   apiBaseUrl,
   buildRequestUrl,
@@ -50,7 +51,7 @@ import type {
  */
 export const getUserGameRankAndScore = async (
   authorization: AuthObject,
-  payload: { gameId: number; userName: string }
+  payload: { gameId: ID; userName: string }
 ): Promise<UserGameRankAndScore> => {
   const { gameId, userName } = payload;
 

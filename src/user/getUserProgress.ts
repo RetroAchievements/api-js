@@ -1,3 +1,4 @@
+import type { ID } from "../utils/internal";
 import {
   apiBaseUrl,
   buildRequestUrl,
@@ -52,7 +53,7 @@ import type { GetUserProgressResponse, UserProgress } from "./models";
  */
 export const getUserProgress = async (
   authorization: AuthObject,
-  payload: { userName: string; gameIds: Array<number | string> }
+  payload: { userName: string; gameIds: ID[] }
 ): Promise<UserProgress> => {
   const { userName, gameIds } = payload;
 

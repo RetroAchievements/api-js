@@ -1,3 +1,4 @@
+import type { ID } from "../utils/internal";
 import {
   apiBaseUrl,
   buildRequestUrl,
@@ -35,7 +36,7 @@ import type { AchievementCount, GetAchievementCountResponse } from "./models";
  */
 export const getAchievementCount = async (
   authorization: AuthObject,
-  payload: { gameId: number }
+  payload: { gameId: ID }
 ): Promise<AchievementCount> => {
   const { gameId } = payload;
 

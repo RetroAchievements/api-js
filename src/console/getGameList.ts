@@ -1,3 +1,4 @@
+import type { ID } from "../utils/internal";
 import {
   apiBaseUrl,
   buildRequestUrl,
@@ -6,7 +7,6 @@ import {
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type { GameList, GetGameListResponse } from "./models";
-
 /**
  * A call to this function will retrieve the complete list
  * of games for a specified console on the RetroAchievements.org
@@ -55,7 +55,7 @@ import type { GameList, GetGameListResponse } from "./models";
 export const getGameList = async (
   authorization: AuthObject,
   payload: {
-    consoleId: number;
+    consoleId: ID;
     shouldOnlyRetrieveGamesWithAchievements?: boolean;
     shouldRetrieveGameHashes?: boolean;
   }
