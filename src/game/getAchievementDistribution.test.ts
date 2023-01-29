@@ -4,10 +4,8 @@ import { setupServer } from "msw/node";
 import { apiBaseUrl } from "../utils/internal";
 import { buildAuthorization } from "../utils/public";
 import { getAchievementDistribution } from "./getAchievementDistribution";
-import {
-  type GetAchievementDistributionResponse,
-  AchievementDistributionFlags
-} from "./models";
+import type { GetAchievementDistributionResponse } from "./models";
+import { AchievementDistributionFlags } from "./models";
 
 const server = setupServer();
 

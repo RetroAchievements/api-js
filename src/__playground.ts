@@ -5,25 +5,37 @@
  * Use this file to test and experiment with changes to the project.
  */
 
-// If you can't import what you want from "./index", users won't
-// be able to import it either.
-// import { buildAuthorization, getAchievementCount } from "./index";
+// ---
+
+/**
+ * "./index" is the library's single public-facing export.
+ * In other words, if you're not able to import what you want
+ * to use from "./index", no one who uses the package will be
+ * able to either.
+ */
+import { buildAuthorization, getAchievementCount } from "./index";
+
+// MODIFY THESE VALUES.
+const userName = "myUserName";
+const webApiKey = "myWebApiKey";
 
 const main = async () => {
-  console.log("retroachievements-api-js playground is running.");
-  console.log(""); // newline
+  console.log("🚀  @retroachievements/api playground is running.\n");
 
   // -- Start testing stuff here --
 
-  /*
-  const authorization = buildAuthorization({
-    userName: 'myUserName',
-    webApiKey: 'myWebApiKey'
-  })
+  if (userName === "myUserName" || webApiKey === "myWebApiKey") {
+    console.error(
+      "⛔️  ERROR: In __playground.ts, modify the userName and webApiKey variables to match your RA credentials.\n"
+    );
+  }
 
-  const achievementCount = await getAchievementCount(authorization, 14_402);
+  const authorization = buildAuthorization({ userName, webApiKey });
+
+  const achievementCount = await getAchievementCount(authorization, {
+    gameId: 14_402
+  });
   console.log(achievementCount);
-  */
 };
 
 main();
