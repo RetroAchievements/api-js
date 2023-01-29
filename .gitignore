@@ -122,3 +122,8 @@ dist
 website/node_modules
 website/.docusaurus
 website/build
+
+# VitePress
+.temp
+.vite_opt_cache
+cache

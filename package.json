@@ -36,7 +36,10 @@
     "test:coverage": "jest --selectProjects UNIT --coverage",
     "verify": "yarn format:check && yarn lint && yarn test:coverage && yarn build && yarn size",
     "size": "size-limit",
-    "start": "dts watch"
+    "start": "dts watch",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
     "isomorphic-unfetch": "^4.0.2"
