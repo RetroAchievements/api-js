@@ -52,7 +52,7 @@ import type {
 export const getAchievementUnlocks = async (
   authorization: AuthObject,
   payload: { achievementId: ID; offset?: number; count?: number }
-): Promise<AchievementUnlocksMetadata[]> => {
+): Promise<AchievementUnlocksMetadata> => {
   const { achievementId, offset, count } = payload;
 
   const queryParams: Record<string, number | string> = { a: achievementId };
