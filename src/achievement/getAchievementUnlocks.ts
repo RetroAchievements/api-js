@@ -7,7 +7,7 @@ import {
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type {
-  AchievementUnlockEntity,
+  AchievementUnlocksMetadata,
   GetAchievementUnlocksResponse
 } from "./models";
 
@@ -52,7 +52,7 @@ import type {
 export const getAchievementUnlocks = async (
   authorization: AuthObject,
   payload: { achievementId: ID; offset?: number; count?: number }
-): Promise<AchievementUnlockEntity[]> => {
+): Promise<AchievementUnlocksMetadata[]> => {
   const { achievementId, offset, count } = payload;
 
   const queryParams: Record<string, number | string> = { a: achievementId };
