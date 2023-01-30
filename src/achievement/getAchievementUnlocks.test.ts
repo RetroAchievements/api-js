@@ -26,14 +26,30 @@ describe("Function: getAchievementUnlocks", () => {
       webApiKey: "mockWebApiKey"
     });
 
-    const mockResponse: GetAchievementUnlocksResponse = [
-      {
-        User: "Podgicus0305",
-        RAPoints: "15544",
-        DateAwarded: "2022-07-12 19:06:34",
-        HardcoreMode: "1"
-      }
-    ];
+    const mockResponse: GetAchievementUnlocksResponse = {
+      Achievement: {
+        ID: "1",
+        Title: "Ring Collector",
+        Description: "Collect 100 Rings!",
+        Points: "5",
+        TrueRatio: "6",
+        Author: "Scott",
+        DateCreated: "2012-11-02 00:03:12",
+        DateModified: "2022-06-11 16:52:35"
+      },
+      Console: { ID: "1", Title: "Mega Drive" },
+      Game: { ID: "1", Title: "Sonic the Hedgehog" },
+      UnlocksCount: 9524,
+      TotalPlayers: 21_710,
+      Unlocks: [
+        {
+          User: "Tiotroll2022",
+          RAPoints: "348",
+          DateAwarded: "2023-01-29 21:45:41",
+          HardcoreMode: "0"
+        }
+      ]
+    };
 
     let searchParams = "";
 
@@ -59,13 +75,29 @@ describe("Function: getAchievementUnlocks", () => {
     expect(searchParams).toContain("o=1");
     expect(searchParams).toContain("c=1");
 
-    expect(response).toEqual([
-      {
-        user: "Podgicus0305",
-        raPoints: 15_544,
-        dateAwarded: "2022-07-12 19:06:34",
-        hardcoreMode: true
-      }
-    ]);
+    expect(response).toEqual({
+      achievement: {
+        id: 1,
+        title: "Ring Collector",
+        description: "Collect 100 Rings!",
+        points: 5,
+        trueRatio: 6,
+        author: "Scott",
+        dateCreated: "2012-11-02 00:03:12",
+        dateModified: "2022-06-11 16:52:35"
+      },
+      console: { id: 1, title: "Mega Drive" },
+      game: { id: 1, title: "Sonic the Hedgehog" },
+      unlocksCount: 9524,
+      totalPlayers: 21_710,
+      unlocks: [
+        {
+          user: "Tiotroll2022",
+          raPoints: 348,
+          dateAwarded: "2023-01-29 21:45:41",
+          hardcoreMode: false
+        }
+      ]
+    });
   });
 });

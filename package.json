@@ -42,7 +42,7 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
-    "isomorphic-unfetch": "^4.0.2"
+    "isomorphic-unfetch": "^3.1.0"
   },
   "peerDependencies": {},
   "devDependencies": {
