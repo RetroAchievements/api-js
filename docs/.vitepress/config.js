@@ -64,6 +64,38 @@ export default {
           {
             text: "Progress for Multiple Games",
             link: "/v1/users/get-user-progress"
+          },
+          {
+            text: "Recently Played Games",
+            link: "/v1/users/get-user-recently-played-games"
+          },
+          {
+            text: "User Summary",
+            link: "/v1/users/get-user-summary"
+          }
+        ]
+      },
+      {
+        text: "Consoles",
+        collapsible: true,
+        items: [
+          {
+            text: "Get All IDs",
+            link: "/v1/consoles/get-console-ids"
+          },
+          {
+            text: "Get All Games",
+            link: "/v1/consoles/get-game-list"
+          }
+        ]
+      },
+      {
+        text: "Achievements",
+        collapsible: true,
+        items: [
+          {
+            text: "Unlocks List",
+            link: "/v1/achievements/get-achievement-unlocks"
           }
         ]
       }

@@ -12,7 +12,7 @@ import type {
 
 /**
  * A call to this function will retrieve a list of a target user's
- * recently played games, targeted by username.
+ * recently played games, via their username.
  *
  * @param authorization An object containing your userName and webApiKey.
  * This can be constructed with `buildAuthorization()`.

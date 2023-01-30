@@ -13,7 +13,7 @@ import type {
 
 /**
  * A call to this function will retrieve a list of users who
- * have earned the given achievementId.
+ * have earned a given achievement, targeted by the achievement's ID.
  *
  * @param authorization An object containing your userName and webApiKey.
  * This can be constructed with `buildAuthorization()`.
