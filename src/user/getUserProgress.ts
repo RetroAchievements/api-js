@@ -10,14 +10,14 @@ import type { GetUserProgressResponse, UserProgress } from "./models";
 
 /**
  * A call to this function will retrieve a given user's
- * progress on a given set of games, targeted by game ID.
+ * progress on a given list of games, targeted by game ID.
  *
  * @param authorization An object containing your userName and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
  * @param payload.userName The user for which to retrieve the progress for.
  *
- * @param payload.gameIds An array of RetroAchievements Game IDs. If you aren't
+ * @param payload.gameIds An array of RetroAchievements game IDs. If you aren't
  * sure of the game ID, visit the game's page on the website and copy the number
  * at the end of the URL.
  *
@@ -25,7 +25,7 @@ import type { GetUserProgressResponse, UserProgress } from "./models";
  * ```
  * const userProgress = await getUserProgress(
  *   authorization,
- *   { userName: "xelnia", gameIds: [14402, 1] }
+ *   { userName: "xelnia", gameIds: [1, 14402] }
  * );
  * ```
  *

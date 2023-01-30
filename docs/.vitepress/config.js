@@ -1,9 +1,11 @@
 export default {
   title: "RetroAchievements API",
-  description: "Just playing around.",
+  description:
+    "The official JavaScript library for getting achievement, user, and game data from RetroAchievements.",
 
   themeConfig: {
     siteTitle: "@retroachievements/api",
+    logo: "./favicon.webp",
 
     socialLinks: [
       {
@@ -26,6 +28,44 @@ export default {
       {
         text: "Getting Started",
         link: "/getting-started"
+      },
+      {
+        text: "Users",
+        collapsible: true,
+        items: [
+          {
+            text: "Achievements Earned Between Days",
+            link: "/v1/users/get-achievements-earned-between"
+          },
+          {
+            text: "Achievements Earned On Day",
+            link: "/v1/users/get-achievements-earned-on-day"
+          },
+          {
+            text: "Progress for Game with Game Info",
+            link: "/v1/users/get-game-info-and-user-progress"
+          },
+          {
+            text: "Set Claims",
+            link: "/v1/users/get-user-claims"
+          },
+          {
+            text: "Completed Games",
+            link: "/v1/users/get-user-completed-games"
+          },
+          {
+            text: "Rank and Score for Game",
+            link: "/v1/users/get-user-game-rank-and-score"
+          },
+          {
+            text: "Point Totals",
+            link: "/v1/users/get-user-points"
+          },
+          {
+            text: "Progress for Multiple Games",
+            link: "/v1/users/get-user-progress"
+          }
+        ]
       }
     ],
 

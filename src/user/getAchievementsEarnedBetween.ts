@@ -41,25 +41,25 @@ import type {
  * @returns An array containing metadata about the user
  * achievements earned during the specified date range.
  * ```
- *  [
- *    {
- *      date: '2022-10-12 07:58:05',
- *      hardcoreMode: true,
- *      achievementId: 173315,
- *      title: 'Your Puny Human Weapons',
- *      description: 'Collect all objects in the Weapons Category.',
- *      badgeName: '193756',
- *      points: 10,
- *      author: 'blendedsea',
- *      gameTitle: 'Me & My Katamari',
- *      gameIcon: '/Images/047357.png',
- *      gameId: 3571,
- *      consoleName: 'PlayStation Portable',
- *      cumulScore: 120,
- *      badgeUrl: '/Badge/193756.png',
- *      gameUrl: '/game/3571'
- *    }
- *  ]
+ * [
+ *   {
+ *     date: '2022-10-12 07:58:05',
+ *     hardcoreMode: true,
+ *     achievementId: 173315,
+ *     title: 'Your Puny Human Weapons',
+ *     description: 'Collect all objects in the Weapons Category.',
+ *     badgeName: '193756',
+ *     points: 10,
+ *     author: 'blendedsea',
+ *     gameTitle: 'Me & My Katamari',
+ *     gameIcon: '/Images/047357.png',
+ *     gameId: 3571,
+ *     consoleName: 'PlayStation Portable',
+ *     cumulScore: 120,
+ *     badgeUrl: '/Badge/193756.png',
+ *     gameUrl: '/game/3571'
+ *   }
+ * ]
  * ```
  */
 export const getAchievementsEarnedBetween = async (

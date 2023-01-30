@@ -22,7 +22,7 @@ import type { GetUserClaimsResponse, UserClaims } from "./models";
  * ```
  * const userClaims = await getUserClaims(
  *   authorization,
- *   { userName: "xelnia" }
+ *   { userName: "Jamiras" }
  * );
  * ```
  *

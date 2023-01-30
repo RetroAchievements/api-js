@@ -15,7 +15,7 @@ import type {
  * about the games a given user has played. It returns two
  * entries per each game: one for the softcore completion and
  * one for the hardcore completion. These are designated by
- * the `hardcoreMode` property on the completion object.
+ * the `hardcoreMode` property on each completion object.
  *
  * @param authorization An object containing your userName and webApiKey.
  * This can be constructed with `buildAuthorization()`.

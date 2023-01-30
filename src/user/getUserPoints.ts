@@ -14,7 +14,7 @@ import type { GetUserPointsResponse, UserPoints } from "./models";
  * @param authorization An object containing your userName and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param payload.userName The user for which to retrieve the points for.
+ * @param payload.userName The user for which to retrieve the point totals for.
  *
  * @example
  * ```
