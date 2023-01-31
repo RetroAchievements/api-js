@@ -30,6 +30,24 @@ export default {
         link: "/getting-started"
       },
       {
+        text: "Feed",
+        collapsible: true,
+        items: [
+          {
+            text: "Achievement of the Week",
+            link: "/v1/feed/get-achievement-of-the-week"
+          },
+          {
+            text: "Active Claims",
+            link: "/v1/feed/get-active-claims"
+          },
+          {
+            text: "Top Ten Users",
+            link: "/v1/feed/get-top-ten-users"
+          }
+        ]
+      },
+      {
         text: "Users",
         collapsible: true,
         items: [

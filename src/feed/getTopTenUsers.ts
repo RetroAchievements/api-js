@@ -23,7 +23,7 @@ import type {
  * [
  *   { userName: "MockUser", totalPoints: 350000, totalRatioPoints: 995000 },
  *   { userName: "MockUser2", totalPoints: 345000, totalRatioPoints: 994000 },
- *   ...
+ *   // ...
  * ]
  * ```
  */

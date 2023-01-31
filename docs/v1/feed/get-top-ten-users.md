@@ -1,22 +1,21 @@
-# getConsoleIds
+# getTopTenUsers
 
-A call to this function will retrieve the complete list of console ID and name pairs on the RetroAchievements.org platform.
+A call to this function will retrieve the current top ten users on the site.
 
 ## Examples
 
 ```ts
-import { getConsoleIds } from "@retroachievements/api";
+import { getTopTenUsers } from "@retroachievements/api";
 
-const consoleIds = await getConsoleIds(authorization);
+const topTenUsers = await getTopTenUsers(authorization);
 ```
 
 ## Returns
 
 ```json
 [
-  { "id": 1, "name": "Mega Drive" },
-  { "id": 2, "name": "Nintendo 64" },
-  { "id": 3, "name": "SNES" }
+  { "userName": "MockUser", "totalPoints": 350000, "totalRatioPoints": 995000 },
+  { "userName": "MockUser2", "totalPoints": 345000, "totalRatioPoints": 994000 }
   // ...
 ]
 ```
@@ -29,5 +28,5 @@ const consoleIds = await getConsoleIds(authorization);
 
 ## Source
 
-[@retroachievements/api, getConsoleIds.ts](https://github.dev/retroachievements/retroachievements-api-js/blob/main/src/console/getConsoleIds.ts)  
-[RAWeb, API_GetConsoleIDs.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetConsoleIDs.php)
+[@retroachievements/api, getTopTenUsers.ts](https://github.dev/retroachievements/retroachievements-api-js/blob/main/src/feed/getTopTenUsers.ts)  
+[RAWeb, API_GetTopTenUsers.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetTopTenUsers.php)
