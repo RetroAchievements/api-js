@@ -94,6 +94,20 @@ export default {
         ]
       },
       {
+        text: "Games",
+        collapsible: true,
+        items: [
+          {
+            text: "Achievement Count",
+            link: "/v1/games/get-achievement-count"
+          },
+          {
+            text: "Achievement Distribution",
+            link: "/v1/games/get-achievement-distribution"
+          }
+        ]
+      },
+      {
         text: "Consoles",
         collapsible: true,
         items: [
