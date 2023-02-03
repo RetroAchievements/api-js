@@ -104,6 +104,22 @@ export default {
           {
             text: "Achievement Distribution",
             link: "/v1/games/get-achievement-distribution"
+          },
+          {
+            text: "Game Info",
+            link: "/v1/games/get-game"
+          },
+          {
+            text: "Extended Game Info",
+            link: "/v1/games/get-game-extended"
+          },
+          {
+            text: "Game Rank and Score",
+            link: "/v1/games/get-game-rank-and-score"
+          },
+          {
+            text: "Game Rating",
+            link: "/v1/games/get-game-rating"
           }
         ]
       },
@@ -128,6 +144,46 @@ export default {
           {
             text: "Unlocks List",
             link: "/v1/achievements/get-achievement-unlocks"
+          }
+        ]
+      },
+      {
+        text: "Tickets",
+        collapsible: true,
+        items: [
+          {
+            text: "Get Ticket by ID",
+            link: "/v1/tickets/get-ticket-by-id"
+          },
+          {
+            text: "Get Most Ticketed Games",
+            link: "/v1/tickets/get-most-ticketed-games"
+          },
+          {
+            text: "Get Most Recent Tickets",
+            link: "/v1/tickets/get-most-recent-tickets"
+          },
+          {
+            text: "Get Game Ticket Stats",
+            link: "/v1/tickets/get-game-ticket-stats"
+          },
+          {
+            text: "Get Developer Ticket Stats",
+            link: "/v1/tickets/get-developer-ticket-stats"
+          },
+          {
+            tet: "Get Achievement Ticket Stats",
+            link: "/v1/tickets/get-achievement-ticket-stats"
+          }
+        ]
+      },
+      {
+        text: "Utils",
+        collapsible: true,
+        items: [
+          {
+            text: "buildAuthorization()",
+            link: "/v1/utils/build-authorization"
           }
         ]
       }

@@ -52,6 +52,7 @@ const achievements = await getAchievementsEarnedBetween(authorization, {
     "badgeUrl": "/Badge/250698.png",
     "gameUrl": "/game/19018"
   }
+  // ...
 ]
 ```
 

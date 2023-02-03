@@ -50,6 +50,7 @@ const userClaims = await getUserClaims(authorization, {
     "updated": "2022-12-22 02:12:18",
     "minutesLeft": 73610
   }
+  // ...
 ]
 ```
 

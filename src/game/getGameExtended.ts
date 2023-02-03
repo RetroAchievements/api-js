@@ -49,7 +49,7 @@ import type { GameExtended, GetGameExtendedResponse } from "./models";
  *   richPresencePatch: "2b92fa1bf9635c303b3b7f8feea3ed3c",
  *   numAchievements: 12,
  *   numDistinctPlayersCasual: 454,
- *   numDistinctPlayersHardcore, 323
+ *   numDistinctPlayersHardcore: 323,
  *   claims: [],
  *   achievements: {
  *     '79434': {

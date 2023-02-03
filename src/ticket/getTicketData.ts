@@ -33,7 +33,7 @@ interface GetTicketDataAllPayloadValues {
 
 /**
  * A call to this function will retrieve ticket metadata information
- * about a single ticket by its ticket ID.
+ * about a single achievement ticket, targeted by its ticket ID.
  *
  * @param authorization An object containing your userName and webApiKey.
  * This can be constructed with `buildAuthorization()`.
@@ -57,7 +57,7 @@ export function getTicketData(
 
 /**
  * A call to this function will retrieve ticket metadata information
- * about the latest opened tickets on RetroAchievements.
+ * about the latest opened achievement tickets on RetroAchievements.
  *
  * @param authorization An object containing your userName and webApiKey.
  * This can be constructed with `buildAuthorization()`.
@@ -82,7 +82,7 @@ export function getTicketData(
 
 /**
  * A call to this function will retrieve the games on the site with
- * the highest count of opened tickets.
+ * the highest count of opened achievement tickets.
  *
  * @param authorization An object containing your userName and webApiKey.
  * This can be constructed with `buildAuthorization()`.

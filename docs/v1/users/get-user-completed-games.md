@@ -16,6 +16,7 @@ const userCompletedGames = await getUserCompletedGames(authorization, {
 
 ```json
 [
+  // There will be two records for each game played by the user.
   {
     "gameId": 14976,
     "title": "Mortal Kombat",
@@ -38,7 +39,7 @@ const userCompletedGames = await getUserCompletedGames(authorization, {
     "pctWon": 0.3714,
     "hardcoreMode": true
   }
-  // There will be two records for each game played by the user.
+  // ...
 ]
 ```
 

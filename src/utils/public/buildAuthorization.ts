@@ -1,7 +1,7 @@
 import type { AuthObject } from "./models";
 
 /**
- * Accepts your RetroAchievements.org userName and web API key. After
+ * Accepts your RetroAchievements.org username and web API key. After
  * receiving these inputs, the function returns you a value that can be
  * used for the authentication parameter by any of the async calls in this
  * library.
