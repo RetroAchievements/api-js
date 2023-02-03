@@ -22,15 +22,15 @@ You will need to be authenticated to use the official RetroAchievements API. To 
 
 1. Visit [your control panel](https://retroachievements.org/controlpanel.php) on the RA website.
 
+<br />
+
 2. Find the "Keys" section on the page. Copy the web API key value.
 
-::: danger
-While the API is read-only at the present time (Jan. 2023), this will likely change in the future.
-
+::: warning
 Store your API key as though it is a secret, like a password. Avoid checking in your API key with your code.
-
-**At some point in the future there could be an endpoint that allows resetting user progress on games. DO NOT LEAK YOUR API KEY.**
 :::
+
+<br />
 
 3. You can now create your authorization object using your web API key.
 
@@ -42,6 +42,8 @@ const webApiKey = "<your web API key>";
 
 const authorization = buildAuthorization({ userName, webApiKey });
 ```
+
+<br />
 
 4. You now have all you need to use any function in the API. Each function takes this authorization object as its first argument. Here's an example:
 
