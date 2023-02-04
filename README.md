@@ -1,103 +1,150 @@
-# DTS User Guide
+<h1 align="center">@retroachievements/api</h1>
 
-Congrats! You just saved yourself hours of work by bootstrapping this project with DTS. Let’s get you oriented with what’s here and how to use it.
+<p align="center">
+  <i>A JavaScript library that lets you get achievement, user, and game data from RetroAchievements.</i>
+  <br /><br />
+</p>
 
-> This DTS setup is meant for developing libraries (not apps!) that can be published to NPM. If you’re looking to build a Node app, you could use `ts-node-dev`, plain `ts-node`, or simple `tsc`.
+<p align="center">
+  <a href="https://retroachievements-api-js.vercel.app/getting-started.html"><strong>Documentation: Get Started</strong></a>
+  <br />
+</p>
 
-> If you’re new to TypeScript, checkout [this handy cheatsheet](https://devhints.io/typescript)
+<p align="center">
+  <a href="https://github.com/prettier/prettier">
+    <img src="https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square" alt="Styled with Prettier" />
+  </a>
+  <a href="https://github.com/semantic-release/semantic-release">
+    <img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="Semantic Release" />
+  </a>
+</p>
 
-## Commands
+<hr />
 
-DTS scaffolds your new library inside `/src`.
+## Features
 
-To run DTS, use:
+✅ &nbsp;Modular by design, and supports tree-shaking.  
+✅ &nbsp;Officially-supported, aligns 1:1 with the RAWeb API.  
+✅ &nbsp;Backwards-compatible - easy migration path to API v2.  
+✅ &nbsp;Supports Node environments (14 and above).  
+✅ &nbsp;Supports browsers.  
+✅ &nbsp;Ships with TypeScript support and types.  
+✅ &nbsp;Correctly maps types and properties from RAWeb PHP calls.  
+✅ &nbsp;Small, <3Kb.
+
+<hr />
+
+## Documentation
+
+Learn how to authenticate and start pulling data from RetroAchievements on our documentation website.
+
+- [Get started](https://retroachievements-api-js.vercel.app/getting-started.html)
+- [Get a user's profile information](https://retroachievements-api-js.vercel.app/v1/users/get-user-summary.html)
+- [Look up games a user has completed](https://retroachievements-api-js.vercel.app/v1/users/get-user-completed-games.html)
+- [Get a game's metadata](https://retroachievements-api-js.vercel.app/v1/games/get-game-extended.html)
+
+## Installation
+
+Run the following command:
 
 ```bash
-npm start # or yarn start
+npm install --save @retroachievements/api
 ```
 
-This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
+## How to begin making API calls
 
-To do a one-off build, use `npm run build` or `yarn build`.
+To use any endpoint function in the API, you must first be authorized by RetroAchievements. Fortunately, this is a fairly straightforward process.
 
-To run tests, use `npm test` or `yarn test`.
+1. Visit [your control panel](https://retroachievements.org/controlpanel.php) on the RA website.
 
-## Configuration
+2. Find the "Keys" section on the page. Copy the web API key value. **Do not expose your API key anywhere publicly.**
 
-Code quality is set up for you with `prettier`, `husky`, and `lint-staged`. Adjust the respective fields in `package.json` accordingly.
+3. You can now create your authorization object using your web API key.
 
-### Jest
+```ts
+import { buildAuthorization } from "@retroachievements/api";
 
-Jest tests are set up to run with `npm test` or `yarn test`.
+const userName = "<your username on RA>";
+const webApiKey = "<your web API key>";
 
-### Bundle Analysis
-
-[`size-limit`](https://github.com/ai/size-limit) is set up to calculate the real cost of your library with `npm run size` and visualize the bundle with `npm run analyze`.
-
-#### Setup Files
-
-This is the folder structure we set up for you:
-
-```txt
-/src
-  index.ts        # EDIT THIS
-/test
-  index.test.ts   # EDIT THIS
-.gitignore
-package.json
-README.md         # EDIT THIS
-tsconfig.json
+const authorization = buildAuthorization({ userName, webApiKey });
 ```
 
-### Rollup
+4. You now have all you need to use any function in the API. Each function takes this authorization object as its first argument. Here's an example:
 
-DTS uses [Rollup](https://rollupjs.org) as a bundler and generates multiple rollup configs for various module formats and build settings. See [Optimizations](#optimizations) for details.
+```ts
+import { getGame } from "@retroachievements/api";
 
-### TypeScript
-
-`tsconfig.json` is set up to interpret `dom` and `esnext` types, as well as `react` for `jsx`. Adjust according to your needs.
-
-## Continuous Integration
-
-### GitHub Actions
-
-Two actions are added by default:
-
-- `main` which installs deps w/ cache, lints, tests, and builds on all pushes against a Node and OS matrix
-- `size` which comments cost comparison of your library on every pull request using [`size-limit`](https://github.com/ai/size-limit)
-
-## Optimizations
-
-Please see the main `dts` [optimizations docs](https://github.com/weiran-zsd/dts-cli#optimizations). In particular, know that you can take advantage of development-only optimizations:
-
-```js
-// ./types/index.d.ts
-declare var __DEV__: boolean;
-
-// inside your code...
-if (__DEV__) {
-  console.log("foo");
-}
+// This returns basic metadata about the game on this page:
+// https://retroachievements.org/game/14402
+const game = await getGame(authorization, { gameId: 14402 });
 ```
 
-You can also choose to install and use [invariant](https://github.com/weiran-zsd/dts-cli#invariant) and [warning](https://github.com/weiran-zsd/dts-cli#warning) functions.
+## API
 
-## Module Formats
+Click the function names to open their complete docs on the docs site.
 
-CJS, ESModules, and UMD module formats are supported.
+### Users
 
-The appropriate paths are configured in `package.json` and `dist/index.js` accordingly. Please report if any issues are found.
+- [`getAchievementsEarnedBetween()`](https://retroachievements-api-js.vercel.app/v1/users/get-achievements-earned-between.html) - Get a list of achievements earned by a user between two dates.
+- [`getAchievementsEarnedOnDay()`](https://retroachievements-api-js.vercel.app/v1/users/get-achievements-earned-on-day.html) - Get a list of achievements earned by a user on a given date.
+- [`getGameInfoAndUserProgress()`](https://retroachievements-api-js.vercel.app/v1/users/get-game-info-and-user-progress.html) - Get metadata about a game as well as a user's progress on that game.
+- [`getUserClaims()`](https://retroachievements-api-js.vercel.app/v1/users/get-user-claims.html) - Get a list of set claims made over the lifetime of a user.
+- [`getUserCompletedGames()`](https://retroachievements-api-js.vercel.app/v1/users/get-user-completed-games.html) - Get hardcore and softcore completion metadata about games a user has played.
+- [`getUserGameRankAndScore()`](https://retroachievements-api-js.vercel.app/v1/users/get-user-game-rank-and-score.html) - Get metadata about how a user has performed on a given game.
+- [`getUserPoints()`](https://retroachievements-api-js.vercel.app/v1/users/get-user-points.html) - Get a user's total hardcore and softcore points.
+- [`getUserProgress()`](https://retroachievements-api-js.vercel.app/v1/users/get-user-progress.html) - Get a user's progress on a list of specified games.
+- [`getUserRecentlyPlayedGames()`](https://retroachievements-api-js.vercel.app/v1/users/get-user-recently-played-games.html) - Get a list of games a user has recently played.
+- [`getUserSummary()`](https://retroachievements-api-js.vercel.app/v1/users/get-user-summary.html) - Get a user's profile metadata.
 
-## Named Exports
+### Games
 
-Per Palmer Group guidelines, [always use named exports.](https://github.com/palmerhq/typescript#exports) Code split inside your React app instead of your React library.
+- [`getAchievementCount()`](https://retroachievements-api-js.vercel.app/v1/games/get-achievement-count.html) - Get the list of achievement IDs for a game.
+- [`getAchievementDistribution()`](https://retroachievements-api-js.vercel.app/v1/games/get-achievement-distribution.html) - Get how many players have unlocked how many achievements for a game.
+- [`getGame()`](https://retroachievements-api-js.vercel.app/v1/games/get-game.html) - Get basic metadata about a game.
+- [`getGameExtended()`](https://retroachievements-api-js.vercel.app/v1/games/get-game-extended.html) - Get extended metadata about a game.
+- [`getGameRankAndScore()`](https://retroachievements-api-js.vercel.app/v1/games/get-game-rank-and-score.html) - Get a list of either the latest masters or highest points earners for a game.
+- [`getGameRating()`](https://retroachievements-api-js.vercel.app/v1/games/get-game-rating.html) - Get how users have rated a game.
 
-## Including Styles
+### Achievements
 
-There are many ways to ship styles, including with CSS-in-JS. DTS has no opinion on this, configure how you like.
+- [`getAchievementUnlocks()`](https://retroachievements-api-js.vercel.app/v1/achievements/get-achievement-unlocks.html) - Get a list of users who have earned an achievement.
 
-For vanilla CSS, you can include it at the root directory and add it to the `files` section in your `package.json`, so that it can be imported separately by your users and run through their bundler's loader.
+### Consoles
 
-## Publishing to NPM
+- [`getConsoleIds()`](https://retroachievements-api-js.vercel.app/v1/consoles/get-console-ids.html) - Get the complete list of console ID and name pairs on the site.
+- [`getGameList()`](https://retroachievements-api-js.vercel.app/v1/consoles/get-game-list.html) - Get the complete list of games for a console.
 
-We recommend using [np](https://github.com/sindresorhus/np).
+### Feed
+
+- [`getAchievementOfTheWeek()`](https://retroachievements-api-js.vercel.app/v1/feed/get-achievement-of-the-week.html) - Get comprehensive metadata about the current Achievement of the Week.
+- [`getActiveClaims()`](https://retroachievements-api-js.vercel.app/v1/feed/get-active-claims.html) - Get all current set claims on the site.
+- [`getTopTenUsers()`](https://retroachievements-api-js.vercel.app/v1/feed/get-top-ten-users.html) - Get the list of top ten points earners.
+
+### Tickets
+
+- [Get Ticket by ID](https://retroachievements-api-js.vercel.app/v1/tickets/get-ticket-by-id.html)
+- [Get Most Ticketed Games](https://retroachievements-api-js.vercel.app/v1/tickets/get-most-ticketed-games.html)
+- [Get Most Recent Tickets](https://retroachievements-api-js.vercel.app/v1/tickets/get-most-recent-tickets.html)
+- [Get Game Ticket Stats](https://retroachievements-api-js.vercel.app/v1/tickets/get-game-ticket-stats.html)
+- [Get Developer Ticket Stats](https://retroachievements-api-js.vercel.app/v1/tickets/get-developer-ticket-stats.html)
+
+## Examples
+
+TODO
+
+## Projects Using @retroachievements/api
+
+Let us know about yours by [opening an issue](https://github.com/RetroAchievements/retroachievements-api-js/issues/new)!
+
+## Contributors
+
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://github.com/wescopeland"><img src="https://avatars.githubusercontent.com/u/3984985?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Wes Copeland</b></sub></a><br /><a href="https://github.com/achievements-app/psn-api/commits?author=wescopeland" title="Code">💻</a> <a href="#example-wescopeland" title="Examples">💡</a> <a href="https://github.com/achievements-app/psn-api/commits?author=wescopeland" title="Documentation">📖</a></td>
+    </tr>
+  </tbody>
+</table>
