@@ -10,7 +10,7 @@
     "raweb",
     "retro gaming"
   ],
-  "version": "1.0.0-rc.4",
+  "version": "1.0.0-rc.5",
   "typings": "dist/index.d.ts",
   "exports": {
     ".": {
