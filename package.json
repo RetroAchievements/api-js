@@ -39,7 +39,7 @@
     "lint:fix": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx . --fix",
     "test": "jest --selectProjects UNIT",
     "test:coverage": "jest --selectProjects UNIT --coverage",
-    "verify": "yarn format:check && yarn lint && yarn test:coverage && yarn build && yarn size",
+    "verify": "yarn format:check && yarn lint && yarn test:coverage && yarn build && yarn size && yarn docs:build",
     "size": "size-limit",
     "start": "microbundle watch",
     "docs:dev": "vitepress dev docs",

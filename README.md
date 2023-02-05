@@ -25,9 +25,8 @@
 
 ✅ &nbsp;Modular by design, and supports tree-shaking.  
 ✅ &nbsp;Officially-supported, aligns 1:1 with the RAWeb API.  
-✅ &nbsp;Backwards-compatible - easy migration path to API v2.  
+✅ &nbsp;Backwards-compatible, easy migration path to API v2.  
 ✅ &nbsp;Supports Node environments (14 and above).  
-✅ &nbsp;Supports browsers.  
 ✅ &nbsp;Ships with TypeScript support and types.  
 ✅ &nbsp;Correctly maps types and properties from RAWeb PHP calls.  
 ✅ &nbsp;Small, <3Kb.
@@ -136,6 +135,10 @@ TODO
 ## Projects Using @retroachievements/api
 
 Let us know about yours by [opening an issue](https://github.com/RetroAchievements/retroachievements-api-js/issues/new)!
+
+## How to Contribute
+
+Check out [CONTRIBUTING.md](https://github.com/RetroAchievements/retroachievements-api-js/blob/main/CONTRIBUTING.md) for how to get started.
 
 ## Contributors
 
