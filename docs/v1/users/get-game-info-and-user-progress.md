@@ -96,5 +96,5 @@ const gameInfoAndUserProgress = await getGameInfoAndUserProgress(
 
 ## Source
 
-[@retroachievements/api, getGameInfoAndUserProgress.ts](https://github.dev/retroachievements/retroachievements-api-js/blob/main/src/user/getGameInfoAndUserProgress.ts)  
+[@retroachievements/api, getGameInfoAndUserProgress.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/user/getGameInfoAndUserProgress.ts)  
 [RAWeb, API_GetGameInfoAndUserProgress.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetGameInfoAndUserProgress.php)

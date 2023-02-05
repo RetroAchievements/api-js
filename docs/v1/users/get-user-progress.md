@@ -46,5 +46,5 @@ const userProgress = await getUserProgress(authorization, {
 
 ## Source
 
-[@retroachievements/api, getUserProgress.ts](https://github.dev/retroachievements/retroachievements-api-js/blob/main/src/user/getUserProgress.ts)  
+[@retroachievements/api, getUserProgress.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/user/getUserProgress.ts)  
 [RAWeb, API_GetUserProgress.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetUserProgress.php)

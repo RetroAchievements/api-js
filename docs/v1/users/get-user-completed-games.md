@@ -52,5 +52,5 @@ const userCompletedGames = await getUserCompletedGames(authorization, {
 
 ## Source
 
-[@retroachievements/api, getUserCompletedGames.ts](https://github.dev/retroachievements/retroachievements-api-js/blob/main/src/user/getUserCompletedGames.ts)  
+[@retroachievements/api, getUserCompletedGames.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/user/getUserCompletedGames.ts)  
 [RAWeb, API_GetUserCompletedGames.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetUserCompletedGames.php)

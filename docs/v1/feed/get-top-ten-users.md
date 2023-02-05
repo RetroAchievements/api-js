@@ -28,5 +28,5 @@ const topTenUsers = await getTopTenUsers(authorization);
 
 ## Source
 
-[@retroachievements/api, getTopTenUsers.ts](https://github.dev/retroachievements/retroachievements-api-js/blob/main/src/feed/getTopTenUsers.ts)  
+[@retroachievements/api, getTopTenUsers.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/feed/getTopTenUsers.ts)  
 [RAWeb, API_GetTopTenUsers.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetTopTenUsers.php)

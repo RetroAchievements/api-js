@@ -67,5 +67,5 @@ const achievements = await getAchievementsEarnedBetween(authorization, {
 
 ## Source
 
-[@retroachievements/api, getAchievementsEarnedBetween.ts](https://github.dev/retroachievements/retroachievements-api-js/blob/main/src/user/getAchievementsEarnedBetween.ts)  
+[@retroachievements/api, getAchievementsEarnedBetween.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/user/getAchievementsEarnedBetween.ts)  
 [RAWeb, API_GetAchievementsEarnedBetween.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetAchievementsEarnedBetween.php)

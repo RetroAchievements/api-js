@@ -45,5 +45,5 @@ const game = await getGame(authorization, {
 
 ## Source
 
-[@retroachievements/api, getGame.ts](https://github.dev/retroachievements/retroachievements-api-js/blob/main/src/game/getGame.ts)  
+[@retroachievements/api, getGame.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/game/getGame.ts)  
 [RAWeb, API_GetGame.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetGame.php)

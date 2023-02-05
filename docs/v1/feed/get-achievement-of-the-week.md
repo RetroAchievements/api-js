@@ -50,5 +50,5 @@ const achievementOfTheWeek = await getAchievementOfTheWeek(authorization);
 
 ## Source
 
-[@retroachievements/api, getAchievementOfTheWeek.ts](https://github.dev/retroachievements/retroachievements-api-js/blob/main/src/feed/getAchievementOfTheWeek.ts)  
+[@retroachievements/api, getAchievementOfTheWeek.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/feed/getAchievementOfTheWeek.ts)  
 [RAWeb, API_GetAchievementOfTheWeek.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetAchievementOfTheWeek.php)

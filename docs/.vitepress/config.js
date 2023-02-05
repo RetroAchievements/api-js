@@ -10,7 +10,7 @@ export default {
     socialLinks: [
       {
         icon: "github",
-        link: "https://github.com/retroachievements/retroachievements-api-js"
+        link: "https://github.com/RetroAchievements/retroachievements-api-js"
       },
       {
         icon: "discord",
@@ -191,7 +191,7 @@ export default {
 
     editLink: {
       pattern:
-        "https://github.com/retroachievements/retroachievements-api-js/edit/docs/:path",
+        "https://github.com/RetroAchievements/retroachievements-api-js/edit/docs/:path",
       text: "Edit this page on GitHub"
     },
 

@@ -37,5 +37,5 @@ const userGameRankAndScore = await getUserGameRankAndScore(authorization, {
 
 ## Source
 
-[@retroachievements/api, getUserGameRankAndScore.ts](https://github.dev/retroachievements/retroachievements-api-js/blob/main/src/user/getUserGameRankAndScore.ts)  
+[@retroachievements/api, getUserGameRankAndScore.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/user/getUserGameRankAndScore.ts)  
 [RAWeb, API_GetUserGameRankAndScore.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetUserGameRankAndScore.php)

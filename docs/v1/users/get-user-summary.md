@@ -132,5 +132,5 @@ const userSummary = await getUserSummary(authorization, {
 
 ## Source
 
-[@retroachievements/api, getUserSummary.ts](https://github.dev/retroachievements/retroachievements-api-js/blob/main/src/user/getUserSummary.ts)  
+[@retroachievements/api, getUserSummary.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/user/getUserSummary.ts)  
 [RAWeb, API_GetUserSummary.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetUserSummary.php)

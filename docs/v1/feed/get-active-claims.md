@@ -43,5 +43,5 @@ const activeClaims = await getActiveClaims(authorization);
 
 ## Source
 
-[@retroachievements/api, getActiveClaims.ts](https://github.dev/retroachievements/retroachievements-api-js/blob/main/src/feed/getActiveClaims.ts)  
+[@retroachievements/api, getActiveClaims.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/feed/getActiveClaims.ts)  
 [RAWeb, API_GetAchievementOfTheWeek.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetActiveClaims.php)

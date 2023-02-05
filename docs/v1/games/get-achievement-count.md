@@ -30,5 +30,5 @@ const achievementCount = await getAchievementCount(authorization, {
 
 ## Source
 
-[@retroachievements/api, getAchievementCount.ts](https://github.dev/retroachievements/retroachievements-api-js/blob/main/src/game/getAchievementCount.ts)  
+[@retroachievements/api, getAchievementCount.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/game/getAchievementCount.ts)  
 [RAWeb, API_GetAchievementCount.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetAchievementCount.php)

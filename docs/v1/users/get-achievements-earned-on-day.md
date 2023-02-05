@@ -65,5 +65,5 @@ const achievements = await getAchievementsEarnedOnDay(authorization, {
 
 ## Source
 
-[@retroachievements/api, getAchievementsEarnedOnDay.ts](https://github.dev/retroachievements/retroachievements-api-js/blob/main/src/user/getAchievementsEarnedOnDay.ts)  
+[@retroachievements/api, getAchievementsEarnedOnDay.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/user/getAchievementsEarnedOnDay.ts)  
 [RAWeb, API_GetAchievementsEarnedOnDay.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetAchievementsEarnedOnDay.php)
