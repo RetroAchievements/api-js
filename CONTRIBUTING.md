@@ -107,3 +107,13 @@ Before opening a PR, the following are good things to check for:
 - Does `yarn verify` pass successfully?
 - Does any new code have tests?
 - Is new code documented on the VitePress site?
+
+## How to release to npm
+
+If you are a RetroAchievements org member, you should be able to release a new package to npm.
+
+1. Change the package version number in _package.json_. Respect semantic versioning: [major].[minor].[patch]. A major release usually assumes breaking changes.
+
+2. Run `yarn build`.
+
+3. Run `npm publish --access public`.
