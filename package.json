@@ -10,7 +10,7 @@
     "raweb",
     "retro gaming"
   ],
-  "version": "1.0.0-rc.5",
+  "version": "1.0.0",
   "typings": "dist/index.d.ts",
   "exports": {
     ".": {
@@ -45,7 +45,7 @@
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "release": "semantic-release"
+    "npm:release": "build && semantic-release"
   },
   "dependencies": {
     "isomorphic-unfetch": "^3.1.0"
