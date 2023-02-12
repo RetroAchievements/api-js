@@ -10,23 +10,14 @@
   <br />
 </p>
 
-<p align="center">
-  <a href="https://github.com/prettier/prettier">
-    <img src="https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square" alt="Styled with Prettier" />
-  </a>
-  <a href="https://github.com/semantic-release/semantic-release">
-    <img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="Semantic Release" />
-  </a>
-</p>
-
 <hr />
 
 ## Features
 
-✅ &nbsp;Modular by design, and supports tree-shaking.  
+✅ &nbsp;Modular by design and supports tree-shaking.  
 ✅ &nbsp;Officially-supported, aligns 1:1 with the RAWeb API.  
 ✅ &nbsp;Backwards-compatible, easy migration path to API v2.  
-✅ &nbsp;Supports Node environments (14 and above).  
+✅ &nbsp;Supports Node environments (16 and above).  
 ✅ &nbsp;Ships with TypeScript support and types.  
 ✅ &nbsp;Correctly maps types and properties from RAWeb PHP calls.  
 ✅ &nbsp;Small, <3Kb.
