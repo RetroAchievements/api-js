@@ -1,13 +1,13 @@
-# getActiveClaims
+# getClaims
 
-A call to this function returns information about all (1000 max) active set claims.
+A call to this function returns information about all (1000 max) set claims of a specified kind: completed, dropped, or expired.
 
 ## Examples
 
 ```ts
-import { getActiveClaims } from "@retroachievements/api";
+import { getClaims } from "@retroachievements/api";
 
-const activeClaims = await getActiveClaims(authorization);
+const claims = await getClaims(authorization, { claimKind: "dropped" });
 ```
 
 ## Returns
@@ -42,8 +42,9 @@ const activeClaims = await getActiveClaims(authorization);
 | Name            | Type                                        | Description                                                                                                                  |
 | :-------------- | :------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------- |
 | `authorization` | [`AuthObject`](/v1/data-models/auth-object) | An object that must contain a `userName` and a `webApiKey`. See [this page](/getting-started) for how to create this object. |
+| `claimKind`     | "completed", "dropped", or "expired"        | The type of filter to apply to the list of fetched claims.                                                                   |
 
 ## Source
 
-[@retroachievements/api, getActiveClaims.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/feed/getActiveClaims.ts)  
-[RAWeb, API_GetActiveClaims.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetActiveClaims.php)
+[@retroachievements/api, getClaims.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/feed/getClaims.ts)  
+[RAWeb, API_GetClaims.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetClaims.php)

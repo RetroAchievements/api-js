@@ -1,5 +1,5 @@
 export * from "./achievement-count.model";
-export * from "./achievement-distribution-flags.model";
+export * from "./achievement-distribution-flags.enum";
 export * from "./game.model";
 export * from "./game-extended.model";
 export * from "./game-extended-achievement-entity.model";

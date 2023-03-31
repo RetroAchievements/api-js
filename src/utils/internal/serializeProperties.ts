@@ -33,7 +33,7 @@ export const serializeProperties = (
         if (originalValue === null) {
           sanitizedValue = null;
         } else {
-          sanitizedValue = originalValue === "1" ? true : false;
+          sanitizedValue = String(originalValue) === "1" ? true : false;
         }
       }
 
