@@ -37,9 +37,9 @@ const activeClaims = await getActiveClaims(authorization);
 
 ## Parameters
 
-| Name            | Type                                        | Description                                                                                                                   |
-| :-------------- | :------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------- |
-| `authorization` | [`AuthObject`](/v1/data-models/auth-object) | An object that must contain a `userName` and a `webApiKey`. See [this page](/getting-started) for how to create this object1. |
+| Name            | Type                                        | Description                                                                                                                  |
+| :-------------- | :------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------- |
+| `authorization` | [`AuthObject`](/v1/data-models/auth-object) | An object that must contain a `userName` and a `webApiKey`. See [this page](/getting-started) for how to create this object. |
 
 ## Source
 

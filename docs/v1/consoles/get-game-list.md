@@ -46,5 +46,5 @@ const gameList = await getGameList(authorization, {
 
 ## Source
 
-[@retroachievements/api, getConsoleIds.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/console/getConsoleIds.ts)  
-[RAWeb, API_GetConsoleIDs.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetConsoleIDs.php)
+[@retroachievements/api, getGameList.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/console/getGameList.ts)  
+[RAWeb, API_GetGameList.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetGameList.php)
