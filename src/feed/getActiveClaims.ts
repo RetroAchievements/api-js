@@ -5,7 +5,7 @@ import {
   serializeProperties
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
-import type { ActiveClaim, GetActiveClaimsResponse } from "./models";
+import type { GetSetClaimsResponse, SetClaim } from "./models";
 
 /**
  * A call to this function returns information about all
@@ -29,6 +29,7 @@ import type { ActiveClaim, GetActiveClaimsResponse } from "./models";
  *     gameTitle: "SpongeBob SquarePants: Battle for Bikini Bottom",
  *     gameIcon: "/Images/059776.png",
  *     consoleName: "PlayStation 2",
+ *     consoleId: 22,
  *     claimType: 0,
  *     setType: 0,
  *     status: 0,
@@ -37,32 +38,24 @@ import type { ActiveClaim, GetActiveClaimsResponse } from "./models";
  *     created: "2022-10-04 00:25:06",
  *     doneTime: "2023-01-04 00:25:06",
  *     updated: "2022-10-04 00:25:06",
- *     minutesLeft: 112523
+ *     minutesLeft: 112523,
+ *     userIsJrDev: false
  *   }
  * ]
  * ```
  */
 export const getActiveClaims = async (
   authorization: AuthObject
-): Promise<ActiveClaim[]> => {
+): Promise<SetClaim[]> => {
   const url = buildRequestUrl(
     apiBaseUrl,
     "/API_GetActiveClaims.php",
     authorization
   );
 
-  const rawResponse = await call<GetActiveClaimsResponse>({ url });
+  const rawResponse = await call<GetSetClaimsResponse>({ url });
 
   return serializeProperties(rawResponse, {
-    shouldCastToNumbers: [
-      "ID",
-      "GameID",
-      "ClaimType",
-      "SetType",
-      "Status",
-      "Extension",
-      "Special",
-      "MinutesLeft"
-    ]
+    shouldMapToBooleans: ["UserIsJrDev"]
   });
 };

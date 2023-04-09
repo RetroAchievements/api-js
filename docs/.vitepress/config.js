@@ -44,6 +44,10 @@ export default {
             link: "/v1/feed/get-achievement-of-the-week"
           },
           {
+            text: "Claims",
+            link: "/v1/feed/get-claims"
+          },
+          {
             text: "Active Claims",
             link: "/v1/feed/get-active-claims"
           },

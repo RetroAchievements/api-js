@@ -5,12 +5,12 @@ import { setupServer } from "msw/node";
 
 import { apiBaseUrl } from "../utils/internal";
 import { buildAuthorization } from "../utils/public";
-import { getActiveClaims } from "./getActiveClaims";
+import { getClaims } from "./getClaims";
 import type { GetSetClaimsResponse } from "./models";
 
 const server = setupServer();
 
-describe("Function: getActiveClaims", () => {
+describe("Function: getClaims", () => {
   // MSW Setup
   beforeAll(() => server.listen());
   afterEach(() => server.resetHandlers());
@@ -18,10 +18,10 @@ describe("Function: getActiveClaims", () => {
 
   it("is defined #sanity", () => {
     // ASSERT
-    expect(getActiveClaims).toBeDefined();
+    expect(getClaims).toBeDefined();
   });
 
-  it("retrieves metadata about current active claims", async () => {
+  it("retrieves metadata about a requested kind of claims", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
@@ -51,13 +51,13 @@ describe("Function: getActiveClaims", () => {
     ];
 
     server.use(
-      rest.get(`${apiBaseUrl}/API_GetActiveClaims.php`, (_, res, ctx) =>
+      rest.get(`${apiBaseUrl}/API_GetClaims.php`, (_, res, ctx) =>
         res(ctx.json(mockResponse))
       )
     );
 
     // ACT
-    const response = await getActiveClaims(authorization);
+    const response = await getClaims(authorization, { claimKind: "completed" });
 
     // ASSERT
     expect(response).toEqual([

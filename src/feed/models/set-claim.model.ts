@@ -1,20 +1,8 @@
-export enum ClaimType {
-  Primary = 0,
-  Collaboration = 1
-}
+import type { ClaimSetType } from "./claim-set-type.enum";
+import type { ClaimStatus } from "./claim-status.enum";
+import type { ClaimType } from "./claim-type.enum";
 
-export enum ClaimSetType {
-  NewSet = 0,
-  Revision = 1
-}
-
-export enum ClaimStatus {
-  Active = 0,
-  Complete = 1,
-  Dropped = 2
-}
-
-export interface ActiveClaim {
+export interface SetClaim {
   /** Unique ID of the claim. */
   id: number;
 
@@ -32,6 +20,9 @@ export interface ActiveClaim {
 
   /** Console name of the claimed game. */
   consoleName: string;
+
+  /** Console ID of the claimed game. */
+  consoleId: number;
 
   /** Whether the claim is primary or a collaboration. */
   claimType: ClaimType;
@@ -63,4 +54,7 @@ export interface ActiveClaim {
 
   /** Time in minutes left until the claim expires. */
   minutesLeft: number;
+
+  /** True if the user is a junior dev. */
+  userIsJrDev: boolean;
 }

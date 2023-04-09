@@ -108,7 +108,8 @@ Click the function names to open their complete docs on the docs site.
 ### Feed
 
 - [`getAchievementOfTheWeek()`](https://retroachievements-api-js.vercel.app/v1/feed/get-achievement-of-the-week.html) - Get comprehensive metadata about the current Achievement of the Week.
-- [`getActiveClaims()`](https://retroachievements-api-js.vercel.app/v1/feed/get-active-claims.html) - Get all current set claims on the site.
+- [`getActiveClaims()`](https://retroachievements-api-js.vercel.app/v1/feed/get-active-claims.html) - Get all active set claims on the site.
+- [`getClaims()`](https://retroachievements-api-js.vercel.app/v1/feed/get-claims.html) - Get all claims of other kinds on the site.
 - [`getTopTenUsers()`](https://retroachievements-api-js.vercel.app/v1/feed/get-top-ten-users.html) - Get the list of top ten points earners.
 
 ### Tickets
