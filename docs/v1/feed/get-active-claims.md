@@ -21,7 +21,6 @@ const activeClaims = await getActiveClaims(authorization);
     "gameTitle": "SpongeBob SquarePants: Battle for Bikini Bottom",
     "gameIcon": "/Images/059776.png",
     "consoleName": "PlayStation 2",
-    "consoleId": 22,
     "claimType": 0,
     "setType": 0,
     "status": 0,
@@ -30,8 +29,7 @@ const activeClaims = await getActiveClaims(authorization);
     "created": "2022-10-04 00:25:06",
     "doneTime": "2023-01-04 00:25:06",
     "updated": "2022-10-04 00:25:06",
-    "minutesLeft": 112523,
-    "userIsJrDev": false
+    "minutesLeft": 112523
   }
   // ...
 ]
@@ -46,4 +44,4 @@ const activeClaims = await getActiveClaims(authorization);
 ## Source
 
 [@retroachievements/api, getActiveClaims.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/feed/getActiveClaims.ts)  
-[RAWeb, API_GetActiveClaims.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetActiveClaims.php)
+[RAWeb, API_GetAchievementOfTheWeek.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetActiveClaims.php)
