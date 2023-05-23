@@ -79,6 +79,7 @@ Click the function names to open their complete docs on the docs site.
 - [`getAchievementsEarnedBetween()`](https://retroachievements-api-js.vercel.app/v1/users/get-achievements-earned-between.html) - Get a list of achievements earned by a user between two dates.
 - [`getAchievementsEarnedOnDay()`](https://retroachievements-api-js.vercel.app/v1/users/get-achievements-earned-on-day.html) - Get a list of achievements earned by a user on a given date.
 - [`getGameInfoAndUserProgress()`](https://retroachievements-api-js.vercel.app/v1/users/get-game-info-and-user-progress.html) - Get metadata about a game as well as a user's progress on that game.
+- [`getUserAwards()`](https://retroachievements-api-js.vercel.app/v1/users/get-user-awards.html) - Get a list of a user's site awards/badges.
 - [`getUserClaims()`](https://retroachievements-api-js.vercel.app/v1/users/get-user-claims.html) - Get a list of set claims made over the lifetime of a user.
 - [`getUserCompletedGames()`](https://retroachievements-api-js.vercel.app/v1/users/get-user-completed-games.html) - Get hardcore and softcore completion metadata about games a user has played.
 - [`getUserGameRankAndScore()`](https://retroachievements-api-js.vercel.app/v1/users/get-user-game-rank-and-score.html) - Get metadata about how a user has performed on a given game.

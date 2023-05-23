@@ -51,7 +51,7 @@ const userRecentAchievements = await getUserRecentAchievements(authorization, {
 | Name            | Type                                        | Description                                                                                                                  |
 | :-------------- | :------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------- |
 | `authorization` | [`AuthObject`](/v1/data-models/auth-object) | An object that must contain a `userName` and a `webApiKey`. See [this page](/getting-started) for how to create this object. |
-| `userName`      | `string`                                    | The user for which to retrieve the recently played games for.                                                                |
+| `userName`      | `string`                                    | The user for which to retrieve the recently earned achievements for.                                                         |
 | `recentMinutes` | `number?`                                   | Optional. Defaults to 60. How many minutes back to fetch for the given user.                                                 |
 
 ## Source

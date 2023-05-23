@@ -18,7 +18,7 @@ import type {
  * @param authorization An object containing your userName and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param payload.userName The user for which to retrieve the summary for.
+ * @param payload.userName The user for which to retrieve the recent achievements for.
  *
  * @param payload.recentMinutes Optional. Defaults to 60. How many minutes
  * back to fetch for the given user.

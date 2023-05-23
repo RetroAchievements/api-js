@@ -71,5 +71,8 @@ const naiveCamelCase = (originalValue: string) => {
   // "rAPoints" -> "raPoints"
   camelCased = camelCased.replace(/rA/g, "ra");
 
+  // "visibleUserawards" -> "visibleUserAwards"
+  camelCased = camelCased.replace(/visibleUserawards/g, "visibleUserAwards");
+
   return camelCased;
 };

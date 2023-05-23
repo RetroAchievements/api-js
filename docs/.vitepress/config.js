@@ -62,6 +62,10 @@ export default {
         collapsible: true,
         items: [
           {
+            text: "Recent Achievements",
+            link: "/v1/users/get-user-recent-achievements"
+          },
+          {
             text: "Achievements Earned Between Days",
             link: "/v1/users/get-achievements-earned-between"
           },
@@ -72,6 +76,10 @@ export default {
           {
             text: "Progress for Game with Game Info",
             link: "/v1/users/get-game-info-and-user-progress"
+          },
+          {
+            text: "Awards / Badges",
+            link: "/v1/users/get-user-awards"
           },
           {
             text: "Set Claims",
