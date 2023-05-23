@@ -6,6 +6,7 @@ export * from "./getUserCompletedGames";
 export * from "./getUserGameRankAndScore";
 export * from "./getUserPoints";
 export * from "./getUserProgress";
+export * from "./getUserRecentAchievements";
 export * from "./getUserRecentlyPlayedGames";
 export * from "./getUserSummary";
 export * from "./models";

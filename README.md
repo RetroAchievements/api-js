@@ -84,6 +84,7 @@ Click the function names to open their complete docs on the docs site.
 - [`getUserGameRankAndScore()`](https://retroachievements-api-js.vercel.app/v1/users/get-user-game-rank-and-score.html) - Get metadata about how a user has performed on a given game.
 - [`getUserPoints()`](https://retroachievements-api-js.vercel.app/v1/users/get-user-points.html) - Get a user's total hardcore and softcore points.
 - [`getUserProgress()`](https://retroachievements-api-js.vercel.app/v1/users/get-user-progress.html) - Get a user's progress on a list of specified games.
+- [`getUserRecentAchievements()`](https://retroachievements-api-js.vercel.app/v1/users/get-user-recent-achievements.html) - Get a list of achievements recently earned by the user.
 - [`getUserRecentlyPlayedGames()`](https://retroachievements-api-js.vercel.app/v1/users/get-user-recently-played-games.html) - Get a list of games a user has recently played.
 - [`getUserSummary()`](https://retroachievements-api-js.vercel.app/v1/users/get-user-summary.html) - Get a user's profile metadata.
 
