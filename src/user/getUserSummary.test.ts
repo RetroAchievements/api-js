@@ -60,6 +60,7 @@ describe("Function: getUserSummary", () => {
       )
     );
 
+    // ASSERT
     await expect(
       getUserSummary(authorization, { userName: "WCopeland" })
     ).rejects.toThrow();
