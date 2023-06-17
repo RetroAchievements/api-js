@@ -36,4 +36,21 @@ describe("Util: call", () => {
     expect(response).toEqual({ foo: "bar" });
     expect(receivedMethod).toEqual("GET");
   });
+
+  it("given the call returns an error, throws an error", async () => {
+    // ARRANGE
+    const mockRequestUrl = "https://abc.xyz/v1/endpoint2";
+
+    server.use(
+      rest.get(mockRequestUrl, (req, res, ctx) => {
+        return res(
+          ctx.status(503),
+          ctx.text("<HTML><BODY>something bad happened</BODY></HTML>")
+        );
+      })
+    );
+
+    // ASSERT
+    await expect(call({ url: mockRequestUrl })).rejects.toThrow();
+  });
 });

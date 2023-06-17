@@ -44,6 +44,26 @@ describe("Function: getUserSummary", () => {
     // ASSERT
     expect(response).toEqual(mockExpectedSummaryValue);
   });
+
+  it("given the API returns a 503, throws an error", async () => {
+    // ARRANGE
+    const authorization = buildAuthorization({
+      userName: "mockUserName",
+      webApiKey: "mockWebApiKey"
+    });
+
+    const mockResponse = "<html><body>the api is down</body></html>";
+
+    server.use(
+      rest.get(`${apiBaseUrl}/API_GetUserSummary.php`, (_, res, ctx) =>
+        res(ctx.status(503), ctx.body(mockResponse))
+      )
+    );
+
+    await expect(
+      getUserSummary(authorization, { userName: "WCopeland" })
+    ).rejects.toThrow();
+  });
 });
 
 const mockGetUserSummaryResponse: GetUserSummaryResponse = {

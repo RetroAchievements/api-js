@@ -25,5 +25,12 @@ export const call = async <
   const { url } = config;
 
   const rawResponse = await unfetch(url);
+
+  if (!rawResponse.ok) {
+    throw new Error(
+      `HTTP Error: Status ${rawResponse.status} ${rawResponse.statusText}`
+    );
+  }
+
   return (await rawResponse.json()) as T;
 };
