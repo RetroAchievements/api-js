@@ -1,4 +1,4 @@
-import { rest } from "msw";
+import { http, HttpResponse } from "msw";
 import { setupServer } from "msw/node";
 
 import { call } from "./call";
@@ -23,9 +23,9 @@ describe("Util: call", () => {
     const mockRequestUrl = "https://abc.xyz/v1/endpoint";
 
     server.use(
-      rest.get(mockRequestUrl, (req, res, ctx) => {
-        receivedMethod = req.method;
-        return res(ctx.json({ foo: "bar" }));
+      http.get(mockRequestUrl, (info) => {
+        receivedMethod = info.request.method;
+        return HttpResponse.json({ foo: "bar" });
       })
     );
 
@@ -42,12 +42,11 @@ describe("Util: call", () => {
     const mockRequestUrl = "https://abc.xyz/v1/endpoint2";
 
     server.use(
-      rest.get(mockRequestUrl, (req, res, ctx) => {
-        return res(
-          ctx.status(503),
-          ctx.text("<HTML><BODY>something bad happened</BODY></HTML>")
-        );
-      })
+      http.get(mockRequestUrl, () =>
+        HttpResponse.text("<HTML><BODY>something bad happened</BODY></HTML>", {
+          status: 503
+        })
+      )
     );
 
     // ASSERT

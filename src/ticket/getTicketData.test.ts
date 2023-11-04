@@ -1,4 +1,4 @@
-import { rest } from "msw";
+import { http, HttpResponse } from "msw";
 import { setupServer } from "msw/node";
 
 import { apiBaseUrl } from "../utils/internal";
@@ -58,8 +58,8 @@ describe("Function: getTicketData", () => {
     };
 
     server.use(
-      rest.get(`${apiBaseUrl}/API_GetTicketData.php`, (_, res, ctx) =>
-        res(ctx.json(mockResponse))
+      http.get(`${apiBaseUrl}/API_GetTicketData.php`, () =>
+        HttpResponse.json(mockResponse)
       )
     );
 
@@ -136,8 +136,8 @@ describe("Function: getTicketData", () => {
     };
 
     server.use(
-      rest.get(`${apiBaseUrl}/API_GetTicketData.php`, (_, res, ctx) =>
-        res(ctx.json(mockResponse))
+      http.get(`${apiBaseUrl}/API_GetTicketData.php`, () =>
+        HttpResponse.json(mockResponse)
       )
     );
 
@@ -209,8 +209,8 @@ describe("Function: getTicketData", () => {
     };
 
     server.use(
-      rest.get(`${apiBaseUrl}/API_GetTicketData.php`, (_, res, ctx) =>
-        res(ctx.json(mockResponse))
+      http.get(`${apiBaseUrl}/API_GetTicketData.php`, () =>
+        HttpResponse.json(mockResponse)
       )
     );
 
@@ -258,8 +258,8 @@ describe("Function: getTicketData", () => {
     };
 
     server.use(
-      rest.get(`${apiBaseUrl}/API_GetTicketData.php`, (_, res, ctx) =>
-        res(ctx.json(mockResponse))
+      http.get(`${apiBaseUrl}/API_GetTicketData.php`, () =>
+        HttpResponse.json(mockResponse)
       )
     );
 
@@ -293,8 +293,8 @@ describe("Function: getTicketData", () => {
     };
 
     server.use(
-      rest.get(`${apiBaseUrl}/API_GetTicketData.php`, (_, res, ctx) =>
-        res(ctx.json(mockResponse))
+      http.get(`${apiBaseUrl}/API_GetTicketData.php`, () =>
+        HttpResponse.json(mockResponse)
       )
     );
 
@@ -327,8 +327,8 @@ describe("Function: getTicketData", () => {
     };
 
     server.use(
-      rest.get(`${apiBaseUrl}/API_GetTicketData.php`, (_, res, ctx) =>
-        res(ctx.json(mockResponse))
+      http.get(`${apiBaseUrl}/API_GetTicketData.php`, () =>
+        HttpResponse.json(mockResponse)
       )
     );
 

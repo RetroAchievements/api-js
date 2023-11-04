@@ -4,6 +4,8 @@ export default defineConfig({
   test: {
     root: process.cwd(),
 
+    setupFiles: ["vitest.polyfills.ts"],
+
     globals: true,
 
     exclude: [

@@ -1,4 +1,4 @@
-import { rest } from "msw";
+import { http, HttpResponse } from "msw";
 import { setupServer } from "msw/node";
 
 import { apiBaseUrl } from "../utils/internal";
@@ -49,8 +49,8 @@ describe("Function: getUserAwards", () => {
     };
 
     server.use(
-      rest.get(`${apiBaseUrl}/API_GetUserAwards.php`, (_, res, ctx) =>
-        res(ctx.json(mockResponse))
+      http.get(`${apiBaseUrl}/API_GetUserAwards.php`, () =>
+        HttpResponse.json(mockResponse)
       )
     );
 

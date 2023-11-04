@@ -1,6 +1,6 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 
-import { rest } from "msw";
+import { http, HttpResponse } from "msw";
 import { setupServer } from "msw/node";
 
 import { apiBaseUrl } from "../utils/internal";
@@ -31,8 +31,8 @@ describe("Function: getUserSummary", () => {
     const mockResponse = mockGetUserSummaryResponse;
 
     server.use(
-      rest.get(`${apiBaseUrl}/API_GetUserSummary.php`, (_, res, ctx) =>
-        res(ctx.json(mockResponse))
+      http.get(`${apiBaseUrl}/API_GetUserSummary.php`, () =>
+        HttpResponse.json(mockResponse)
       )
     );
 
@@ -55,8 +55,8 @@ describe("Function: getUserSummary", () => {
     const mockResponse = "<html><body>the api is down</body></html>";
 
     server.use(
-      rest.get(`${apiBaseUrl}/API_GetUserSummary.php`, (_, res, ctx) =>
-        res(ctx.status(503), ctx.body(mockResponse))
+      http.get(`${apiBaseUrl}/API_GetUserSummary.php`, () =>
+        HttpResponse.json(mockResponse, { status: 503 })
       )
     );
 

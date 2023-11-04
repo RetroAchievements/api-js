@@ -1,6 +1,6 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 
-import { rest } from "msw";
+import { http, HttpResponse } from "msw";
 import { setupServer } from "msw/node";
 
 import { apiBaseUrl } from "../utils/internal";
@@ -69,8 +69,8 @@ describe("Function: getGameExtended", () => {
     };
 
     server.use(
-      rest.get(`${apiBaseUrl}/API_GetGameExtended.php`, (_, res, ctx) =>
-        res(ctx.json(mockResponse))
+      http.get(`${apiBaseUrl}/API_GetGameExtended.php`, () =>
+        HttpResponse.json(mockResponse)
       )
     );
 

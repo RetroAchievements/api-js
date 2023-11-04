@@ -1,4 +1,4 @@
-import { rest } from "msw";
+import { http, HttpResponse } from "msw";
 import { setupServer } from "msw/node";
 
 import { apiBaseUrl } from "../utils/internal";
@@ -51,16 +51,13 @@ describe("Function: getAchievementUnlocks", () => {
       ]
     };
 
-    let searchParams = "";
+    let requestUrl = "";
 
     server.use(
-      rest.get(
-        `${apiBaseUrl}/API_GetAchievementUnlocks.php`,
-        (req, res, ctx) => {
-          searchParams = req.url.search;
-          return res(ctx.json(mockResponse));
-        }
-      )
+      http.get(`${apiBaseUrl}/API_GetAchievementUnlocks.php`, (info) => {
+        requestUrl = info.request.url;
+        return HttpResponse.json(mockResponse);
+      })
     );
 
     // ACT
@@ -71,9 +68,9 @@ describe("Function: getAchievementUnlocks", () => {
     });
 
     // ASSERT
-    expect(searchParams).toContain("a=18000");
-    expect(searchParams).toContain("o=1");
-    expect(searchParams).toContain("c=1");
+    expect(requestUrl).toContain("a=18000");
+    expect(requestUrl).toContain("o=1");
+    expect(requestUrl).toContain("c=1");
 
     expect(response).toEqual({
       achievement: {

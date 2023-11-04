@@ -1,4 +1,4 @@
-import { rest } from "msw";
+import { http, HttpResponse } from "msw";
 import { setupServer } from "msw/node";
 
 import { apiBaseUrl } from "../utils/internal";
@@ -35,16 +35,14 @@ describe("Function: getAchievementDistribution", () => {
       "5": 1
     };
 
-    let detectedSearchParams: URLSearchParams;
+    let requestUrl = "";
 
     server.use(
-      rest.get(
-        `${apiBaseUrl}/API_GetAchievementDistribution.php`,
-        (req, res, ctx) => {
-          detectedSearchParams = req.url.searchParams;
-          return res(ctx.json(mockResponse));
-        }
-      )
+      http.get(`${apiBaseUrl}/API_GetAchievementDistribution.php`, (info) => {
+        requestUrl = info.request.url;
+
+        return HttpResponse.json(mockResponse);
+      })
     );
 
     // ACT
@@ -55,9 +53,9 @@ describe("Function: getAchievementDistribution", () => {
     // ASSERT
     expect(response).toEqual(mockResponse);
 
-    expect(detectedSearchParams!.get("i")).toEqual("14402");
-    expect(detectedSearchParams!.has("f")).toBeFalsy();
-    expect(detectedSearchParams!.has("h")).toBeFalsy();
+    expect(requestUrl).toContain("i=14402");
+    expect(requestUrl).not.toContain("f=");
+    expect(requestUrl).not.toContain("h=");
   });
 
   it("given flags, successfully attaches the option to the call", async () => {
@@ -75,16 +73,13 @@ describe("Function: getAchievementDistribution", () => {
       "5": 1
     };
 
-    let detectedSearchParams: URLSearchParams;
+    let requestUrl = "";
 
     server.use(
-      rest.get(
-        `${apiBaseUrl}/API_GetAchievementDistribution.php`,
-        (req, res, ctx) => {
-          detectedSearchParams = req.url.searchParams;
-          return res(ctx.json(mockResponse));
-        }
-      )
+      http.get(`${apiBaseUrl}/API_GetAchievementDistribution.php`, (info) => {
+        requestUrl = info.request.url;
+        return HttpResponse.json(mockResponse);
+      })
     );
 
     // ACT
@@ -96,11 +91,11 @@ describe("Function: getAchievementDistribution", () => {
     // ASSERT
     expect(response).toEqual(mockResponse);
 
-    expect(detectedSearchParams!.get("i")).toEqual("14402");
-    expect(detectedSearchParams!.get("f")).toEqual(
-      String(AchievementDistributionFlags.UnofficialAchievements)
+    expect(requestUrl).toContain("i=14402");
+    expect(requestUrl).toContain(
+      `f=${AchievementDistributionFlags.UnofficialAchievements}`
     );
-    expect(detectedSearchParams!.has("h")).toBeFalsy();
+    expect(requestUrl).not.toContain("h=");
   });
 
   it("given a truthy hardcore value, successfully attaches the option to the call", async () => {
@@ -118,16 +113,13 @@ describe("Function: getAchievementDistribution", () => {
       "5": 1
     };
 
-    let detectedSearchParams: URLSearchParams;
+    let requestUrl = "";
 
     server.use(
-      rest.get(
-        `${apiBaseUrl}/API_GetAchievementDistribution.php`,
-        (req, res, ctx) => {
-          detectedSearchParams = req.url.searchParams;
-          return res(ctx.json(mockResponse));
-        }
-      )
+      http.get(`${apiBaseUrl}/API_GetAchievementDistribution.php`, (info) => {
+        requestUrl = info.request.url;
+        return HttpResponse.json(mockResponse);
+      })
     );
 
     // ACT
@@ -139,8 +131,8 @@ describe("Function: getAchievementDistribution", () => {
     // ASSERT
     expect(response).toEqual(mockResponse);
 
-    expect(detectedSearchParams!.get("i")).toEqual("14402");
-    expect(detectedSearchParams!.get("h")).toEqual("1");
+    expect(requestUrl).toContain("i=14402");
+    expect(requestUrl).toContain("h=1");
   });
 
   it("given a falsy hardcore value, successfully attaches the option to the call", async () => {
@@ -158,16 +150,13 @@ describe("Function: getAchievementDistribution", () => {
       "5": 1
     };
 
-    let detectedSearchParams: URLSearchParams;
+    let requestUrl = "";
 
     server.use(
-      rest.get(
-        `${apiBaseUrl}/API_GetAchievementDistribution.php`,
-        (req, res, ctx) => {
-          detectedSearchParams = req.url.searchParams;
-          return res(ctx.json(mockResponse));
-        }
-      )
+      http.get(`${apiBaseUrl}/API_GetAchievementDistribution.php`, (info) => {
+        requestUrl = info.request.url;
+        return HttpResponse.json(mockResponse);
+      })
     );
 
     // ACT
@@ -179,7 +168,7 @@ describe("Function: getAchievementDistribution", () => {
     // ASSERT
     expect(response).toEqual(mockResponse);
 
-    expect(detectedSearchParams!.get("i")).toEqual("14402");
-    expect(detectedSearchParams!.get("h")).toEqual("0");
+    expect(requestUrl).toContain("i=14402");
+    expect(requestUrl).toContain("h=0");
   });
 });
