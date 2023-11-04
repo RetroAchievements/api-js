@@ -17,6 +17,8 @@ export interface GetUserAwardsResponse {
   HiddenAwardsCount: number;
   MasteryAwardsCount: number;
   CompletionAwardsCount: number;
+  BeatenHardcoreAwardsCount: number;
+  BeatenSoftcoreAwardsCount: number;
   EventAwardsCount: number;
   SiteAwardsCount: number;
   VisibleUserAwards: GetUserAwardsEntity[];

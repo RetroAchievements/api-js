@@ -31,6 +31,8 @@ describe("Function: getUserAwards", () => {
       HiddenAwardsCount: 5,
       MasteryAwardsCount: 5,
       CompletionAwardsCount: 0,
+      BeatenHardcoreAwardsCount: 24,
+      BeatenSoftcoreAwardsCount: 7,
       EventAwardsCount: 0,
       SiteAwardsCount: 0,
       VisibleUserAwards: [
@@ -63,6 +65,8 @@ describe("Function: getUserAwards", () => {
       hiddenAwardsCount: 5,
       masteryAwardsCount: 5,
       completionAwardsCount: 0,
+      beatenHardcoreAwardsCount: 24,
+      beatenSoftcoreAwardsCount: 7,
       eventAwardsCount: 0,
       siteAwardsCount: 0,
       visibleUserAwards: [

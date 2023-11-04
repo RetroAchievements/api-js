@@ -17,6 +17,8 @@ export interface UserAwards {
   hiddenAwardsCount: number;
   masteryAwardsCount: number;
   completionAwardsCount: number;
+  beatenHardcoreAwardsCount: number;
+  beatenSoftcoreAwardsCount: number;
   eventAwardsCount: number;
   siteAwardsCount: number;
   visibleUserAwards: UserAward[];
