@@ -1,6 +1,6 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 
-import { rest } from "msw";
+import { http, HttpResponse } from "msw";
 import { setupServer } from "msw/node";
 
 import { apiBaseUrl } from "../utils/internal";
@@ -48,8 +48,8 @@ describe("Function: getGameList", () => {
     ];
 
     server.use(
-      rest.get(`${apiBaseUrl}/API_GetGameList.php`, (_, res, ctx) =>
-        res(ctx.json(mockResponse))
+      http.get(`${apiBaseUrl}/API_GetGameList.php`, () =>
+        HttpResponse.json(mockResponse)
       )
     );
 
