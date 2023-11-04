@@ -63,16 +63,16 @@ const naiveCamelCase = (originalValue: string) => {
     originalValue.charAt(0).toLowerCase() + originalValue.slice(1);
 
   // "gameID" -> "gameId"
-  camelCased = camelCased.replace(/ID/g, "Id");
+  camelCased = camelCased.replaceAll("ID", "Id");
 
   // "badgeURL" --> "badgeUrl"
-  camelCased = camelCased.replace(/URL/g, "Url");
+  camelCased = camelCased.replaceAll("URL", "Url");
 
   // "rAPoints" -> "raPoints"
-  camelCased = camelCased.replace(/rA/g, "ra");
+  camelCased = camelCased.replaceAll("rA", "ra");
 
   // "visibleUserawards" -> "visibleUserAwards"
-  camelCased = camelCased.replace(/visibleUserawards/g, "visibleUserAwards");
+  camelCased = camelCased.replaceAll("visibleUserawards", "visibleUserAwards");
 
   return camelCased;
 };

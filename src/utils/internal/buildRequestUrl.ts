@@ -7,7 +7,7 @@ export const buildRequestUrl = (
   args: Record<string, string | number> = {}
 ) => {
   const concatenated = `${baseUrl}/${endpointUrl}`;
-  const withoutDoubleSlashes = concatenated.replace(/([^:]\/)\/+/g, "$1");
+  const withoutDoubleSlashes = concatenated.replaceAll(/([^:]\/)\/+/g, "$1");
 
   let withArgs = withoutDoubleSlashes;
 

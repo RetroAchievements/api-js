@@ -92,5 +92,3 @@ export const getUserSummary = async (
     ]
   });
 };
-
-// TODO: add test for this
