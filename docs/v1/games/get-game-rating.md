@@ -38,5 +38,5 @@ const gameRating = await getGameRating(authorization, {
 
 ## Source
 
-[@retroachievements/api, getGameRating.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/game/getGameRating.ts)  
+[@retroachievements/api, getGameRating.ts](https://github.dev/RetroAchievements/api-js/blob/main/src/game/getGameRating.ts)  
 [RAWeb, API_GetGameRating.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetGameRating.php)

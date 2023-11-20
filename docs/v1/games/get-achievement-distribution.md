@@ -44,5 +44,5 @@ const achievementDistribution = await getAchievementDistribution(
 
 ## Source
 
-[@retroachievements/api, getAchievementDistribution.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/game/getAchievementDistribution.ts)  
+[@retroachievements/api, getAchievementDistribution.ts](https://github.dev/RetroAchievements/api-js/blob/main/src/game/getAchievementDistribution.ts)  
 [RAWeb, API_GetAchievementDistribution.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetAchievementDistribution.php)

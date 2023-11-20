@@ -63,5 +63,5 @@ const userClaims = await getUserClaims(authorization, {
 
 ## Source
 
-[@retroachievements/api, getUserClaims.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/user/getUserClaims.ts)  
+[@retroachievements/api, getUserClaims.ts](https://github.dev/RetroAchievements/api-js/blob/main/src/user/getUserClaims.ts)  
 [RAWeb, API_GetUserClaims.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetUserClaims.php)

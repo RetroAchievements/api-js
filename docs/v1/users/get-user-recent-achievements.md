@@ -56,5 +56,5 @@ const userRecentAchievements = await getUserRecentAchievements(authorization, {
 
 ## Source
 
-[@retroachievements/api, getUserRecentAchievements.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/user/getUserRecentAchievements.ts)  
+[@retroachievements/api, getUserRecentAchievements.ts](https://github.dev/RetroAchievements/api-js/blob/main/src/user/getUserRecentAchievements.ts)  
 [RAWeb, API_GetUserRecentAchievements.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetUserRecentAchievements.php)

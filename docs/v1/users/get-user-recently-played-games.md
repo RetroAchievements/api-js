@@ -64,5 +64,5 @@ const userRecentlyPlayedGames = await getUserRecentlyPlayedGames(
 
 ## Source
 
-[@retroachievements/api, getUserRecentlyPlayedGames.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/user/getUserRecentlyPlayedGames.ts)  
+[@retroachievements/api, getUserRecentlyPlayedGames.ts](https://github.dev/RetroAchievements/api-js/blob/main/src/user/getUserRecentlyPlayedGames.ts)  
 [RAWeb, API_GetUserRecentlyPlayedGames.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetUserRecentlyPlayedGames.php)

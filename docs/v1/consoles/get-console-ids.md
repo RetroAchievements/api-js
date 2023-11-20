@@ -29,5 +29,5 @@ const consoleIds = await getConsoleIds(authorization);
 
 ## Source
 
-[@retroachievements/api, getConsoleIds.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/console/getConsoleIds.ts)  
+[@retroachievements/api, getConsoleIds.ts](https://github.dev/RetroAchievements/api-js/blob/main/src/console/getConsoleIds.ts)  
 [RAWeb, API_GetConsoleIDs.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetConsoleIDs.php)

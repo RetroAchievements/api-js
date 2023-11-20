@@ -48,5 +48,5 @@ const ticketData = await getTicketData(authorization, { ticketId: 12345 });
 
 ## Source
 
-[@retroachievements/api, getTicketData.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/ticket/getTicketData.ts)  
+[@retroachievements/api, getTicketData.ts](https://github.dev/RetroAchievements/api-js/blob/main/src/ticket/getTicketData.ts)  
 [RAWeb, API_GetTicketData.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetTicketData.php)

@@ -45,5 +45,5 @@ const userAwards = await getUserAwards(authorization, { userName: "xelnia" });
 
 ## Source
 
-[@retroachievements/api, getUserAwards.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/user/getUserAwards.ts)  
+[@retroachievements/api, getUserAwards.ts](https://github.dev/RetroAchievements/api-js/blob/main/src/user/getUserAwards.ts)  
 [RAWeb, API_GetUserAwards.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetUserAwards.php)
