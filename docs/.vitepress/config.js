@@ -209,7 +209,7 @@ export default {
 
     editLink: {
       pattern:
-        "https://github.com/RetroAchievements/api-js/edit/docs/:path",
+        "https://github.com/RetroAchievements/api-js/edit/main/docs/:path",
       text: "Edit this page on GitHub"
     },
 
