@@ -18,13 +18,13 @@ Are you starting from scratch? [Follow the starter tutorial](/getting-started).
 
 ## Contact and support
 
-- Create a [GitHub issue](https://github.com/RetroAchievements/retroachievements-api-js/issues) for bug reports, feature requests, or questions.
-- Add a [⭐️ star on GitHub](https://github.com/RetroAchievements/retroachievements-api-js) to support the project!
+- Create a [GitHub issue](https://github.com/RetroAchievements/api-js/issues) for bug reports, feature requests, or questions.
+- Add a [⭐️ star on GitHub](https://github.com/RetroAchievements/api-js) to support the project!
 
 ## How to Contribute
 
-Check out [CONTRIBUTING.md](https://github.com/RetroAchievements/retroachievements-api-js/blob/main/CONTRIBUTING.md) for how to get started.
+Check out [CONTRIBUTING.md](https://github.com/RetroAchievements/api-js/blob/main/CONTRIBUTING.md) for how to get started.
 
 ## License
 
-This project is licensed under the [MIT license](https://github.com/RetroAchievements/retroachievements-api-js/blob/main/LICENSE.md).
+This project is licensed under the [MIT license](https://github.com/RetroAchievements/api-js/blob/main/LICENSE.md).

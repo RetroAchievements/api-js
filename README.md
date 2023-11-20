@@ -128,11 +128,11 @@ TODO
 
 ## Projects Using @retroachievements/api
 
-Let us know about yours by [opening an issue](https://github.com/RetroAchievements/retroachievements-api-js/issues/new)!
+Let us know about yours by [opening an issue](https://github.com/RetroAchievements/api-js/issues/new)!
 
 ## How to Contribute
 
-Check out [CONTRIBUTING.md](https://github.com/RetroAchievements/retroachievements-api-js/blob/main/CONTRIBUTING.md) for how to get started.
+Check out [CONTRIBUTING.md](https://github.com/RetroAchievements/api-js/blob/main/CONTRIBUTING.md) for how to get started.
 
 ## Contributors
 

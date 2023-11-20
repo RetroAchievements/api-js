@@ -21,4 +21,4 @@ const game = await getGame(authorization, { gameId: 14402 });
 
 ## Source
 
-[@retroachievements/api, buildAuthorization.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/utils/public/buildAuthorization.ts)
+[@retroachievements/api, buildAuthorization.ts](https://github.dev/RetroAchievements/api-js/blob/main/src/utils/public/buildAuthorization.ts)

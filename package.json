@@ -115,11 +115,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RetroAchievements/retroachievements-api-js.git"
+    "url": "git+https://github.com/RetroAchievements/api-js.git"
   },
   "bugs": {
-    "url": "https://github.com/RetroAchievements/retroachievements-api-js/issues"
+    "url": "https://github.com/RetroAchievements/api-js/issues"
   },
-  "homepage": "https://github.com/RetroAchievements/retroachievements-api-js#readme",
+  "homepage": "https://github.com/RetroAchievements/api-js#readme",
   "author": "RAWeb Team"
 }

@@ -8,7 +8,7 @@ Before beginning, please make sure you have the following tools installed.
 ## Installation
 
 ```bash
-git clone https://github.com/retroachievements/retroachievements-api-js.git
+git clone https://github.com/RetroAchievements/api-js.git
 cd retroachievements-api-js
 yarn
 ```

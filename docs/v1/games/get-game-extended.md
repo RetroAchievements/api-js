@@ -65,5 +65,5 @@ const gameExtended = await getGameExtended(authorization, {
 
 ## Source
 
-[@retroachievements/api, getGameExtended.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/game/getGameExtended.ts)  
+[@retroachievements/api, getGameExtended.ts](https://github.dev/RetroAchievements/api-js/blob/main/src/game/getGameExtended.ts)  
 [RAWeb, API_GetGameExtended.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetGameExtended.php)

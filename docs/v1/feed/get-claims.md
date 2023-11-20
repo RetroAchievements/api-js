@@ -46,5 +46,5 @@ const claims = await getClaims(authorization, { claimKind: "dropped" });
 
 ## Source
 
-[@retroachievements/api, getClaims.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/feed/getClaims.ts)  
+[@retroachievements/api, getClaims.ts](https://github.dev/RetroAchievements/api-js/blob/main/src/feed/getClaims.ts)  
 [RAWeb, API_GetClaims.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetClaims.php)

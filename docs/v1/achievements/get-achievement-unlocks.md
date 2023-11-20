@@ -37,5 +37,5 @@ const achievementUnlocks = await getAchievementUnlocks(authorization, {
 
 ## Source
 
-[@retroachievements/api, getAchievementUnlocks.ts](https://github.dev/RetroAchievements/retroachievements-api-js/blob/main/src/achievement/getAchievementUnlocks.ts)  
+[@retroachievements/api, getAchievementUnlocks.ts](https://github.dev/RetroAchievements/api-js/blob/main/src/achievement/getAchievementUnlocks.ts)  
 [RAWeb, API_GetAchievementUnlocks.php](https://github.dev/RetroAchievements/RAWeb/blob/master/public/API/API_GetAchievementUnlocks.php)
