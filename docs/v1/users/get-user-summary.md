@@ -127,7 +127,7 @@ const userSummary = await getUserSummary(authorization, {
 | :------------------------ | :------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------- |
 | `authorization`           | [`AuthObject`](/v1/data-models/auth-object) | An object that must contain a `userName` and a `webApiKey`. See [this page](/getting-started) for how to create this object. |
 | `userName`                | `string`                                    | The user for which to retrieve the summary for.                                                                              |
-| `recentGamesCount`        | `number?`                                   | Optional. How many recent games to fetch. The default is 5.                                                                  |
+| `recentGamesCount`        | `number?`                                   | Optional. How many recent games to fetch. The default is 0.                                                                  |
 | `recentAchievementsCount` | `number?`                                   | Optional. How many recent achievements to fetch. The default is 5.                                                           |
 
 ## Source

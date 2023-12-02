@@ -17,7 +17,7 @@ import type { GetUserSummaryResponse, UserSummary } from "./models";
  * @param payload.userName The user for which to retrieve the summary for.
  *
  * @param payload.recentGamesCount Optional. The number of recent games to return.
- * This defaults to 5.
+ * This defaults to 0.
  *
  * @param payload.recentAchievementsCount Optional. The number of recent achievements
  * to return. This defaults to 5.
