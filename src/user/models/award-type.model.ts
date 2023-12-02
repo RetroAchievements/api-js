@@ -1,7 +1,8 @@
 export type AwardType =
-  | "Mastery/Completion"
-  | "Achievement Unlocks Yield"
   | "Achievement Points Yield"
-  | "Patreon Supporter"
+  | "Achievement Unlocks Yield"
   | "Certified Legend"
-  | "Invalid or deprecated award type";
+  | "Game Beaten"
+  | "Invalid or deprecated award type"
+  | "Mastery/Completion"
+  | "Patreon Supporter";

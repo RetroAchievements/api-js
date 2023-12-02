@@ -31,6 +31,8 @@ import type { GetUserAwardsResponse, UserAwards } from "./models";
  *   hiddenAwardsCount: 2,
  *   masteryAwardsCount: 6,
  *   completionAwardsCount: 0,
+ *   beatenHardcoreAwardsCount: 24,
+ *   beatenSoftcoreAwardsCount: 7,
  *   eventAwardsCount: 0,
  *   siteAwardsCount: 2,
  *   visibleUserAwards: [
