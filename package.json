@@ -40,12 +40,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "verify": "yarn format:check && yarn lint && yarn test:coverage && yarn build && yarn size && yarn docs:build",
+    "verify": "yarn format:check && yarn lint && yarn test:coverage && yarn build && yarn size",
     "size": "size-limit",
-    "start": "microbundle watch",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "start": "microbundle watch"
   },
   "peerDependencies": {},
   "devDependencies": {
@@ -77,9 +74,7 @@
     "typescript": "^5.2.2",
     "undici": "^5.27.2",
     "vite": "^4.5.0",
-    "vitepress": "^1.0.0-alpha.43",
-    "vitest": "^0.34.6",
-    "vue": "^3.2.45"
+    "vitest": "^0.34.6"
   },
   "size-limit": [
     {
