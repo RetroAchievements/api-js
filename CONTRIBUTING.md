@@ -92,14 +92,6 @@ You can build the app using:
 yarn build
 ```
 
-## Documentation Website
-
-We use VitePress for the docs site. You can start VitePress locally using:
-
-```bash
-yarn docs:dev
-```
-
 ## Opening a PR
 
 Before opening a PR, the following are good things to check for:
