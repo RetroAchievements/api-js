@@ -4,6 +4,7 @@ export * from "./getGameInfoAndUserProgress";
 export * from "./getUserAwards";
 export * from "./getUserClaims";
 export * from "./getUserCompletedGames";
+export * from "./getUserCompletionProgress";
 export * from "./getUserGameRankAndScore";
 export * from "./getUserPoints";
 export * from "./getUserProgress";
