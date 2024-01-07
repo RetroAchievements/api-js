@@ -13,7 +13,7 @@ export interface Game {
   publisher: string;
   developer: string;
   genre: string;
-  released: number;
+  released: string;
   gameTitle: string;
   console: string;
 }
