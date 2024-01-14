@@ -7,6 +7,7 @@ export * from "./getUserCompletedGames";
 export * from "./getUserCompletionProgress";
 export * from "./getUserGameRankAndScore";
 export * from "./getUserPoints";
+export * from "./getUserProfile";
 export * from "./getUserProgress";
 export * from "./getUserRecentAchievements";
 export * from "./getUserRecentlyPlayedGames";
