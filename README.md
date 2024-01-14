@@ -87,7 +87,8 @@ Click the function names to open their complete docs on the docs site.
 - [`getUserProgress()`](https://api-docs.retroachievements.org/v1/users/get-user-progress.html) - Get a user's progress on a list of specified games.
 - [`getUserRecentAchievements()`](https://api-docs.retroachievements.org/v1/users/get-user-recent-achievements.html) - Get a list of achievements recently earned by the user.
 - [`getUserRecentlyPlayedGames()`](https://api-docs.retroachievements.org/v1/users/get-user-recently-played-games.html) - Get a list of games a user has recently played.
-- [`getUserSummary()`](https://api-docs.retroachievements.org/v1/users/get-user-summary.html) - Get a user's profile metadata.
+- [`getUserSummary()`](https://api-docs.retroachievements.org/v1/users/get-user-summary.html) - Get a user's exhaustive profile metadata.
+- [`getUserProfile()`](https://api-docs.retroachievements.org/v1/users/users/profile.html) - Get a thin subset of a user's profile metadata.
 
 ### Games
 
@@ -133,15 +134,3 @@ Let us know about yours by [opening an issue](https://github.com/RetroAchievemen
 ## How to Contribute
 
 Check out [CONTRIBUTING.md](https://github.com/RetroAchievements/api-js/blob/main/CONTRIBUTING.md) for how to get started.
-
-## Contributors
-
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr>
-      <td align="center"><a href="https://github.com/wescopeland"><img src="https://avatars.githubusercontent.com/u/3984985?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Wes Copeland</b></sub></a><br /><a href="https://github.com/achievements-app/psn-api/commits?author=wescopeland" title="Code">💻</a> <a href="#example-wescopeland" title="Examples">💡</a> <a href="https://github.com/achievements-app/psn-api/commits?author=wescopeland" title="Documentation">📖</a></td>
-    </tr>
-  </tbody>
-</table>
