@@ -73,17 +73,23 @@ import type { GameExtended, GetGameExtendedResponse } from "./models";
  */
 export const getGameExtended = async (
   authorization: AuthObject,
-  payload: { gameId: ID }
+  payload: { gameId: ID; isRequestingUnofficialAchievements: boolean }
 ): Promise<GameExtended> => {
-  const { gameId } = payload;
+  const { gameId, isRequestingUnofficialAchievements } = payload;
+
+  const params: Record<string, string | number> = {
+    i: gameId
+  };
+
+  if (isRequestingUnofficialAchievements) {
+    params["f"] = 5;
+  }
 
   const url = buildRequestUrl(
     apiBaseUrl,
     "/API_GetGameExtended.php",
     authorization,
-    {
-      i: gameId
-    }
+    params
   );
 
   const rawResponse = await call<GetGameExtendedResponse>({ url });
