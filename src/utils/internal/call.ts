@@ -1,3 +1,5 @@
+const packageVersion = process.env?.["PACKAGE_VERSION"] ?? "Unknown";
+
 /**
  * Fetch an HTTP resource. This is publicly exposed in the
  * event you would like to access an endpoint that this
@@ -13,7 +15,11 @@ export const call = async <
 }) => {
   const { url } = config;
 
-  const rawResponse = await fetch(url);
+  const headers = new Headers({
+    "User-Agent": `RetroAchievements-api-js/${packageVersion}`
+  });
+
+  const rawResponse = await fetch(url, { headers });
 
   if (!rawResponse.ok) {
     throw new Error(
