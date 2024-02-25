@@ -14,4 +14,4 @@ export type DatedUserAchievement = {
   cumulScore: number;
   badgeUrl: string;
   gameUrl: string;
-}[];
+};
