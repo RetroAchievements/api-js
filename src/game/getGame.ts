@@ -45,7 +45,7 @@ import type { Game, GetGameResponse } from "./models";
  *   publisher: "Activision",
  *   developer: "David Crane",
  *   genre: "Racing",
- *   released: 1980,
+ *   released: "1980",
  *   gameTitle: "Dragster",
  *   console: "Atari 2600"
  * }
@@ -64,12 +64,6 @@ export const getGame = async (
   const rawResponse = await call<GetGameResponse>({ url });
 
   return serializeProperties(rawResponse, {
-    shouldCastToNumbers: [
-      "ID",
-      "ForumTopicID",
-      "ConsoleID",
-      "Flags",
-      "Released"
-    ]
+    shouldCastToNumbers: ["ID", "ForumTopicID", "ConsoleID", "Flags"]
   });
 };

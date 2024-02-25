@@ -73,7 +73,7 @@ describe("Function: getGame", () => {
       publisher: "Activision ",
       developer: "David Crane",
       genre: "Racing",
-      released: 1980,
+      released: "1980",
       gameTitle: "Dragster",
       console: "Atari 2600"
     });
