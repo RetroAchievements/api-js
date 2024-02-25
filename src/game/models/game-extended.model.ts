@@ -14,7 +14,7 @@ export interface GameExtended {
   publisher: string;
   developer: string;
   genre: string;
-  released: number;
+  released: string;
   isFinal: boolean;
   consoleName: string;
   richPresencePatch: string;
