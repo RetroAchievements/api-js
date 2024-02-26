@@ -57,7 +57,8 @@ import type {
  *     consoleName: 'PlayStation Portable',
  *     cumulScore: 120,
  *     badgeUrl: '/Badge/193756.png',
- *     gameUrl: '/game/3571'
+ *     gameUrl: '/game/3571',
+ *     type: 'progression'
  *   }
  * ]
  * ```

@@ -4,7 +4,10 @@ import { setupServer } from "msw/node";
 import { apiBaseUrl } from "../utils/internal";
 import { buildAuthorization } from "../utils/public";
 import { getAchievementsEarnedBetween } from "./getAchievementsEarnedBetween";
-import type { DatedUserAchievementsResponse } from "./models";
+import type {
+  DatedUserAchievement,
+  DatedUserAchievementsResponse
+} from "./models";
 
 const server = setupServer();
 
@@ -42,7 +45,8 @@ describe("Function: getAchievementsEarnedBetween", () => {
         ConsoleName: "PlayStation Portable",
         CumulScore: 40,
         BadgeURL: "/Badge/193797.png",
-        GameURL: "/game/3571"
+        GameURL: "/game/3571",
+        Type: "progression"
       }
     ];
 
@@ -76,8 +80,9 @@ describe("Function: getAchievementsEarnedBetween", () => {
         consoleName: "PlayStation Portable",
         cumulScore: 40,
         badgeUrl: "/Badge/193797.png",
-        gameUrl: "/game/3571"
+        gameUrl: "/game/3571",
+        type: "progression"
       }
-    ]);
+    ] as DatedUserAchievement[]);
   });
 });

@@ -14,4 +14,5 @@ export type DatedUserAchievement = {
   cumulScore: number;
   badgeUrl: string;
   gameUrl: string;
+  type: "progression" | "win_condition" | "missable" | null;
 };
