@@ -6,7 +6,10 @@ import { setupServer } from "msw/node";
 import { apiBaseUrl } from "../utils/internal";
 import { buildAuthorization } from "../utils/public";
 import { getAchievementOfTheWeek } from "./getAchievementOfTheWeek";
-import type { GetAchievementOfTheWeekResponse } from "./models";
+import type {
+  AchievementOfTheWeek,
+  GetAchievementOfTheWeekResponse
+} from "./models";
 
 const server = setupServer();
 
@@ -37,7 +40,9 @@ describe("Function: getAchievementOfTheWeek", () => {
         TrueRatio: "22",
         Author: "BigWeedSmokerMan",
         DateCreated: "2021-08-08 17:47:46",
-        DateModified: "2021-08-09 12:20:05"
+        DateModified: "2021-08-09 12:20:05",
+        BadgeName: "185805",
+        BadgeURL: "/Badge/185805.png"
       },
       Console: { ID: "39", Title: "Saturn" },
       ForumTopic: { ID: "14767" },
@@ -74,7 +79,9 @@ describe("Function: getAchievementOfTheWeek", () => {
         trueRatio: 22,
         author: "BigWeedSmokerMan",
         dateCreated: "2021-08-08 17:47:46",
-        dateModified: "2021-08-09 12:20:05"
+        dateModified: "2021-08-09 12:20:05",
+        badgeName: "185805",
+        badgeUrl: "/Badge/185805.png"
       },
       console: { id: 39, title: "Saturn" },
       forumTopic: { id: 14_767 },
@@ -90,7 +97,7 @@ describe("Function: getAchievementOfTheWeek", () => {
         }
       ],
       unlocksCount: 40
-    });
+    } as AchievementOfTheWeek);
   });
 
   it("properly sets the hardcore boolean value when cleaning properties", async () => {
@@ -109,7 +116,9 @@ describe("Function: getAchievementOfTheWeek", () => {
         TrueRatio: "22",
         Author: "BigWeedSmokerMan",
         DateCreated: "2021-08-08 17:47:46",
-        DateModified: "2021-08-09 12:20:05"
+        DateModified: "2021-08-09 12:20:05",
+        BadgeName: "185805",
+        BadgeURL: "/Badge/185805.png"
       },
       Console: { ID: "39", Title: "Saturn" },
       ForumTopic: { ID: "14767" },
@@ -146,7 +155,9 @@ describe("Function: getAchievementOfTheWeek", () => {
         trueRatio: 22,
         author: "BigWeedSmokerMan",
         dateCreated: "2021-08-08 17:47:46",
-        dateModified: "2021-08-09 12:20:05"
+        dateModified: "2021-08-09 12:20:05",
+        badgeName: "185805",
+        badgeUrl: "/Badge/185805.png"
       },
       console: { id: 39, title: "Saturn" },
       forumTopic: { id: 14_767 },
@@ -162,6 +173,6 @@ describe("Function: getAchievementOfTheWeek", () => {
         }
       ],
       unlocksCount: 40
-    });
+    } as AchievementOfTheWeek);
   });
 });

@@ -8,6 +8,8 @@ export interface AchievementOfTheWeek {
     author: string;
     dateCreated: string;
     dateModified: string;
+    badgeName: string;
+    badgeUrl: string;
   };
 
   console: { id: number; title: string };

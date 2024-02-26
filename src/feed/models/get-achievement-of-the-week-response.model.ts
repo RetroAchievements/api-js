@@ -8,6 +8,8 @@ export interface GetAchievementOfTheWeekResponse {
     Author: string;
     DateCreated: string;
     DateModified: string;
+    BadgeName: string;
+    BadgeURL: string;
   };
 
   Console: { ID: string; Title: string };

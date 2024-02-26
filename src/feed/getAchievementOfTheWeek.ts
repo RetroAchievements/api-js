@@ -36,7 +36,9 @@ import type {
  *     trueRatio: "22",
  *     author: "BigWeedSmokerMan",
  *     dateCreated: "2021-08-08 17:47:46",
- *     dateModified: "2021-08-09 12:20:05"
+ *     dateModified: "2021-08-09 12:20:05",
+ *     badgeName: "185805",
+ *     badgeUrl: "/Badge/185805.png"
  *   },
  *   console: { id: "39", title: "Saturn" },
  *   forumTopic: { id: "14767" },
