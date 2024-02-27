@@ -63,8 +63,7 @@ describe("Function: getAchievementsEarnedBetween", () => {
       toDate: new Date("2022-10-13")
     });
 
-    // ASSERT
-    expect(response).toEqual([
+    const expectedResponse: DatedUserAchievement[] = [
       {
         date: "2022-10-12 07:36:31",
         hardcoreMode: true,
@@ -83,6 +82,9 @@ describe("Function: getAchievementsEarnedBetween", () => {
         gameUrl: "/game/3571",
         type: "progression"
       }
-    ] as DatedUserAchievement[]);
+    ];
+
+    // ASSERT
+    expect(response).toEqual(expectedResponse);
   });
 });

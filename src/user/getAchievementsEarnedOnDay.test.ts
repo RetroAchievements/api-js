@@ -62,8 +62,7 @@ describe("Function: getAchievementsEarnedOnDay", () => {
       onDate: new Date("2022-10-12")
     });
 
-    // ASSERT
-    expect(response).toEqual([
+    const expectedResponse: DatedUserAchievement[] = [
       {
         date: "2022-10-12 07:36:31",
         hardcoreMode: true,
@@ -82,6 +81,9 @@ describe("Function: getAchievementsEarnedOnDay", () => {
         gameUrl: "/game/3571",
         type: null
       }
-    ] as DatedUserAchievement[]);
+    ];
+
+    // ASSERT
+    expect(response).toEqual(expectedResponse);
   });
 });
