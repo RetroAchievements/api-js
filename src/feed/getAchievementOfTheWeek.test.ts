@@ -69,8 +69,7 @@ describe("Function: getAchievementOfTheWeek", () => {
     // ACT
     const response = await getAchievementOfTheWeek(authorization);
 
-    // ASSERT
-    expect(response).toEqual({
+    const expectedResponse: AchievementOfTheWeek = {
       achievement: {
         id: 165_062,
         title: "The True Hero",
@@ -97,7 +96,10 @@ describe("Function: getAchievementOfTheWeek", () => {
         }
       ],
       unlocksCount: 40
-    } as AchievementOfTheWeek);
+    };
+
+    // ASSERT
+    expect(response).toEqual(expectedResponse);
   });
 
   it("properly sets the hardcore boolean value when cleaning properties", async () => {
@@ -145,8 +147,7 @@ describe("Function: getAchievementOfTheWeek", () => {
     // ACT
     const response = await getAchievementOfTheWeek(authorization);
 
-    // ASSERT
-    expect(response).toEqual({
+    const expectedResponse: AchievementOfTheWeek = {
       achievement: {
         id: 165_062,
         title: "The True Hero",
@@ -173,6 +174,9 @@ describe("Function: getAchievementOfTheWeek", () => {
         }
       ],
       unlocksCount: 40
-    } as AchievementOfTheWeek);
+    };
+
+    // ASSERT
+    expect(response).toEqual(expectedResponse);
   });
 });
