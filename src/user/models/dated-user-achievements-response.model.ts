@@ -14,6 +14,7 @@ interface DatedUserAchievementResponseEntity {
   CumulScore: number;
   BadgeURL: string;
   GameURL: string;
+  Type: "progression" | "win_condition" | "missable" | null;
 }
 
 export type DatedUserAchievementsResponse =
