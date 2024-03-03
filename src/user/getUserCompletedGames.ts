@@ -2,12 +2,12 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type {
   GetUserCompletedGamesResponse,
-  UserCompletedGames
+  UserCompletedGames,
 } from "./models";
 
 /**
@@ -82,8 +82,8 @@ export const getUserCompletedGames = async (
       "ConsoleID",
       "MaxPossible",
       "NumAwarded",
-      "PctWon"
+      "PctWon",
     ],
-    shouldMapToBooleans: ["HardcoreMode"]
+    shouldMapToBooleans: ["HardcoreMode"],
   });
 };

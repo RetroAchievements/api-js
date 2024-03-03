@@ -10,7 +10,7 @@ import type {
   MostTicketedGamesResponse,
   RecentTicketsResponse,
   ResponseTicketEntity,
-  TicketsByUserResponse
+  TicketsByUserResponse,
 } from "./models";
 
 const server = setupServer();
@@ -29,7 +29,7 @@ describe("Function: getTicketData", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: ResponseTicketEntity = {
@@ -54,7 +54,7 @@ describe("Function: getTicketData", () => {
       ResolvedBy: "televandalist",
       ReportStateDescription: "Resolved",
       ReportTypeDescription: "Triggered at the wrong time",
-      URL: "https://retroachievements.org/ticketmanager.php?i=10000"
+      URL: "https://retroachievements.org/ticketmanager.php?i=10000",
     };
 
     server.use(
@@ -89,7 +89,7 @@ describe("Function: getTicketData", () => {
       resolvedBy: "televandalist",
       reportStateDescription: "Resolved",
       reportTypeDescription: "Triggered at the wrong time",
-      url: "https://retroachievements.org/ticketmanager.php?i=10000"
+      url: "https://retroachievements.org/ticketmanager.php?i=10000",
     });
   });
 
@@ -97,7 +97,7 @@ describe("Function: getTicketData", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: RecentTicketsResponse = {
@@ -128,11 +128,11 @@ describe("Function: getTicketData", () => {
           ResolvedBy: null,
           ReportState: "1",
           ReportStateDescription: "Open",
-          ReportTypeDescription: "Did not trigger"
-        }
+          ReportTypeDescription: "Did not trigger",
+        },
       ],
       OpenTickets: 715,
-      URL: "https://retroachievements.org/ticketmanager.php"
+      URL: "https://retroachievements.org/ticketmanager.php",
     };
 
     server.use(
@@ -173,11 +173,11 @@ describe("Function: getTicketData", () => {
           resolvedBy: null,
           reportState: 1,
           reportStateDescription: "Open",
-          reportTypeDescription: "Did not trigger"
-        }
+          reportTypeDescription: "Did not trigger",
+        },
       ],
       openTickets: 715,
-      url: "https://retroachievements.org/ticketmanager.php"
+      url: "https://retroachievements.org/ticketmanager.php",
     });
   });
 
@@ -185,7 +185,7 @@ describe("Function: getTicketData", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: MostTicketedGamesResponse = {
@@ -195,17 +195,17 @@ describe("Function: getTicketData", () => {
           GameTitle: "Driver 2: The Wheelman Is Back",
           GameIcon: "/Images/046592.png",
           Console: "PlayStation",
-          OpenTickets: "16"
+          OpenTickets: "16",
         },
         {
           GameID: "5515",
           GameTitle: "Ninja Ryuuken Den | Ninja Gaiden",
           GameIcon: "/Images/020735.png",
           Console: "PC Engine",
-          OpenTickets: "15"
-        }
+          OpenTickets: "15",
+        },
       ],
-      URL: "https://retroachievements.org/ticketmanager.php?f=1"
+      URL: "https://retroachievements.org/ticketmanager.php?f=1",
     };
 
     server.use(
@@ -216,7 +216,7 @@ describe("Function: getTicketData", () => {
 
     // ACT
     const response = await getTicketData(authorization, {
-      isGettingMostTicketedGames: true
+      isGettingMostTicketedGames: true,
     });
 
     // ASSERT
@@ -227,17 +227,17 @@ describe("Function: getTicketData", () => {
           gameTitle: "Driver 2: The Wheelman Is Back",
           gameIcon: "/Images/046592.png",
           console: "PlayStation",
-          openTickets: 16
+          openTickets: 16,
         },
         {
           gameId: 5515,
           gameTitle: "Ninja Ryuuken Den | Ninja Gaiden",
           gameIcon: "/Images/020735.png",
           console: "PC Engine",
-          openTickets: 15
-        }
+          openTickets: 15,
+        },
       ],
-      url: "https://retroachievements.org/ticketmanager.php?f=1"
+      url: "https://retroachievements.org/ticketmanager.php?f=1",
     });
   });
 
@@ -245,7 +245,7 @@ describe("Function: getTicketData", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: TicketsByUserResponse = {
@@ -254,7 +254,7 @@ describe("Function: getTicketData", () => {
       Closed: 18,
       Resolved: 51,
       Total: 69,
-      URL: "https://retroachievements.org/ticketmanager.php?u=Jamiras"
+      URL: "https://retroachievements.org/ticketmanager.php?u=Jamiras",
     };
 
     server.use(
@@ -273,7 +273,7 @@ describe("Function: getTicketData", () => {
       closed: 18,
       resolved: 51,
       total: 69,
-      url: "https://retroachievements.org/ticketmanager.php?u=Jamiras"
+      url: "https://retroachievements.org/ticketmanager.php?u=Jamiras",
     });
   });
 
@@ -281,7 +281,7 @@ describe("Function: getTicketData", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GameTicketsResponse = {
@@ -289,7 +289,7 @@ describe("Function: getTicketData", () => {
       GameTitle: "Rampage 2: Universal Tour",
       ConsoleName: "Nintendo 64",
       OpenTickets: 8,
-      URL: "https://retroachievements.org/ticketmanager.php?g=10329"
+      URL: "https://retroachievements.org/ticketmanager.php?g=10329",
     };
 
     server.use(
@@ -307,7 +307,7 @@ describe("Function: getTicketData", () => {
       gameTitle: "Rampage 2: Universal Tour",
       consoleName: "Nintendo 64",
       openTickets: 8,
-      url: "https://retroachievements.org/ticketmanager.php?g=10329"
+      url: "https://retroachievements.org/ticketmanager.php?g=10329",
     });
   });
 
@@ -315,7 +315,7 @@ describe("Function: getTicketData", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: AchievementTicketStatsResponse = {
@@ -323,7 +323,7 @@ describe("Function: getTicketData", () => {
       AchievementTitle: "Blue Potaras Collector",
       AchievementDescription: "Unlock all Ability Type Z-Items",
       URL: "https://retroachievements.org/ticketmanager.php?a=283331",
-      OpenTickets: 1
+      OpenTickets: 1,
     };
 
     server.use(
@@ -334,7 +334,7 @@ describe("Function: getTicketData", () => {
 
     // ACT
     const response = await getTicketData(authorization, {
-      achievementId: 283_331
+      achievementId: 283_331,
     });
 
     // ASSERT
@@ -343,7 +343,7 @@ describe("Function: getTicketData", () => {
       achievementTitle: "Blue Potaras Collector",
       achievementDescription: "Unlock all Ability Type Z-Items",
       url: "https://retroachievements.org/ticketmanager.php?a=283331",
-      openTickets: 1
+      openTickets: 1,
     });
   });
 });

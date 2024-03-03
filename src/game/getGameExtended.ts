@@ -3,7 +3,7 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type { GameExtended, GetGameExtendedResponse } from "./models";
@@ -78,7 +78,7 @@ export const getGameExtended = async (
   const { gameId, isRequestingUnofficialAchievements } = payload;
 
   const params: Record<string, string | number> = {
-    i: gameId
+    i: gameId,
   };
 
   if (isRequestingUnofficialAchievements) {
@@ -103,7 +103,7 @@ export const getGameExtended = async (
       "TrueRatio",
       "DisplayOrder",
       "NumDistinctPlayersCasual",
-      "NumDistinctPlayersHardcore"
-    ]
+      "NumDistinctPlayersHardcore",
+    ],
   });
 };

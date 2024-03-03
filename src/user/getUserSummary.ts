@@ -2,7 +2,7 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type { GetUserSummaryResponse, UserSummary } from "./models";
@@ -82,13 +82,13 @@ export const getUserSummary = async (
       "NumAchievedHardcore",
       "ScoreAchievedHardcore",
       "Points",
-      "SoftcorePoints"
+      "SoftcorePoints",
     ],
     shouldMapToBooleans: [
       "Untracked",
       "UserWallActive",
       "IsAwarded",
-      "HardcoreAchieved"
-    ]
+      "HardcoreAchieved",
+    ],
   });
 };

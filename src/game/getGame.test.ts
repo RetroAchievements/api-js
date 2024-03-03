@@ -25,7 +25,7 @@ describe("Function: getGame", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetGameResponse = {
@@ -45,7 +45,7 @@ describe("Function: getGame", () => {
       Genre: "Racing",
       Released: "1980",
       GameTitle: "Dragster",
-      Console: "Atari 2600"
+      Console: "Atari 2600",
     };
 
     server.use(
@@ -75,7 +75,7 @@ describe("Function: getGame", () => {
       genre: "Racing",
       released: "1980",
       gameTitle: "Dragster",
-      console: "Atari 2600"
+      console: "Atari 2600",
     });
   });
 });

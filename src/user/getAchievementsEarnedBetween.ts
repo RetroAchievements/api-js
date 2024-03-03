@@ -2,12 +2,12 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type {
   DatedUserAchievement,
-  DatedUserAchievementsResponse
+  DatedUserAchievementsResponse,
 } from "./models";
 
 /**
@@ -76,7 +76,7 @@ export const getAchievementsEarnedBetween = async (
     {
       u: userName,
       f: (fromDate.getTime() / 1000).toFixed(0),
-      t: (toDate.getTime() / 1000).toFixed(0)
+      t: (toDate.getTime() / 1000).toFixed(0),
     }
   );
 
@@ -84,6 +84,6 @@ export const getAchievementsEarnedBetween = async (
 
   return serializeProperties(rawResponse, {
     shouldCastToNumbers: ["AchievementID", "Points", "GameID"],
-    shouldMapToBooleans: ["HardcoreMode"]
+    shouldMapToBooleans: ["HardcoreMode"],
   });
 };

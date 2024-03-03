@@ -2,7 +2,7 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type { ConsoleId, GetConsoleIdsResponse } from "./models";
@@ -42,6 +42,6 @@ export const getConsoleIds = async (
   const rawResponse = await call<GetConsoleIdsResponse>({ url });
 
   return serializeProperties(rawResponse, {
-    shouldCastToNumbers: ["ID"]
+    shouldCastToNumbers: ["ID"],
   });
 };

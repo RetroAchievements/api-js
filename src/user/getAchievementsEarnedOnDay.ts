@@ -2,12 +2,12 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type {
   DatedUserAchievement,
-  DatedUserAchievementsResponse
+  DatedUserAchievementsResponse,
 } from "./models";
 
 /**
@@ -75,7 +75,7 @@ export const getAchievementsEarnedOnDay = async (
     {
       u: userName,
       // YYYY-MM-DD
-      d: `${onDate.getFullYear()}-${onDate.getMonth() + 1}-${onDate.getDate()}`
+      d: `${onDate.getFullYear()}-${onDate.getMonth() + 1}-${onDate.getDate()}`,
     }
   );
 
@@ -83,6 +83,6 @@ export const getAchievementsEarnedOnDay = async (
 
   return serializeProperties(rawResponse, {
     shouldCastToNumbers: ["AchievementID", "Points", "GameID"],
-    shouldMapToBooleans: ["HardcoreMode"]
+    shouldMapToBooleans: ["HardcoreMode"],
   });
 };

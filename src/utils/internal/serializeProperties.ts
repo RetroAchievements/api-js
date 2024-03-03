@@ -42,7 +42,7 @@ export const serializeProperties = (
         [naiveCamelCase(originalKey)]: serializeProperties(
           sanitizedValue,
           options
-        )
+        ),
       };
     }
 

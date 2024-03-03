@@ -23,7 +23,7 @@ describe("Function: getUserCompletionProgress", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetUserCompletionProgressResponse = {
@@ -41,9 +41,9 @@ describe("Function: getUserCompletionProgress", () => {
           NumAwardedHardcore: 8,
           MostRecentAwardedDate: "2022-07-26T23:56:15+00:00",
           HighestAwardKind: null,
-          HighestAwardDate: null
-        }
-      ]
+          HighestAwardDate: null,
+        },
+      ],
     };
 
     server.use(
@@ -54,7 +54,7 @@ describe("Function: getUserCompletionProgress", () => {
 
     // ACT
     const response = await getUserCompletionProgress(authorization, {
-      userName: "xelnia"
+      userName: "xelnia",
     });
 
     // ASSERT
@@ -73,9 +73,9 @@ describe("Function: getUserCompletionProgress", () => {
           numAwardedHardcore: 8,
           mostRecentAwardedDate: "2022-07-26T23:56:15+00:00",
           highestAwardKind: null,
-          highestAwardDate: null
-        }
-      ]
+          highestAwardDate: null,
+        },
+      ],
     });
   });
 });

@@ -23,7 +23,7 @@ describe("Function: getUserProgress", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetUserProgressResponse = {
@@ -33,7 +33,7 @@ describe("Function: getUserProgress", () => {
         NumAchieved: "4",
         ScoreAchieved: "80",
         NumAchievedHardcore: "4",
-        ScoreAchievedHardcore: "80"
+        ScoreAchievedHardcore: "80",
       },
       "14402": {
         NumPossibleAchievements: "10",
@@ -41,8 +41,8 @@ describe("Function: getUserProgress", () => {
         NumAchieved: "4",
         ScoreAchieved: "80",
         NumAchievedHardcore: "4",
-        ScoreAchievedHardcore: "80"
-      }
+        ScoreAchievedHardcore: "80",
+      },
     };
 
     server.use(
@@ -54,7 +54,7 @@ describe("Function: getUserProgress", () => {
     // ACT
     const response = await getUserProgress(authorization, {
       userName: "xelnia",
-      gameIds: [1, 14_402]
+      gameIds: [1, 14_402],
     });
 
     // ASSERT
@@ -65,7 +65,7 @@ describe("Function: getUserProgress", () => {
         numAchieved: 4,
         scoreAchieved: 80,
         numAchievedHardcore: 4,
-        scoreAchievedHardcore: 80
+        scoreAchievedHardcore: 80,
       },
       "14402": {
         numPossibleAchievements: 10,
@@ -73,8 +73,8 @@ describe("Function: getUserProgress", () => {
         numAchieved: 4,
         scoreAchieved: 80,
         numAchievedHardcore: 4,
-        scoreAchievedHardcore: 80
-      }
+        scoreAchievedHardcore: 80,
+      },
     });
   });
 });

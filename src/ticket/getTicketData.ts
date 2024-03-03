@@ -3,7 +3,7 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type {
@@ -12,7 +12,7 @@ import type {
   MostTicketedGames,
   RecentTickets,
   TicketEntity,
-  UserTicketStats
+  UserTicketStats,
 } from "./models";
 
 interface GetTicketDataAllPayloadValues {
@@ -222,9 +222,9 @@ export async function getTicketData(
       "GameID",
       "ReportType",
       "ReportState",
-      "OpenTickets"
+      "OpenTickets",
     ],
-    shouldMapToBooleans: ["Hardcore"]
+    shouldMapToBooleans: ["Hardcore"],
   });
 }
 
@@ -238,7 +238,7 @@ const buildGetTicketDataQueryParams = (
     gameId,
     isGettingTicketsForUnofficialAchievements,
     shouldReturnTicketsList,
-    achievementId
+    achievementId,
   } = payload;
 
   let queryParams: Record<string, string | number> = {};

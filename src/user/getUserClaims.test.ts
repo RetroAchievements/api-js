@@ -24,7 +24,7 @@ describe("Function: getUserClaims", () => {
   it("given a username, retrieves a list of achievement set claims for the user", async () => {
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetUserClaimsResponse = [
@@ -43,8 +43,8 @@ describe("Function: getUserClaims", () => {
         Created: "2017-08-20 00:00:00",
         DoneTime: "2017-08-20 00:00:00",
         Updated: "2022-06-28 17:15:59",
-        MinutesLeft: "-2862348"
-      }
+        MinutesLeft: "-2862348",
+      },
     ];
 
     server.use(
@@ -55,7 +55,7 @@ describe("Function: getUserClaims", () => {
 
     // ACT
     const response = await getUserClaims(authorization, {
-      userName: "Jamiras"
+      userName: "Jamiras",
     });
 
     // ASSERT
@@ -75,8 +75,8 @@ describe("Function: getUserClaims", () => {
         created: "2017-08-20 00:00:00",
         doneTime: "2017-08-20 00:00:00",
         updated: "2022-06-28 17:15:59",
-        minutesLeft: -2_862_348
-      }
+        minutesLeft: -2_862_348,
+      },
     ]);
   });
 });

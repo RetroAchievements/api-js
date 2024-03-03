@@ -3,7 +3,7 @@ import type { AuthObject } from "../utils/public";
 import type {
   GetTopTenUsersResponse,
   TopTenUsers,
-  TopTenUsersEntity
+  TopTenUsersEntity,
 } from "./models";
 
 /**
@@ -43,7 +43,7 @@ export const getTopTenUsers = async (
     sanitizedTopTenUsers.push({
       userName: rawUser["1"],
       totalPoints: Number(rawUser["2"]),
-      totalRatioPoints: Number(rawUser["3"])
+      totalRatioPoints: Number(rawUser["3"]),
     });
   }
 

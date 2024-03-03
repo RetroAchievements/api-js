@@ -15,7 +15,7 @@ export const buildRequestUrl = (
   // Authentication is handled purely by query params.
   const queryParamValues: Record<string, string> = {
     z: authObject.userName,
-    y: authObject.webApiKey
+    y: authObject.webApiKey,
   };
 
   for (const [argKey, argValue] of Object.entries(args)) {

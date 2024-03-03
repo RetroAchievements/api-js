@@ -1,6 +1,6 @@
 import type {
   GameExtended,
-  GameExtendedAchievementEntity
+  GameExtendedAchievementEntity,
 } from "../../game/models";
 
 export type GameExtendedAchievementEntityWithUserProgress =

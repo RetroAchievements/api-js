@@ -3,12 +3,12 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type {
   GameInfoAndUserProgress,
-  GetGameInfoAndUserProgressResponse
+  GetGameInfoAndUserProgressResponse,
 } from "./models";
 
 /**
@@ -97,7 +97,7 @@ export const getGameInfoAndUserProgress = async (
     authorization,
     {
       g: gameId,
-      u: userName
+      u: userName,
     }
   );
 
@@ -113,7 +113,7 @@ export const getGameInfoAndUserProgress = async (
       "DisplayOrder",
       "NumDistinctPlayersCasual",
       "NumDistinctPlayersHardcore",
-      "Released"
-    ]
+      "Released",
+    ],
   });
 };

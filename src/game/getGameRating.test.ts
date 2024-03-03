@@ -23,7 +23,7 @@ describe("Function: getGameRating", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetGameRatingResponse = {
@@ -32,8 +32,8 @@ describe("Function: getGameRating", () => {
         Game: 3.1875,
         Achievements: 0,
         GameNumVotes: 16,
-        AchievementsNumVotes: 0
-      }
+        AchievementsNumVotes: 0,
+      },
     };
 
     server.use(
@@ -52,8 +52,8 @@ describe("Function: getGameRating", () => {
         game: 3.1875,
         achievements: 0,
         gameNumVotes: 16,
-        achievementsNumVotes: 0
-      }
+        achievementsNumVotes: 0,
+      },
     });
   });
 });

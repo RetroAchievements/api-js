@@ -25,7 +25,7 @@ describe("Function: getUserCompletedGames", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetUserCompletedGamesResponse = [
@@ -38,7 +38,7 @@ describe("Function: getUserCompletedGames", () => {
         MaxPossible: "26",
         NumAwarded: "12",
         PctWon: "0.4615",
-        HardcoreMode: "0"
+        HardcoreMode: "0",
       },
       {
         GameID: "1881",
@@ -49,8 +49,8 @@ describe("Function: getUserCompletedGames", () => {
         MaxPossible: "26",
         NumAwarded: "12",
         PctWon: "0.4615",
-        HardcoreMode: "1"
-      }
+        HardcoreMode: "1",
+      },
     ];
 
     server.use(
@@ -61,7 +61,7 @@ describe("Function: getUserCompletedGames", () => {
 
     // ACT
     const response = await getUserCompletedGames(authorization, {
-      userName: "xelnia"
+      userName: "xelnia",
     });
 
     // ASSERT
@@ -75,7 +75,7 @@ describe("Function: getUserCompletedGames", () => {
         maxPossible: 26,
         numAwarded: 12,
         pctWon: 0.4615,
-        hardcoreMode: false
+        hardcoreMode: false,
       },
       {
         gameId: 1881,
@@ -86,8 +86,8 @@ describe("Function: getUserCompletedGames", () => {
         maxPossible: 26,
         numAwarded: 12,
         pctWon: 0.4615,
-        hardcoreMode: true
-      }
+        hardcoreMode: true,
+      },
     ]);
   });
 });

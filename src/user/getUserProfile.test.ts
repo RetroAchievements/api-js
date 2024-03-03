@@ -23,7 +23,7 @@ describe("Function: getUserProfile", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetUserProfileResponse = {
@@ -42,7 +42,7 @@ describe("Function: getUserProfile", () => {
       Untracked: 0,
       ID: 16_446,
       UserWallActive: 1,
-      Motto: "Join me on Twitch! GameSquadSquad for live RA"
+      Motto: "Join me on Twitch! GameSquadSquad for live RA",
     };
 
     server.use(
@@ -53,7 +53,7 @@ describe("Function: getUserProfile", () => {
 
     // ACT
     const response = await getUserProfile(authorization, {
-      userName: "WCopeland"
+      userName: "WCopeland",
     });
 
     // ASSERT
@@ -73,7 +73,7 @@ describe("Function: getUserProfile", () => {
       untracked: false,
       id: 16_446,
       userWallActive: true,
-      motto: "Join me on Twitch! GameSquadSquad for live RA"
+      motto: "Join me on Twitch! GameSquadSquad for live RA",
     });
   });
 });

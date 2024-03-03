@@ -3,12 +3,12 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type {
   GameRankAndScoreEntity,
-  GetGameRankAndScoreResponse
+  GetGameRankAndScoreResponse,
 } from "./models";
 
 /**
@@ -55,13 +55,13 @@ export const getGameRankAndScore = async (
     authorization,
     {
       g: gameId,
-      t: type === "latest-masters" ? 1 : 0
+      t: type === "latest-masters" ? 1 : 0,
     }
   );
 
   const rawResponse = await call<GetGameRankAndScoreResponse>({ url });
 
   return serializeProperties(rawResponse, {
-    shouldCastToNumbers: ["TotalScore"]
+    shouldCastToNumbers: ["TotalScore"],
   });
 };

@@ -15,7 +15,7 @@ describe("Util: buildRequestUrl", () => {
       baz: "myBazValue",
       limit: 10,
       offset: 2,
-      notDefined: undefined
+      notDefined: undefined,
     };
 
     // ACT
@@ -40,7 +40,7 @@ describe("Util: buildRequestUrl", () => {
     // ACT
     const requestUrl = buildRequestUrl(baseUrl, endpointUrl, {
       userName: "TestUser",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     // ASSERT

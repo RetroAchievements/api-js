@@ -23,12 +23,12 @@ describe("Function: getUserPoints", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetUserPointsResponse = {
       Points: 10_000,
-      SoftcorePoints: 5400
+      SoftcorePoints: 5400,
     };
 
     server.use(
@@ -43,7 +43,7 @@ describe("Function: getUserPoints", () => {
     // ASSERT
     expect(response).toEqual({
       points: 10_000,
-      softcorePoints: 5400
+      softcorePoints: 5400,
     });
   });
 });

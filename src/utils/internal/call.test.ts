@@ -44,7 +44,7 @@ describe("Util: call", () => {
     server.use(
       http.get(mockRequestUrl, () =>
         HttpResponse.text("<HTML><BODY>something bad happened</BODY></HTML>", {
-          status: 503
+          status: 503,
         })
       )
     );

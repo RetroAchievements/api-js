@@ -1,4 +1,4 @@
 export enum ClaimType {
   Primary = 0,
-  Collaboration = 1
+  Collaboration = 1,
 }

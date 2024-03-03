@@ -2,7 +2,7 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type { GetSetClaimsResponse, SetClaim } from "./models";
@@ -16,18 +16,18 @@ export const getClaims = async (
   const { claimKind } = payload;
 
   const url = buildRequestUrl(apiBaseUrl, "/API_GetClaims.php", authorization, {
-    k: claimKindValueMap[claimKind]
+    k: claimKindValueMap[claimKind],
   });
 
   const rawResponse = await call<GetSetClaimsResponse>({ url });
 
   return serializeProperties(rawResponse, {
-    shouldMapToBooleans: ["UserIsJrDev"]
+    shouldMapToBooleans: ["UserIsJrDev"],
   });
 };
 
 const claimKindValueMap: Record<ClaimKind, `${number}`> = {
   completed: "1",
   dropped: "2",
-  expired: "3"
+  expired: "3",
 };

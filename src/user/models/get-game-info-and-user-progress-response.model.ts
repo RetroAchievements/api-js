@@ -1,6 +1,6 @@
 import type {
   GameExtendedRawAchievementEntity,
-  GetGameExtendedResponse
+  GetGameExtendedResponse,
 } from "../../game/models";
 
 type GetGameExtendedResponseWithoutClaims = Omit<

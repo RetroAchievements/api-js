@@ -23,7 +23,7 @@ describe("Function: getUserGameRankAndScore", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetUserGameRankAndScoreResponse = [
@@ -31,8 +31,8 @@ describe("Function: getUserGameRankAndScore", () => {
         User: "xelnia",
         TotalScore: "1000",
         LastAward: "2022-09-01 21:51:23",
-        UserRank: "4"
-      }
+        UserRank: "4",
+      },
     ];
 
     server.use(
@@ -44,7 +44,7 @@ describe("Function: getUserGameRankAndScore", () => {
     // ACT
     const response = await getUserGameRankAndScore(authorization, {
       userName: "xelnia",
-      gameId: 14_402
+      gameId: 14_402,
     });
 
     // ASSERT
@@ -53,8 +53,8 @@ describe("Function: getUserGameRankAndScore", () => {
         user: "xelnia",
         totalScore: 1000,
         lastAward: "2022-09-01 21:51:23",
-        userRank: 4
-      }
+        userRank: 4,
+      },
     ]);
   });
 });

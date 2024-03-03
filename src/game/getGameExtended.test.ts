@@ -25,7 +25,7 @@ describe("Function: getGameExtended", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetGameExtendedResponse = {
@@ -63,9 +63,9 @@ describe("Function: getGameExtended", () => {
           DateCreated: "2019-07-31 18:49:57",
           BadgeName: "85541",
           DisplayOrder: "0",
-          MemAddr: "f5c41fa0b5fa0d5fbb8a74c598f18582"
-        }
-      }
+          MemAddr: "f5c41fa0b5fa0d5fbb8a74c598f18582",
+        },
+      },
     };
 
     server.use(
@@ -113,9 +113,9 @@ describe("Function: getGameExtended", () => {
           dateCreated: "2019-07-31 18:49:57",
           badgeName: "85541",
           displayOrder: 0,
-          memAddr: "f5c41fa0b5fa0d5fbb8a74c598f18582"
-        }
-      }
+          memAddr: "f5c41fa0b5fa0d5fbb8a74c598f18582",
+        },
+      },
     });
   });
 });

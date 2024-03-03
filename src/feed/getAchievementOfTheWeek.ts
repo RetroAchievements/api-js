@@ -2,12 +2,12 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type {
   AchievementOfTheWeek,
-  GetAchievementOfTheWeekResponse
+  GetAchievementOfTheWeekResponse,
 } from "./models";
 
 /**
@@ -75,8 +75,8 @@ export const getAchievementOfTheWeek = async (
       "TrueRatio",
       "TotalPlayers",
       "RAPoints",
-      "UnlocksCount"
+      "UnlocksCount",
     ],
-    shouldMapToBooleans: ["HardcoreMode"]
+    shouldMapToBooleans: ["HardcoreMode"],
   });
 };
