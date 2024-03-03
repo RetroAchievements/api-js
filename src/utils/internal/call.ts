@@ -16,7 +16,7 @@ export const call = async <
   const { url } = config;
 
   const headers = new Headers({
-    "User-Agent": `RetroAchievements-api-js/${packageVersion}`
+    "User-Agent": `RetroAchievements-api-js/${packageVersion}`,
   });
 
   const rawResponse = await fetch(url, { headers });

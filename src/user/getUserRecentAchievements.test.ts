@@ -23,7 +23,7 @@ describe("Function: getUserRecentAchievements", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetUserRecentAchievementsResponse = [
@@ -42,8 +42,8 @@ describe("Function: getUserRecentAchievements", () => {
         GameID: 6316,
         ConsoleName: "Game Boy",
         BadgeURL: "/Badge/121991.png",
-        GameURL: "/game/6316"
-      }
+        GameURL: "/game/6316",
+      },
     ];
 
     server.use(
@@ -54,7 +54,7 @@ describe("Function: getUserRecentAchievements", () => {
 
     // ACT
     const response = await getUserRecentAchievements(authorization, {
-      userName: "xelnia"
+      userName: "xelnia",
     });
 
     // ASSERT
@@ -74,8 +74,8 @@ describe("Function: getUserRecentAchievements", () => {
         gameId: 6316,
         consoleName: "Game Boy",
         badgeUrl: "/Badge/121991.png",
-        gameUrl: "/game/6316"
-      }
+        gameUrl: "/game/6316",
+      },
     ]);
   });
 });

@@ -2,12 +2,12 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type {
   GetUserRecentlyPlayedGamesResponse,
-  UserRecentlyPlayedGames
+  UserRecentlyPlayedGames,
 } from "./models";
 
 /**
@@ -88,7 +88,7 @@ export const getUserRecentlyPlayedGames = async (
       "ScoreAchieved",
       "NumAchievedHardcore",
       "ScoreAchievedHardcore",
-      "MyVote"
-    ]
+      "MyVote",
+    ],
   });
 };

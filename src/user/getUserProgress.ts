@@ -3,7 +3,7 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type { GetUserProgressResponse, UserProgress } from "./models";
@@ -73,7 +73,7 @@ export const getUserProgress = async (
       "NumAchieved",
       "ScoreAchieved",
       "NumAchievedHardcore",
-      "ScoreAchievedHardcore"
-    ]
+      "ScoreAchievedHardcore",
+    ],
   });
 };

@@ -3,7 +3,7 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type { GameList, GetGameListResponse } from "./models";
@@ -63,7 +63,7 @@ export const getGameList = async (
   const {
     consoleId,
     shouldOnlyRetrieveGamesWithAchievements,
-    shouldRetrieveGameHashes
+    shouldRetrieveGameHashes,
   } = payload;
 
   let callPayload: Record<string, any> = { i: consoleId };
@@ -71,7 +71,7 @@ export const getGameList = async (
   if (shouldOnlyRetrieveGamesWithAchievements !== undefined) {
     callPayload = {
       ...callPayload,
-      f: shouldOnlyRetrieveGamesWithAchievements ? 1 : 0
+      f: shouldOnlyRetrieveGamesWithAchievements ? 1 : 0,
     };
   }
 
@@ -89,6 +89,6 @@ export const getGameList = async (
   const rawResponse = await call<GetGameListResponse>({ url });
 
   return serializeProperties(rawResponse, {
-    shouldCastToNumbers: ["ID", "ConsoleID"]
+    shouldCastToNumbers: ["ID", "ConsoleID"],
   });
 };

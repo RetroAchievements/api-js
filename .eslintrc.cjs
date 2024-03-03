@@ -1,12 +1,12 @@
 module.exports = {
   parserOptions: {
     ecmaVersion: 2020,
-    sourceType: "module"
+    sourceType: "module",
   },
   env: {
     browser: true,
     node: true,
-    es6: true
+    es6: true,
   },
   parser: "@typescript-eslint/parser",
   plugins: ["@typescript-eslint", "simple-import-sort", "import"],
@@ -15,7 +15,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:sonarjs/recommended",
     "plugin:unicorn/recommended",
-    "prettier"
+    "prettier",
   ],
   rules: {
     "@typescript-eslint/consistent-type-imports": "error",
@@ -47,6 +47,6 @@ module.exports = {
     "unicorn/prefer-node-protocol": "off",
     "unicorn/prefer-spread": "off",
     "unicorn/prefer-switch": "off",
-    "unicorn/prevent-abbreviations": "off"
-  }
+    "unicorn/prevent-abbreviations": "off",
+  },
 };

@@ -24,7 +24,7 @@ describe("Function: getAchievementDistribution", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetAchievementDistributionResponse = {
@@ -32,7 +32,7 @@ describe("Function: getAchievementDistribution", () => {
       "2": 10,
       "3": 8,
       "4": 4,
-      "5": 1
+      "5": 1,
     };
 
     let requestUrl = "";
@@ -47,7 +47,7 @@ describe("Function: getAchievementDistribution", () => {
 
     // ACT
     const response = await getAchievementDistribution(authorization, {
-      gameId: 14_402
+      gameId: 14_402,
     });
 
     // ASSERT
@@ -62,7 +62,7 @@ describe("Function: getAchievementDistribution", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetAchievementDistributionResponse = {
@@ -70,7 +70,7 @@ describe("Function: getAchievementDistribution", () => {
       "2": 10,
       "3": 8,
       "4": 4,
-      "5": 1
+      "5": 1,
     };
 
     let requestUrl = "";
@@ -85,7 +85,7 @@ describe("Function: getAchievementDistribution", () => {
     // ACT
     const response = await getAchievementDistribution(authorization, {
       gameId: 14_402,
-      flags: AchievementDistributionFlags.UnofficialAchievements
+      flags: AchievementDistributionFlags.UnofficialAchievements,
     });
 
     // ASSERT
@@ -102,7 +102,7 @@ describe("Function: getAchievementDistribution", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetAchievementDistributionResponse = {
@@ -110,7 +110,7 @@ describe("Function: getAchievementDistribution", () => {
       "2": 10,
       "3": 8,
       "4": 4,
-      "5": 1
+      "5": 1,
     };
 
     let requestUrl = "";
@@ -125,7 +125,7 @@ describe("Function: getAchievementDistribution", () => {
     // ACT
     const response = await getAchievementDistribution(authorization, {
       gameId: 14_402,
-      hardcore: true
+      hardcore: true,
     });
 
     // ASSERT
@@ -139,7 +139,7 @@ describe("Function: getAchievementDistribution", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetAchievementDistributionResponse = {
@@ -147,7 +147,7 @@ describe("Function: getAchievementDistribution", () => {
       "2": 10,
       "3": 8,
       "4": 4,
-      "5": 1
+      "5": 1,
     };
 
     let requestUrl = "";
@@ -162,7 +162,7 @@ describe("Function: getAchievementDistribution", () => {
     // ACT
     const response = await getAchievementDistribution(authorization, {
       gameId: 14_402,
-      hardcore: false
+      hardcore: false,
     });
 
     // ASSERT

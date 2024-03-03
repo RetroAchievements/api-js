@@ -25,7 +25,7 @@ describe("Function: getConsoleIds", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetConsoleIdsResponse = [
@@ -33,20 +33,20 @@ describe("Function: getConsoleIds", () => {
         ID: "1",
         Name: "Mega Drive",
         IconURL:
-          "https://static.retroachievements.org/assets/images/system/md.png"
+          "https://static.retroachievements.org/assets/images/system/md.png",
       },
       {
         ID: "2",
         Name: "Nintendo 64",
         IconURL:
-          "https://static.retroachievements.org/assets/images/system/n64.png"
+          "https://static.retroachievements.org/assets/images/system/n64.png",
       },
       {
         ID: "3",
         Name: "SNES",
         IconURL:
-          "https://static.retroachievements.org/assets/images/system/snes.png"
-      }
+          "https://static.retroachievements.org/assets/images/system/snes.png",
+      },
     ];
 
     server.use(
@@ -64,20 +64,20 @@ describe("Function: getConsoleIds", () => {
         id: 1,
         name: "Mega Drive",
         iconUrl:
-          "https://static.retroachievements.org/assets/images/system/md.png"
+          "https://static.retroachievements.org/assets/images/system/md.png",
       },
       {
         id: 2,
         name: "Nintendo 64",
         iconUrl:
-          "https://static.retroachievements.org/assets/images/system/n64.png"
+          "https://static.retroachievements.org/assets/images/system/n64.png",
       },
       {
         id: 3,
         name: "SNES",
         iconUrl:
-          "https://static.retroachievements.org/assets/images/system/snes.png"
-      }
+          "https://static.retroachievements.org/assets/images/system/snes.png",
+      },
     ];
 
     expect(response).toEqual(expectedResponse);

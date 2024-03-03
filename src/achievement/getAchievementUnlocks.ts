@@ -3,12 +3,12 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type {
   AchievementUnlocksMetadata,
-  GetAchievementUnlocksResponse
+  GetAchievementUnlocksResponse,
 } from "./models";
 
 /**
@@ -76,6 +76,6 @@ export const getAchievementUnlocks = async (
 
   return serializeProperties(rawResponse, {
     shouldCastToNumbers: ["ID", "Points", "TrueRatio", "RAPoints"],
-    shouldMapToBooleans: ["HardcoreMode"]
+    shouldMapToBooleans: ["HardcoreMode"],
   });
 };

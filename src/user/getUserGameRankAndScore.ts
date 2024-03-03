@@ -3,12 +3,12 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type {
   GetUserGameRankAndScoreResponse,
-  UserGameRankAndScore
+  UserGameRankAndScore,
 } from "./models";
 
 /**
@@ -65,6 +65,6 @@ export const getUserGameRankAndScore = async (
   const rawResponse = await call<GetUserGameRankAndScoreResponse>({ url });
 
   return serializeProperties(rawResponse, {
-    shouldCastToNumbers: ["TotalScore", "UserRank"]
+    shouldCastToNumbers: ["TotalScore", "UserRank"],
   });
 };

@@ -23,7 +23,7 @@ describe("Function: getUserAwards", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetUserAwardsResponse = {
@@ -45,9 +45,9 @@ describe("Function: getUserAwards", () => {
           Title: "WarioWare, Inc.: Mega Microgames!",
           ConsoleName: "Game Boy Advance",
           Flags: null,
-          ImageIcon: "/Images/034678.png"
-        }
-      ]
+          ImageIcon: "/Images/034678.png",
+        },
+      ],
     };
 
     server.use(
@@ -79,9 +79,9 @@ describe("Function: getUserAwards", () => {
           title: "WarioWare, Inc.: Mega Microgames!",
           consoleName: "Game Boy Advance",
           flags: null,
-          imageIcon: "/Images/034678.png"
-        }
-      ]
+          imageIcon: "/Images/034678.png",
+        },
+      ],
     });
   });
 });

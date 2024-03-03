@@ -23,7 +23,7 @@ describe("Function: getUserRecentlyPlayedGames", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetUserRecentlyPlayedGamesResponse = [
@@ -40,8 +40,8 @@ describe("Function: getUserRecentlyPlayedGames", () => {
         ScoreAchieved: 0,
         NumAchievedHardcore: 0,
         ScoreAchievedHardcore: 0,
-        MyVote: "2"
-      }
+        MyVote: "2",
+      },
     ];
 
     server.use(
@@ -52,7 +52,7 @@ describe("Function: getUserRecentlyPlayedGames", () => {
 
     // ACT
     const response = await getUserRecentlyPlayedGames(authorization, {
-      userName: "xelnia"
+      userName: "xelnia",
     });
 
     // ASSERT
@@ -70,8 +70,8 @@ describe("Function: getUserRecentlyPlayedGames", () => {
         scoreAchieved: 0,
         numAchievedHardcore: 0,
         scoreAchievedHardcore: 0,
-        myVote: 2
-      }
+        myVote: 2,
+      },
     ]);
   });
 });

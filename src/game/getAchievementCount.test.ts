@@ -23,12 +23,12 @@ describe("Function: getAchievementCount", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetAchievementCountResponse = {
       GameID: 8,
-      AchievementIDs: [1, 2, 3, 4, 5]
+      AchievementIDs: [1, 2, 3, 4, 5],
     };
 
     server.use(
@@ -43,7 +43,7 @@ describe("Function: getAchievementCount", () => {
     // ASSERT
     expect(response).toEqual({
       gameId: 8,
-      achievementIds: [1, 2, 3, 4, 5]
+      achievementIds: [1, 2, 3, 4, 5],
     });
   });
 });

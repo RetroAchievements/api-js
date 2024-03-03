@@ -15,7 +15,7 @@ describe("Util: serializeProperties", () => {
       GameID: 100,
       AchievementIDs: [1, 2, 3, 4, 5],
       RAPoints: 100,
-      ConsoleName: "PlayStation Portable"
+      ConsoleName: "PlayStation Portable",
     };
 
     // ACT
@@ -27,7 +27,7 @@ describe("Util: serializeProperties", () => {
       gameId: 100,
       achievementIds: [1, 2, 3, 4, 5],
       raPoints: 100,
-      consoleName: "PlayStation Portable"
+      consoleName: "PlayStation Portable",
     });
   });
 
@@ -39,8 +39,8 @@ describe("Util: serializeProperties", () => {
         GameID: 100,
         AchievementIDs: [1, 2, 3, 4, 5],
         RAPoints: 100,
-        ConsoleName: "PlayStation Portable"
-      }
+        ConsoleName: "PlayStation Portable",
+      },
     ];
 
     // ACT
@@ -53,8 +53,8 @@ describe("Util: serializeProperties", () => {
         gameId: 100,
         achievementIds: [1, 2, 3, 4, 5],
         raPoints: 100,
-        consoleName: "PlayStation Portable"
-      }
+        consoleName: "PlayStation Portable",
+      },
     ]);
   });
 
@@ -68,8 +68,8 @@ describe("Util: serializeProperties", () => {
       ConsoleName: "PlayStation Portable",
       UserMeta: {
         Name: "xelnia",
-        Points: 100
-      }
+        Points: 100,
+      },
     };
 
     // ACT
@@ -84,8 +84,8 @@ describe("Util: serializeProperties", () => {
       consoleName: "PlayStation Portable",
       userMeta: {
         name: "xelnia",
-        points: 100
-      }
+        points: 100,
+      },
     });
   });
 
@@ -95,13 +95,13 @@ describe("Util: serializeProperties", () => {
       UserName: "xelnia",
       Points: "500",
       Metadata: {
-        TitleID: "100"
-      }
+        TitleID: "100",
+      },
     };
 
     // ACT
     const sanitizedObject = serializeProperties(originalObject, {
-      shouldCastToNumbers: ["TitleID", "Points"]
+      shouldCastToNumbers: ["TitleID", "Points"],
     });
 
     // ASSERT
@@ -109,8 +109,8 @@ describe("Util: serializeProperties", () => {
       userName: "xelnia",
       points: 500,
       metadata: {
-        titleId: 100
-      }
+        titleId: 100,
+      },
     });
   });
 
@@ -120,13 +120,13 @@ describe("Util: serializeProperties", () => {
       UserName: "xelnia",
       HardcoreMode: "0",
       Metadata: {
-        IsCoolGuy: "1"
-      }
+        IsCoolGuy: "1",
+      },
     };
 
     // ACT
     const sanitizedObject = serializeProperties(originalObject, {
-      shouldMapToBooleans: ["HardcoreMode", "IsCoolGuy"]
+      shouldMapToBooleans: ["HardcoreMode", "IsCoolGuy"],
     });
 
     // ASSERT
@@ -134,8 +134,8 @@ describe("Util: serializeProperties", () => {
       userName: "xelnia",
       hardcoreMode: false,
       metadata: {
-        isCoolGuy: true
-      }
+        isCoolGuy: true,
+      },
     });
   });
 });

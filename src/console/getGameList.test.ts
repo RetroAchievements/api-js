@@ -25,7 +25,7 @@ describe("Function: getGameList", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetGameListResponse = [
@@ -42,9 +42,9 @@ describe("Function: getGameList", () => {
         ForumTopicID: 1972,
         Hashes: [
           "32e1a15161ef1f070b023738353bde51",
-          "9b04970a603ace521c7cca2acaf69804"
-        ]
-      }
+          "9b04970a603ace521c7cca2acaf69804",
+        ],
+      },
     ];
 
     server.use(
@@ -56,7 +56,7 @@ describe("Function: getGameList", () => {
     // ACT
     const response = await getGameList(authorization, {
       consoleId: 1,
-      shouldRetrieveGameHashes: true
+      shouldRetrieveGameHashes: true,
     });
 
     // ASSERT
@@ -74,9 +74,9 @@ describe("Function: getGameList", () => {
         forumTopicId: 1972,
         hashes: [
           "32e1a15161ef1f070b023738353bde51",
-          "9b04970a603ace521c7cca2acaf69804"
-        ]
-      }
+          "9b04970a603ace521c7cca2acaf69804",
+        ],
+      },
     ]);
   });
 });

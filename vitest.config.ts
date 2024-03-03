@@ -13,7 +13,7 @@ export default defineConfig({
       ".next",
       ".docusaurus",
       "cypress",
-      "**/node_modules/**"
+      "**/node_modules/**",
     ],
 
     coverage: {
@@ -23,12 +23,12 @@ export default defineConfig({
         "**/*.enum.ts",
         "**/index.ts",
         "**/test/**",
-        "**/__playground.ts"
+        "**/__playground.ts",
       ],
       statements: 95,
       branches: 80,
       functions: 100,
-      lines: 95
-    }
-  }
+      lines: 95,
+    },
+  },
 });

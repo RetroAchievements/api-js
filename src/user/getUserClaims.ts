@@ -2,7 +2,7 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type { GetUserClaimsResponse, UserClaims } from "./models";
@@ -53,7 +53,7 @@ export const getUserClaims = async (
       "Status",
       "Extension",
       "Special",
-      "MinutesLeft"
-    ]
+      "MinutesLeft",
+    ],
   });
 };

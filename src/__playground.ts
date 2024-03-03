@@ -34,7 +34,7 @@ const main = async () => {
   const authorization = buildAuthorization({ userName, webApiKey });
 
   const achievementCount = await getAchievementCount(authorization, {
-    gameId: 14_402
+    gameId: 14_402,
   });
   console.log(achievementCount);
 };

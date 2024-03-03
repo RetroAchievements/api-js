@@ -25,7 +25,7 @@ describe("Function: getGameInfoAndUserProgress", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetGameInfoAndUserProgressResponse = {
@@ -64,13 +64,13 @@ describe("Function: getGameInfoAndUserProgress", () => {
           DisplayOrder: "0",
           MemAddr: "f5c41fa0b5fa0d5fbb8a74c598f18582",
           DateEarned: "2022-08-23 22:56:38",
-          DateEarnedHardcore: "2022-08-23 22:56:38"
-        }
+          DateEarnedHardcore: "2022-08-23 22:56:38",
+        },
       },
       NumAwardedToUser: 12,
       NumAwardedToUserHardcore: 12,
       UserCompletion: "100.00%",
-      UserCompletionHardcore: "100.00%"
+      UserCompletionHardcore: "100.00%",
     };
 
     server.use(
@@ -82,7 +82,7 @@ describe("Function: getGameInfoAndUserProgress", () => {
     // ACT
     const response = await getGameInfoAndUserProgress(authorization, {
       gameId: 14_402,
-      userName: "xelnia"
+      userName: "xelnia",
     });
 
     // ASSERT
@@ -122,13 +122,13 @@ describe("Function: getGameInfoAndUserProgress", () => {
           displayOrder: 0,
           memAddr: "f5c41fa0b5fa0d5fbb8a74c598f18582",
           dateEarned: "2022-08-23 22:56:38",
-          dateEarnedHardcore: "2022-08-23 22:56:38"
-        }
+          dateEarnedHardcore: "2022-08-23 22:56:38",
+        },
       },
       numAwardedToUser: 12,
       numAwardedToUserHardcore: 12,
       userCompletion: "100.00%",
-      userCompletionHardcore: "100.00%"
+      userCompletionHardcore: "100.00%",
     });
   });
 });

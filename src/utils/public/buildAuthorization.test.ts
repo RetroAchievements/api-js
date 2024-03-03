@@ -10,7 +10,7 @@ describe("Util: buildAuthorization", () => {
     // ARRANGE
     const myAuth = {
       userName: "myUserName",
-      webApiKey: "myWebApiKey"
+      webApiKey: "myWebApiKey",
     };
 
     // ACT

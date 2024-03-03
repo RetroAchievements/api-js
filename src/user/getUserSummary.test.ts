@@ -25,7 +25,7 @@ describe("Function: getUserSummary", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse = mockGetUserSummaryResponse;
@@ -38,7 +38,7 @@ describe("Function: getUserSummary", () => {
 
     // ACT
     const response = await getUserSummary(authorization, {
-      userName: "WCopeland"
+      userName: "WCopeland",
     });
 
     // ASSERT
@@ -49,7 +49,7 @@ describe("Function: getUserSummary", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse = "<html><body>the api is down</body></html>";
@@ -76,7 +76,7 @@ const mockGetUserSummaryResponse: GetUserSummaryResponse = {
       ConsoleName: "PlayStation 2",
       Title: "Mortal Kombat: Deadly Alliance",
       ImageIcon: "/Images/064938.png",
-      LastPlayed: "2023-01-27 02:05:02"
+      LastPlayed: "2023-01-27 02:05:02",
     },
     {
       GameID: "15922",
@@ -84,8 +84,8 @@ const mockGetUserSummaryResponse: GetUserSummaryResponse = {
       ConsoleName: "NES",
       Title: "~Hack~ Mega Man 3 Revamped",
       ImageIcon: "/Images/061792.png",
-      LastPlayed: "2022-11-07 21:49:09"
-    }
+      LastPlayed: "2022-11-07 21:49:09",
+    },
   ],
   MemberSince: "2020-02-02 20:10:35",
   LastActivity: {
@@ -95,7 +95,7 @@ const mockGetUserSummaryResponse: GetUserSummaryResponse = {
     activitytype: "1",
     User: "WCopeland",
     data: "281263",
-    data2: "1"
+    data2: "1",
   },
   RichPresenceMsg: "Arcade [Match 2] - Nitara vs Drahmin (Novice difficulty)",
   LastGameID: "19020",
@@ -115,7 +115,7 @@ const mockGetUserSummaryResponse: GetUserSummaryResponse = {
     Released: "November 16, 2002",
     IsFinal: false,
     ConsoleName: "PlayStation 2",
-    RichPresencePatch: "MockRichPresencePatch"
+    RichPresencePatch: "MockRichPresencePatch",
   },
   ContribCount: "0",
   ContribYield: "0",
@@ -135,7 +135,7 @@ const mockGetUserSummaryResponse: GetUserSummaryResponse = {
       NumAchieved: "16",
       ScoreAchieved: "95",
       NumAchievedHardcore: "16",
-      ScoreAchievedHardcore: "95"
+      ScoreAchievedHardcore: "95",
     },
     "6278": {
       NumPossibleAchievements: "42",
@@ -143,8 +143,8 @@ const mockGetUserSummaryResponse: GetUserSummaryResponse = {
       NumAchieved: 0,
       ScoreAchieved: 0,
       NumAchievedHardcore: 0,
-      ScoreAchievedHardcore: 0
-    }
+      ScoreAchievedHardcore: 0,
+    },
   },
   RecentAchievements: {
     "19020": {
@@ -158,15 +158,15 @@ const mockGetUserSummaryResponse: GetUserSummaryResponse = {
         BadgeName: "311063",
         IsAwarded: "1",
         DateAwarded: "2023-01-27 02:04:36",
-        HardcoreAchieved: "0"
-      }
-    }
+        HardcoreAchieved: "0",
+      },
+    },
   },
   Points: "18817",
   SoftcorePoints: "25",
   UserPic: "/UserPic/WCopeland.png",
   TotalRanked: 34_572,
-  Status: "Offline"
+  Status: "Offline",
 };
 
 const mockExpectedSummaryValue: UserSummary = {
@@ -178,7 +178,7 @@ const mockExpectedSummaryValue: UserSummary = {
       consoleName: "PlayStation 2",
       title: "Mortal Kombat: Deadly Alliance",
       imageIcon: "/Images/064938.png",
-      lastPlayed: "2023-01-27 02:05:02"
+      lastPlayed: "2023-01-27 02:05:02",
     },
     {
       gameId: 15_922,
@@ -186,8 +186,8 @@ const mockExpectedSummaryValue: UserSummary = {
       consoleName: "NES",
       title: "~Hack~ Mega Man 3 Revamped",
       imageIcon: "/Images/061792.png",
-      lastPlayed: "2022-11-07 21:49:09"
-    }
+      lastPlayed: "2022-11-07 21:49:09",
+    },
   ],
   memberSince: "2020-02-02 20:10:35",
   lastActivity: {
@@ -197,7 +197,7 @@ const mockExpectedSummaryValue: UserSummary = {
     activitytype: 1,
     user: "WCopeland",
     data: "281263",
-    data2: "1"
+    data2: "1",
   },
   richPresenceMsg: "Arcade [Match 2] - Nitara vs Drahmin (Novice difficulty)",
   lastGameId: 19_020,
@@ -217,7 +217,7 @@ const mockExpectedSummaryValue: UserSummary = {
     released: "November 16, 2002",
     isFinal: false,
     consoleName: "PlayStation 2",
-    richPresencePatch: "MockRichPresencePatch"
+    richPresencePatch: "MockRichPresencePatch",
   },
   contribCount: 0,
   contribYield: 0,
@@ -237,7 +237,7 @@ const mockExpectedSummaryValue: UserSummary = {
       numAchieved: 16,
       scoreAchieved: 95,
       numAchievedHardcore: 16,
-      scoreAchievedHardcore: 95
+      scoreAchievedHardcore: 95,
     },
     "6278": {
       numPossibleAchievements: 42,
@@ -245,8 +245,8 @@ const mockExpectedSummaryValue: UserSummary = {
       numAchieved: 0,
       scoreAchieved: 0,
       numAchievedHardcore: 0,
-      scoreAchievedHardcore: 0
-    }
+      scoreAchievedHardcore: 0,
+    },
   },
   recentAchievements: {
     19_020: {
@@ -260,13 +260,13 @@ const mockExpectedSummaryValue: UserSummary = {
         badgeName: "311063",
         isAwarded: true,
         dateAwarded: "2023-01-27 02:04:36",
-        hardcoreAchieved: false
-      }
-    }
+        hardcoreAchieved: false,
+      },
+    },
   },
   points: 18_817,
   softcorePoints: 25,
   userPic: "/UserPic/WCopeland.png",
   totalRanked: 34_572,
-  status: "Offline"
+  status: "Offline",
 };

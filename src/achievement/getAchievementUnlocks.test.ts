@@ -23,7 +23,7 @@ describe("Function: getAchievementUnlocks", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetAchievementUnlocksResponse = {
@@ -35,7 +35,7 @@ describe("Function: getAchievementUnlocks", () => {
         TrueRatio: "6",
         Author: "Scott",
         DateCreated: "2012-11-02 00:03:12",
-        DateModified: "2022-06-11 16:52:35"
+        DateModified: "2022-06-11 16:52:35",
       },
       Console: { ID: "1", Title: "Mega Drive" },
       Game: { ID: "1", Title: "Sonic the Hedgehog" },
@@ -46,9 +46,9 @@ describe("Function: getAchievementUnlocks", () => {
           User: "Tiotroll2022",
           RAPoints: "348",
           DateAwarded: "2023-01-29 21:45:41",
-          HardcoreMode: "0"
-        }
-      ]
+          HardcoreMode: "0",
+        },
+      ],
     };
 
     let requestUrl = "";
@@ -64,7 +64,7 @@ describe("Function: getAchievementUnlocks", () => {
     const response = await getAchievementUnlocks(authorization, {
       achievementId: 18_000,
       count: 1,
-      offset: 1
+      offset: 1,
     });
 
     // ASSERT
@@ -81,7 +81,7 @@ describe("Function: getAchievementUnlocks", () => {
         trueRatio: 6,
         author: "Scott",
         dateCreated: "2012-11-02 00:03:12",
-        dateModified: "2022-06-11 16:52:35"
+        dateModified: "2022-06-11 16:52:35",
       },
       console: { id: 1, title: "Mega Drive" },
       game: { id: 1, title: "Sonic the Hedgehog" },
@@ -92,9 +92,9 @@ describe("Function: getAchievementUnlocks", () => {
           user: "Tiotroll2022",
           raPoints: 348,
           dateAwarded: "2023-01-29 21:45:41",
-          hardcoreMode: false
-        }
-      ]
+          hardcoreMode: false,
+        },
+      ],
     });
   });
 });

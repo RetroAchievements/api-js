@@ -2,7 +2,7 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type { GetUserProfileResponse, UserProfile } from "./models";
@@ -48,8 +48,8 @@ export const getUserProfile = async (
       "TotalPoints",
       "TotalSoftcorePoints",
       "TotalTruePoints",
-      "Permissions"
+      "Permissions",
     ],
-    shouldMapToBooleans: ["Untracked", "UserWallActive"]
+    shouldMapToBooleans: ["Untracked", "UserWallActive"],
   });
 };

@@ -2,12 +2,12 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type {
   GetUserRecentAchievementsResponse,
-  UserRecentAchievement
+  UserRecentAchievement,
 } from "./models";
 
 /**
@@ -75,6 +75,6 @@ export const getUserRecentAchievements = async (
   const rawResponse = await call<GetUserRecentAchievementsResponse>({ url });
 
   return serializeProperties(rawResponse, {
-    shouldMapToBooleans: ["HardcoreMode"]
+    shouldMapToBooleans: ["HardcoreMode"],
   });
 };

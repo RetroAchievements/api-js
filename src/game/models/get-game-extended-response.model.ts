@@ -4,7 +4,7 @@
 
 enum GameExtendedClaimType {
   Primary = "0",
-  Collaboration = "1"
+  Collaboration = "1",
 }
 
 export interface GameExtendedRawAchievementEntity {

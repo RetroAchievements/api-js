@@ -6,7 +6,7 @@ import { buildAuthorization } from "../utils/public";
 import { getAchievementsEarnedBetween } from "./getAchievementsEarnedBetween";
 import type {
   DatedUserAchievement,
-  DatedUserAchievementsResponse
+  DatedUserAchievementsResponse,
 } from "./models";
 
 const server = setupServer();
@@ -26,7 +26,7 @@ describe("Function: getAchievementsEarnedBetween", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: DatedUserAchievementsResponse = [
@@ -46,8 +46,8 @@ describe("Function: getAchievementsEarnedBetween", () => {
         CumulScore: 40,
         BadgeURL: "/Badge/193797.png",
         GameURL: "/game/3571",
-        Type: "progression"
-      }
+        Type: "progression",
+      },
     ];
 
     server.use(
@@ -60,7 +60,7 @@ describe("Function: getAchievementsEarnedBetween", () => {
     const response = await getAchievementsEarnedBetween(authorization, {
       userName: "xelnia",
       fromDate: new Date("2022-10-12"),
-      toDate: new Date("2022-10-13")
+      toDate: new Date("2022-10-13"),
     });
 
     const expectedResponse: DatedUserAchievement[] = [
@@ -80,8 +80,8 @@ describe("Function: getAchievementsEarnedBetween", () => {
         cumulScore: 40,
         badgeUrl: "/Badge/193797.png",
         gameUrl: "/game/3571",
-        type: "progression"
-      }
+        type: "progression",
+      },
     ];
 
     // ASSERT

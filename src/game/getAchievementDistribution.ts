@@ -3,7 +3,7 @@ import { apiBaseUrl, buildRequestUrl, call } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type {
   AchievementDistributionFlags,
-  GetAchievementDistributionResponse
+  GetAchievementDistributionResponse,
 } from "./models";
 
 /**
@@ -84,6 +84,6 @@ export const getAchievementDistribution = async (
   );
 
   return await call<GetAchievementDistributionResponse>({
-    url
+    url,
   });
 };

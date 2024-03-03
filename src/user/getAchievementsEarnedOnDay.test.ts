@@ -6,7 +6,7 @@ import { buildAuthorization } from "../utils/public";
 import { getAchievementsEarnedOnDay } from "./getAchievementsEarnedOnDay";
 import type {
   DatedUserAchievement,
-  DatedUserAchievementsResponse
+  DatedUserAchievementsResponse,
 } from "./models";
 
 const server = setupServer();
@@ -26,7 +26,7 @@ describe("Function: getAchievementsEarnedOnDay", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: DatedUserAchievementsResponse = [
@@ -46,8 +46,8 @@ describe("Function: getAchievementsEarnedOnDay", () => {
         CumulScore: 40,
         BadgeURL: "/Badge/193797.png",
         GameURL: "/game/3571",
-        Type: null
-      }
+        Type: null,
+      },
     ];
 
     server.use(
@@ -59,7 +59,7 @@ describe("Function: getAchievementsEarnedOnDay", () => {
     // ACT
     const response = await getAchievementsEarnedOnDay(authorization, {
       userName: "xelnia",
-      onDate: new Date("2022-10-12")
+      onDate: new Date("2022-10-12"),
     });
 
     const expectedResponse: DatedUserAchievement[] = [
@@ -79,8 +79,8 @@ describe("Function: getAchievementsEarnedOnDay", () => {
         cumulScore: 40,
         badgeUrl: "/Badge/193797.png",
         gameUrl: "/game/3571",
-        type: null
-      }
+        type: null,
+      },
     ];
 
     // ASSERT

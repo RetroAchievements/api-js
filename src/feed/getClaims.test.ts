@@ -25,7 +25,7 @@ describe("Function: getClaims", () => {
     // ARRANGE
     const authorization = buildAuthorization({
       userName: "mockUserName",
-      webApiKey: "mockWebApiKey"
+      webApiKey: "mockWebApiKey",
     });
 
     const mockResponse: GetSetClaimsResponse = [
@@ -46,8 +46,8 @@ describe("Function: getClaims", () => {
         DoneTime: "2023-01-03 20:29:45",
         Updated: "2022-10-03 20:29:45",
         MinutesLeft: 112_285,
-        UserIsJrDev: 1
-      }
+        UserIsJrDev: 1,
+      },
     ];
 
     server.use(
@@ -78,8 +78,8 @@ describe("Function: getClaims", () => {
         doneTime: "2023-01-03 20:29:45",
         updated: "2022-10-03 20:29:45",
         minutesLeft: 112_285,
-        userIsJrDev: true
-      }
+        userIsJrDev: true,
+      },
     ]);
   });
 });

@@ -2,12 +2,12 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type {
   GetUserCompletionProgressResponse,
-  UserCompletionProgress
+  UserCompletionProgress,
 } from "./models";
 
 /**
@@ -61,7 +61,7 @@ export const getUserCompletionProgress = async (
   const { userName, offset, count } = payload;
 
   const params: Record<string, string | number> = {
-    u: userName
+    u: userName,
   };
   if (offset) {
     params["o"] = offset;

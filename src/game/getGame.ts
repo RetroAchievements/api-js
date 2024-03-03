@@ -3,7 +3,7 @@ import {
   apiBaseUrl,
   buildRequestUrl,
   call,
-  serializeProperties
+  serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type { Game, GetGameResponse } from "./models";
@@ -58,12 +58,12 @@ export const getGame = async (
   const { gameId } = payload;
 
   const url = buildRequestUrl(apiBaseUrl, "/API_GetGame.php", authorization, {
-    i: gameId
+    i: gameId,
   });
 
   const rawResponse = await call<GetGameResponse>({ url });
 
   return serializeProperties(rawResponse, {
-    shouldCastToNumbers: ["ID", "ForumTopicID", "ConsoleID", "Flags"]
+    shouldCastToNumbers: ["ID", "ForumTopicID", "ConsoleID", "Flags"],
   });
 };
