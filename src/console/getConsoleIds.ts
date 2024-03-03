@@ -22,8 +22,12 @@ import type { ConsoleId, GetConsoleIdsResponse } from "./models";
  *
  * @returns An array containing a complete list of console ID
  * and name pairs for RetroAchievements.org.
- * ```
- * { id: "1", name: "Mega Drive" }
+ * ```json
+ * {
+ *   id: "1",
+ *   name: "Mega Drive",
+ *   iconUrl: "https://static.retroachievements.org/assets/images/system/md.png"
+ * }
  * ```
  */
 export const getConsoleIds = async (

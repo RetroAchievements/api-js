@@ -6,7 +6,7 @@ import { setupServer } from "msw/node";
 import { apiBaseUrl } from "../utils/internal";
 import { buildAuthorization } from "../utils/public";
 import { getConsoleIds } from "./getConsoleIds";
-import type { GetConsoleIdsResponse } from "./models";
+import type { ConsoleId, GetConsoleIdsResponse } from "./models";
 
 const server = setupServer();
 
@@ -29,9 +29,24 @@ describe("Function: getConsoleIds", () => {
     });
 
     const mockResponse: GetConsoleIdsResponse = [
-      { ID: "1", Name: "Mega Drive" },
-      { ID: "2", Name: "Nintendo 64" },
-      { ID: "3", Name: "SNES" }
+      {
+        ID: "1",
+        Name: "Mega Drive",
+        IconURL:
+          "https://static.retroachievements.org/assets/images/system/md.png"
+      },
+      {
+        ID: "2",
+        Name: "Nintendo 64",
+        IconURL:
+          "https://static.retroachievements.org/assets/images/system/n64.png"
+      },
+      {
+        ID: "3",
+        Name: "SNES",
+        IconURL:
+          "https://static.retroachievements.org/assets/images/system/snes.png"
+      }
     ];
 
     server.use(
@@ -44,10 +59,27 @@ describe("Function: getConsoleIds", () => {
     const response = await getConsoleIds(authorization);
 
     // ASSERT
-    expect(response).toEqual([
-      { id: 1, name: "Mega Drive" },
-      { id: 2, name: "Nintendo 64" },
-      { id: 3, name: "SNES" }
-    ]);
+    const expectedResponse: ConsoleId[] = [
+      {
+        id: 1,
+        name: "Mega Drive",
+        iconUrl:
+          "https://static.retroachievements.org/assets/images/system/md.png"
+      },
+      {
+        id: 2,
+        name: "Nintendo 64",
+        iconUrl:
+          "https://static.retroachievements.org/assets/images/system/n64.png"
+      },
+      {
+        id: 3,
+        name: "SNES",
+        iconUrl:
+          "https://static.retroachievements.org/assets/images/system/snes.png"
+      }
+    ];
+
+    expect(response).toEqual(expectedResponse);
   });
 });
