@@ -1,3 +1,5 @@
+import type { AchievementType } from "./achievement-type.model";
+
 export type DatedUserAchievement = {
   date: string;
   hardcoreMode: boolean;
@@ -14,5 +16,5 @@ export type DatedUserAchievement = {
   cumulScore: number;
   badgeUrl: string;
   gameUrl: string;
-  type: "progression" | "win_condition" | "missable" | null;
+  type: AchievementType;
 };

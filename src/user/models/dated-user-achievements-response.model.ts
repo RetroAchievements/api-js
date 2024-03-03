@@ -1,3 +1,5 @@
+import type { AchievementType } from "./achievement-type.model";
+
 interface DatedUserAchievementResponseEntity {
   Date: string;
   HardcoreMode: string;
@@ -14,7 +16,7 @@ interface DatedUserAchievementResponseEntity {
   CumulScore: number;
   BadgeURL: string;
   GameURL: string;
-  Type: "progression" | "win_condition" | "missable" | null;
+  Type: AchievementType;
 }
 
 export type DatedUserAchievementsResponse =
