@@ -1,4 +1,4 @@
-import type { AchievementType } from "./achievement-type.model";
+import type { AchievementType } from "../../achievement";
 
 export type DatedUserAchievement = {
   date: string;

@@ -1,3 +1,5 @@
+import type { AchievementType } from "../../achievement";
+
 export interface GameExtendedAchievementEntity {
   id: number;
   numAwarded: number;
@@ -12,4 +14,5 @@ export interface GameExtendedAchievementEntity {
   badgeName: string;
   displayOrder: number;
   memAddr: string;
+  type: AchievementType;
 }
