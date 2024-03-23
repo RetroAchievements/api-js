@@ -73,7 +73,7 @@ import type { GameExtended, GetGameExtendedResponse } from "./models";
  */
 export const getGameExtended = async (
   authorization: AuthObject,
-  payload: { gameId: ID; isRequestingUnofficialAchievements: boolean }
+  payload: { gameId: ID; isRequestingUnofficialAchievements?: boolean }
 ): Promise<GameExtended> => {
   const { gameId, isRequestingUnofficialAchievements } = payload;
 

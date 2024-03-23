@@ -1,4 +1,3 @@
-export * from "./achievement-type.model";
 export * from "./award-type.model";
 export * from "./dated-user-achievement.model";
 export * from "./dated-user-achievements-response.model";
