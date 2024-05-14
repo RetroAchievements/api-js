@@ -51,7 +51,7 @@ import type {
  *   publisher: "Activision",
  *   developer: "David Crane",
  *   genre: "Racing",
- *   released: 1980,
+ *   released: "1980",
  *   isFinal: false,
  *   consoleName: "Atari 2600",
  *   richPresencePatch: "2b92fa1bf9635c303b3b7f8feea3ed3c",
@@ -113,7 +113,6 @@ export const getGameInfoAndUserProgress = async (
       "DisplayOrder",
       "NumDistinctPlayersCasual",
       "NumDistinctPlayersHardcore",
-      "Released",
     ],
   });
 };
