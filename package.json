@@ -32,7 +32,7 @@
     "dev": "esrun --watch src/__playground.ts",
     "prebuild": "node src/set-version.js",
     "build": "microbundle",
-    "prepare": "microbundle",
+    "prepare": "microbundle && husky install",
     "format": "prettier --write . '**/*.{json,md,js,ts,tsx}'",
     "format:write": "prettier --write . '**/*.{json,md,js,ts,tsx}'",
     "format:check": "prettier --check . '**/*.{json,md,js,ts,tsx}'",
@@ -72,12 +72,6 @@
     "undici": "^5.27.2",
     "vite": "^4.5.0",
     "vitest": "^0.34.6"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged && pnpm lint",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "config": {
     "commitizen": {
