@@ -41,10 +41,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "verify": "yarn format:check && yarn lint && yarn test:coverage && yarn build",
+    "verify": "pnpm format:check && pnpm lint && pnpm test:coverage && pnpm build",
     "start": "microbundle watch"
   },
-  "peerDependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
@@ -62,7 +61,7 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-sonarjs": "^0.23.0",
     "eslint-plugin-unicorn": "^49.0.0",
-    "husky": "4.3.8",
+    "husky": "9.0.11",
     "microbundle": "^0.15.1",
     "msw": "^2.0.3",
     "prettier": "2.8.3",
@@ -76,7 +75,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && yarn lint",
+      "pre-commit": "pretty-quick --staged && pnpm lint",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -102,5 +101,6 @@
     "url": "https://github.com/RetroAchievements/api-js/issues"
   },
   "homepage": "https://github.com/RetroAchievements/api-js#readme",
-  "author": "RAWeb Team"
+  "author": "RAWeb Team",
+  "packageManager": "pnpm@9.1.1+sha256.9551e803dcb7a1839fdf5416153a844060c7bce013218ce823410532504ac10b"
 }

@@ -3,14 +3,14 @@
 Before beginning, please make sure you have the following tools installed.
 
 - Node.js (the latest LTS release, [download](https://nodejs.org/en/download/))
-- yarn classic (1.x, [instructions](https://yarnpkg.com/lang/en/docs/install/))
+- pnpm (9.x, [instructions](https://pnpm.io/installation))
 
 ## Installation
 
 ```bash
 git clone https://github.com/RetroAchievements/api-js.git
 cd retroachievements-api-js
-yarn
+pnpm install
 ```
 
 ## Local development
@@ -25,7 +25,7 @@ const webApiKey = "myWebApiKey";
 You can now modify the playground file how you see fit to test your changes. To run the file in watch mode, execute the following command in your terminal:
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 ## Commit messages
@@ -50,13 +50,13 @@ Prettier is used for code style. ESLint with a strict set of anti-code smell rul
 To manually run Prettier, do:
 
 ```bash
-yarn format:write
+pnpm format:write
 ```
 
 To manually run ESLint, do:
 
 ```bash
-yarn lint:fix
+pnpm lint:fix
 ```
 
 This works but is cumbersome. It is recommended that you set your editor to run Prettier and ESLint automatically on save.
@@ -71,13 +71,13 @@ Given that this library is an official reference implementation, we strive for h
 To run the current suite of tests, in the terminal execute:
 
 ```bash
-yarn test
+pnpm test
 ```
 
 If you're actively writing tests, you can use watch mode like:
 
 ```bash
-yarn test --watch
+pnpm test --watch
 ```
 
 Take note of the [ARRANGE, ACT, ASSERT pattern](https://github.com/goldbergyoni/javascript-testing-best-practices#-%EF%B8%8F-12-structure-tests-by-the-aaa-pattern) followed throughout the testing suite and be sure to use it in any new tests so they are easy to understand for future maintainers.
@@ -89,14 +89,14 @@ This project uses [microbundle](https://github.com/developit/microbundle) for bu
 You can build the app using:
 
 ```bash
-yarn build
+pnpm build
 ```
 
 ## Opening a PR
 
 Before opening a PR, the following are good things to check for:
 
-- Does `yarn verify` pass successfully?
+- Does `pnpm verify` pass successfully?
 - Does any new code have tests?
 - Is new code documented on the VitePress site?
 
@@ -106,6 +106,6 @@ If you are a RetroAchievements org member, you should be able to release a new p
 
 1. Change the package version number in _package.json_. Respect semantic versioning: [major].[minor].[patch]. A major release usually assumes breaking changes.
 
-2. Run `yarn build`.
+2. Run `pnpm build`.
 
 3. Run `npm publish --access public`.
