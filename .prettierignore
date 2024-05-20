@@ -2,3 +2,4 @@ coverage
 dist
 website/.docusaurus
 website/build
+pnpm-lock.yaml
