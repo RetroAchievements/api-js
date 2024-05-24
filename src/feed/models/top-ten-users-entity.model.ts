@@ -1,5 +1,5 @@
 export interface TopTenUsersEntity {
-  userName: string;
+  username: string;
   totalPoints: number;
   totalRatioPoints: number;
 }

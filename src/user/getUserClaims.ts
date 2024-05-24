@@ -12,17 +12,17 @@ import type { GetUserClaimsResponse, UserClaims } from "./models";
  * achievement set claims made over the lifetime of a given
  * user, targeted by their username.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param payload.userName The user for which to retrieve the historical
+ * @param payload.username The user for which to retrieve the historical
  * achievement set claims list for.
  *
  * @example
  * ```
  * const userClaims = await getUserClaims(
  *   authorization,
- *   { userName: "Jamiras" }
+ *   { username: "Jamiras" }
  * );
  * ```
  *
@@ -31,15 +31,15 @@ import type { GetUserClaimsResponse, UserClaims } from "./models";
  */
 export const getUserClaims = async (
   authorization: AuthObject,
-  payload: { userName: string }
+  payload: { username: string }
 ): Promise<UserClaims> => {
-  const { userName } = payload;
+  const { username } = payload;
 
   const url = buildRequestUrl(
     apiBaseUrl,
     "/API_GetUserClaims.php",
     authorization,
-    { u: userName }
+    { u: username }
   );
 
   const rawResponse = await call<GetUserClaimsResponse>({ url });

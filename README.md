@@ -54,10 +54,10 @@ To use any endpoint function in the API, you must first be authorized by RetroAc
 ```ts
 import { buildAuthorization } from "@retroachievements/api";
 
-const userName = "<your username on RA>";
+const username = "<your username on RA>";
 const webApiKey = "<your web API key>";
 
-const authorization = buildAuthorization({ userName, webApiKey });
+const authorization = buildAuthorization({ username, webApiKey });
 ```
 
 4. You now have all you need to use any function in the API. Each function takes this authorization object as its first argument. Here's an example:

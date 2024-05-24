@@ -15,7 +15,7 @@ import type {
  * A call to this function will retrieve a list of users who
  * have earned a given achievement, targeted by the achievement's ID.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
  * @param payload.achievementId The target achievement we want to

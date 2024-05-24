@@ -24,7 +24,7 @@ describe("Function: getUserCompletedGames", () => {
   it("given a username, returns completion metadata", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -61,7 +61,7 @@ describe("Function: getUserCompletedGames", () => {
 
     // ACT
     const response = await getUserCompletedGames(authorization, {
-      userName: "xelnia",
+      username: "xelnia",
     });
 
     // ASSERT

@@ -12,10 +12,10 @@ import type { GetUserProgressResponse, UserProgress } from "./models";
  * A call to this function will retrieve a given user's
  * progress on a given list of games, targeted by game ID.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param payload.userName The user for which to retrieve the progress for.
+ * @param payload.username The user for which to retrieve the progress for.
  *
  * @param payload.gameIds An array of RetroAchievements game IDs. If you aren't
  * sure of the game ID, visit the game's page on the website and copy the number
@@ -25,7 +25,7 @@ import type { GetUserProgressResponse, UserProgress } from "./models";
  * ```
  * const userProgress = await getUserProgress(
  *   authorization,
- *   { userName: "xelnia", gameIds: [1, 14402] }
+ *   { username: "xelnia", gameIds: [1, 14402] }
  * );
  * ```
  *
@@ -53,15 +53,15 @@ import type { GetUserProgressResponse, UserProgress } from "./models";
  */
 export const getUserProgress = async (
   authorization: AuthObject,
-  payload: { userName: string; gameIds: ID[] }
+  payload: { username: string; gameIds: ID[] }
 ): Promise<UserProgress> => {
-  const { userName, gameIds } = payload;
+  const { username, gameIds } = payload;
 
   const url = buildRequestUrl(
     apiBaseUrl,
     "/API_GetUserProgress.php",
     authorization,
-    { u: userName, i: gameIds.join(",") }
+    { u: username, i: gameIds.join(",") }
   );
 
   const rawResponse = await call<GetUserProgressResponse>({ url });

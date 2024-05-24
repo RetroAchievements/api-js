@@ -23,7 +23,7 @@ describe("Function: getAchievementDistribution", () => {
   it("given a game ID, retrieves the achievement distribution associated with the game", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -61,7 +61,7 @@ describe("Function: getAchievementDistribution", () => {
   it("given flags, successfully attaches the option to the call", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -101,7 +101,7 @@ describe("Function: getAchievementDistribution", () => {
   it("given a truthy hardcore value, successfully attaches the option to the call", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -138,7 +138,7 @@ describe("Function: getAchievementDistribution", () => {
   it("given a falsy hardcore value, successfully attaches the option to the call", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 

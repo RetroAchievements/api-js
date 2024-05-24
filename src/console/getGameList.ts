@@ -12,7 +12,7 @@ import type { GameList, GetGameListResponse } from "./models";
  * of games for a specified console on the RetroAchievements.org
  * platform.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
  * @param payload.consoleId The unique console ID to retrieve a list of

@@ -22,7 +22,7 @@ describe("Function: getUserProfile", () => {
   it("given a username, retrieves minimal user profile information about the user", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -53,7 +53,7 @@ describe("Function: getUserProfile", () => {
 
     // ACT
     const response = await getUserProfile(authorization, {
-      userName: "WCopeland",
+      username: "WCopeland",
     });
 
     // ASSERT

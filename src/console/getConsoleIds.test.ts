@@ -24,7 +24,7 @@ describe("Function: getConsoleIds", () => {
   it("retrieves a list of console IDs and their names and cleans properties", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 

@@ -22,7 +22,7 @@ describe("Function: getUserGameRankAndScore", () => {
   it("given a game ID and a user name, retrieves metadata about how that user ranks on the given game", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -43,7 +43,7 @@ describe("Function: getUserGameRankAndScore", () => {
 
     // ACT
     const response = await getUserGameRankAndScore(authorization, {
-      userName: "xelnia",
+      username: "xelnia",
       gameId: 14_402,
     });
 

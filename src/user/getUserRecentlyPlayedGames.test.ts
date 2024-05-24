@@ -22,7 +22,7 @@ describe("Function: getUserRecentlyPlayedGames", () => {
   it(`retrieves a list of a given user's recently played games`, async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -52,7 +52,7 @@ describe("Function: getUserRecentlyPlayedGames", () => {
 
     // ACT
     const response = await getUserRecentlyPlayedGames(authorization, {
-      userName: "xelnia",
+      username: "xelnia",
     });
 
     // ASSERT

@@ -9,7 +9,7 @@ describe("Util: buildAuthorization", () => {
   it("returns the same object it is given", () => {
     // ARRANGE
     const myAuth = {
-      userName: "myUserName",
+      username: "myUserName",
       webApiKey: "myWebApiKey",
     };
 
@@ -20,7 +20,7 @@ describe("Util: buildAuthorization", () => {
     expect(authorization).toEqual(myAuth);
   });
 
-  it("throws an error if missing a userName", () => {
+  it("throws an error if missing a username", () => {
     // ASSERT
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore - We're assuming the user is not using a TypeScript project.
@@ -31,6 +31,6 @@ describe("Util: buildAuthorization", () => {
     // ASSERT
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore - We're assuming the user is not using a TypeScript project.
-    expect(() => buildAuthorization({ userName: "mockUserName" })).toThrow();
+    expect(() => buildAuthorization({ username: "mockUserName" })).toThrow();
   });
 });

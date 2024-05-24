@@ -24,7 +24,7 @@ describe("Function: getUserSummary", () => {
   it("given a username, retrieves user summary information about the user", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -38,7 +38,7 @@ describe("Function: getUserSummary", () => {
 
     // ACT
     const response = await getUserSummary(authorization, {
-      userName: "WCopeland",
+      username: "WCopeland",
     });
 
     // ASSERT
@@ -48,7 +48,7 @@ describe("Function: getUserSummary", () => {
   it("given the API returns a 503, throws an error", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -62,7 +62,7 @@ describe("Function: getUserSummary", () => {
 
     // ASSERT
     await expect(
-      getUserSummary(authorization, { userName: "WCopeland" })
+      getUserSummary(authorization, { username: "WCopeland" })
     ).rejects.toThrow();
   });
 });

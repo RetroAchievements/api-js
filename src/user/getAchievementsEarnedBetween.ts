@@ -14,10 +14,10 @@ import type {
  * A call to this function will retrieve a list of achievements
  * earned by a given user between two provided dates.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param payload.userName The user for which to retrieve the
+ * @param payload.username The user for which to retrieve the
  * list of achievements for.
  *
  * @param payload.fromDate A Date object specifying when
@@ -31,7 +31,7 @@ import type {
  * const achievementsEarnedBetween = await getAchievementsEarnedBetween(
  *   authorization,
  *   {
- *     userName: "xelnia",
+ *     username: "xelnia",
  *     fromDate: new Date("2022-10-12"),
  *     toDate: new Date("2022-10-13")
  *   }
@@ -65,16 +65,16 @@ import type {
  */
 export const getAchievementsEarnedBetween = async (
   authorization: AuthObject,
-  payload: { userName: string; fromDate: Date; toDate: Date }
+  payload: { username: string; fromDate: Date; toDate: Date }
 ): Promise<DatedUserAchievement[]> => {
-  const { userName, fromDate, toDate } = payload;
+  const { username, fromDate, toDate } = payload;
 
   const url = buildRequestUrl(
     apiBaseUrl,
     "/API_GetAchievementsEarnedBetween.php",
     authorization,
     {
-      u: userName,
+      u: username,
       f: (fromDate.getTime() / 1000).toFixed(0),
       t: (toDate.getTime() / 1000).toFixed(0),
     }

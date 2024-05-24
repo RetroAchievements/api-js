@@ -16,7 +16,7 @@ import type {
  * about a game, in addition to a user's progress about a game.
  * This is targeted via a game's unique ID and a given username.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
  * @param payload.gameId The unique game ID. If you are unsure, open the
@@ -24,14 +24,14 @@ import type {
  * URL is https://retroachievements.org/game/14402. We can see from the
  * URL that the game ID is "14402".
  *
- * @param payload.userName The user for which to retrieve the
+ * @param payload.username The user for which to retrieve the
  * game progress for.
  *
  * @example
  * ```
  * const gameInfoAndUserProgress = await getGameInfoAndUserProgress(
  *   authorization,
- *   { gameId: 14402, userName: "wv_pinball" }
+ *   { gameId: 14402, username: "wv_pinball" }
  * );
  * ```
  *
@@ -87,9 +87,9 @@ import type {
  */
 export const getGameInfoAndUserProgress = async (
   authorization: AuthObject,
-  payload: { gameId: ID; userName: string }
+  payload: { gameId: ID; username: string }
 ): Promise<GameInfoAndUserProgress> => {
-  const { gameId, userName } = payload;
+  const { gameId, username } = payload;
 
   const url = buildRequestUrl(
     apiBaseUrl,
@@ -97,7 +97,7 @@ export const getGameInfoAndUserProgress = async (
     authorization,
     {
       g: gameId,
-      u: userName,
+      u: username,
     }
   );
 

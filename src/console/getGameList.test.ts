@@ -24,7 +24,7 @@ describe("Function: getGameList", () => {
   it("retrieves a list of games and cleans their properties", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 

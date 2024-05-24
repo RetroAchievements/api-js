@@ -25,7 +25,7 @@ describe("Function: getAchievementsEarnedOnDay", () => {
   it("retrieves a list of user achievements earned on a specified date", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -58,7 +58,7 @@ describe("Function: getAchievementsEarnedOnDay", () => {
 
     // ACT
     const response = await getAchievementsEarnedOnDay(authorization, {
-      userName: "xelnia",
+      username: "xelnia",
       onDate: new Date("2022-10-12"),
     });
 

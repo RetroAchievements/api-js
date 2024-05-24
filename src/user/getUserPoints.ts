@@ -11,16 +11,16 @@ import type { GetUserPointsResponse, UserPoints } from "./models";
  * A call to this function will retrieve a given user's hardcore
  * and softcore points.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param payload.userName The user for which to retrieve the point totals for.
+ * @param payload.username The user for which to retrieve the point totals for.
  *
  * @example
  * ```
  * const userPoints = await getUserPoints(
  *   authorization,
- *   { userName: "xelnia" }
+ *   { username: "xelnia" }
  * );
  * ```
  *
@@ -34,15 +34,15 @@ import type { GetUserPointsResponse, UserPoints } from "./models";
  */
 export const getUserPoints = async (
   authorization: AuthObject,
-  payload: { userName: string }
+  payload: { username: string }
 ): Promise<UserPoints> => {
-  const { userName } = payload;
+  const { username } = payload;
 
   const url = buildRequestUrl(
     apiBaseUrl,
     "/API_GetUserPoints.php",
     authorization,
-    { u: userName }
+    { u: username }
   );
 
   const rawResponse = await call<GetUserPointsResponse>({ url });

@@ -15,10 +15,10 @@ import type {
  * recently earned achievements, via their username. By default, it
  * fetches achievements earned in the last hour.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param payload.userName The user for which to retrieve the recent achievements for.
+ * @param payload.username The user for which to retrieve the recent achievements for.
  *
  * @param payload.recentMinutes Optional. Defaults to 60. How many minutes
  * back to fetch for the given user.
@@ -27,7 +27,7 @@ import type {
  * ```
  * const userRecentAchievements = await getUserRecentAchievements(
  *   authorization,
- *   { userName: "xelnia" }
+ *   { username: "xelnia" }
  * );
  * ```
  *
@@ -55,11 +55,11 @@ import type {
  */
 export const getUserRecentAchievements = async (
   authorization: AuthObject,
-  payload: { userName: string; recentMinutes?: number }
+  payload: { username: string; recentMinutes?: number }
 ): Promise<UserRecentAchievement[]> => {
-  const { userName, recentMinutes } = payload;
+  const { username, recentMinutes } = payload;
 
-  const queryParams: Record<string, string | number> = { u: userName };
+  const queryParams: Record<string, string | number> = { u: username };
 
   if (recentMinutes !== undefined) {
     queryParams["m"] = recentMinutes;

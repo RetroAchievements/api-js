@@ -27,7 +27,7 @@ describe("Function: getAchievementOfTheWeek", () => {
   it("retrieves metadata about the current achievement of the week and cleans properties", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -105,7 +105,7 @@ describe("Function: getAchievementOfTheWeek", () => {
   it("properly sets the hardcore boolean value when cleaning properties", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 

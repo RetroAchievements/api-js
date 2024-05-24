@@ -14,7 +14,7 @@ import type {
  * A call to this function will retrieve comprehensive
  * metadata about the current Achievement of the Week.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
  * @example
