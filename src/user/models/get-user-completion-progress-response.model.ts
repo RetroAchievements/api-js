@@ -1,3 +1,5 @@
+import type { AwardKind } from "../../utils/public";
+
 interface RawUserCompletionProgressEntity {
   GameID: number;
   Title: string;
@@ -9,12 +11,7 @@ interface RawUserCompletionProgressEntity {
   NumAwardedHardcore: number;
 
   MostRecentAwardedDate?: string;
-  HighestAwardKind?:
-    | "mastered"
-    | "completed"
-    | "beaten-hardcore"
-    | "beaten-softcore"
-    | null;
+  HighestAwardKind?: AwardKind | null;
   HighestAwardDate?: string | null;
 }
 

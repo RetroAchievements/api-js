@@ -2,6 +2,7 @@ import type {
   GameExtended,
   GameExtendedAchievementEntity,
 } from "../../game/models";
+import type { AwardKind } from "../../utils/public";
 
 export type GameExtendedAchievementEntityWithUserProgress =
   GameExtendedAchievementEntity & {
@@ -17,11 +18,6 @@ export interface GameInfoAndUserProgress extends GameExtended {
   userCompletion: string;
   userCompletionHardcore: string;
 
-  highestAwardKind?:
-    | "mastered"
-    | "completed"
-    | "beaten-hardcore"
-    | "beaten-softcore"
-    | null;
+  highestAwardKind?: AwardKind | null;
   highestAwardDate?: string;
 }
