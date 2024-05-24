@@ -1,3 +1,5 @@
+import type { AwardKind } from "../../utils/public";
+
 export interface UserCompletionProgressEntity {
   gameId: number;
   title: string;
@@ -9,11 +11,6 @@ export interface UserCompletionProgressEntity {
   numAwardedHardcore: number;
 
   mostRecentAwardedDate?: string;
-  highestAwardKind?:
-    | "mastered"
-    | "completed"
-    | "beaten-hardcore"
-    | "beaten-softcore"
-    | null;
+  highestAwardKind?: AwardKind | null;
   highestAwardDate?: string;
 }

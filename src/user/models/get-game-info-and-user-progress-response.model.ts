@@ -2,6 +2,7 @@ import type {
   GameExtendedRawAchievementEntity,
   GetGameExtendedResponse,
 } from "../../game/models";
+import type { AwardKind } from "../../utils/public";
 
 type GetGameExtendedResponseWithoutClaims = Omit<
   GetGameExtendedResponse,
@@ -26,11 +27,6 @@ export interface GetGameInfoAndUserProgressResponse
   UserCompletion: string;
   UserCompletionHardcore: string;
 
-  HighestAwardKind?:
-    | "mastered"
-    | "completed"
-    | "beaten-hardcore"
-    | "beaten-softcore"
-    | null;
+  HighestAwardKind?: AwardKind | null;
   HighestAwardDate?: string;
 }
