@@ -24,7 +24,7 @@ describe("Function: getGameRankAndScore", () => {
   it("given a game ID, retrieves metadata about latest masteries for a game", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 

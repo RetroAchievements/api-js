@@ -22,7 +22,7 @@ describe("Function: getTopTenUsers", () => {
   it("retrieves metadata about the current top ten users on the site", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -51,48 +51,48 @@ describe("Function: getTopTenUsers", () => {
     // ASSERT
     expect(response).toEqual([
       {
-        userName: "MaxMilyin",
+        username: "MaxMilyin",
         totalPoints: 346_289,
         totalRatioPoints: 995_092,
       },
       {
-        userName: "HippopotamusRex",
+        username: "HippopotamusRex",
         totalPoints: 312_118,
         totalRatioPoints: 1_151_351,
       },
       {
-        userName: "Sarconius",
+        username: "Sarconius",
         totalPoints: 257_862,
         totalRatioPoints: 1_181_770,
       },
-      { userName: "guineu", totalPoints: 241_623, totalRatioPoints: 672_597 },
+      { username: "guineu", totalPoints: 241_623, totalRatioPoints: 672_597 },
       {
-        userName: "Andrey199650",
+        username: "Andrey199650",
         totalPoints: 240_101,
         totalRatioPoints: 567_522,
       },
       {
-        userName: "Wendigo",
+        username: "Wendigo",
         totalPoints: 227_903,
         totalRatioPoints: 1_099_685,
       },
       {
-        userName: "donutweegee",
+        username: "donutweegee",
         totalPoints: 204_701,
         totalRatioPoints: 587_221,
       },
       {
-        userName: "AmericanNinja",
+        username: "AmericanNinja",
         totalPoints: 202_980,
         totalRatioPoints: 567_618,
       },
       {
-        userName: "Infernum",
+        username: "Infernum",
         totalPoints: 202_171,
         totalRatioPoints: 689_967,
       },
       {
-        userName: "FabricioPrie",
+        username: "FabricioPrie",
         totalPoints: 196_974,
         totalRatioPoints: 450_436,
       },

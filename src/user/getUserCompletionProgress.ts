@@ -14,10 +14,10 @@ import type {
  * A call to this function will retrieve a given user's completion
  * progress, targeted by their username.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param payload.userName The user for which to retrieve the progress for.
+ * @param payload.username The user for which to retrieve the progress for.
  *
  * @param payload.offset Defaults to 0. The number of entries to skip.
  *
@@ -27,7 +27,7 @@ import type {
  * ```
  * const userCompletionProgress = await getUserCompletionProgress(
  *   authorization,
- *   { userName: "xelnia" }
+ *   { username: "xelnia" }
  * );
  * ```
  *
@@ -56,12 +56,12 @@ import type {
  */
 export const getUserCompletionProgress = async (
   authorization: AuthObject,
-  payload: { userName: string; offset?: number; count?: number }
+  payload: { username: string; offset?: number; count?: number }
 ): Promise<UserCompletionProgress> => {
-  const { userName, offset, count } = payload;
+  const { username, offset, count } = payload;
 
   const params: Record<string, string | number> = {
-    u: userName,
+    u: username,
   };
   if (offset) {
     params["o"] = offset;

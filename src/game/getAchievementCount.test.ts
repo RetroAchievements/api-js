@@ -22,7 +22,7 @@ describe("Function: getAchievementCount", () => {
   it("given a game ID, retrieves the list of achievement IDs associated with the game and cleans properties", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 

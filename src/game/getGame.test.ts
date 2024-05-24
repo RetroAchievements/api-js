@@ -24,7 +24,7 @@ describe("Function: getGame", () => {
   it("given a game ID, retrieves basic metadata about the game", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 

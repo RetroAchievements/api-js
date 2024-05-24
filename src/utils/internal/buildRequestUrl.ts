@@ -14,7 +14,7 @@ export const buildRequestUrl = (
   // `z` and `y` are expected query params from the RA API.
   // Authentication is handled purely by query params.
   const queryParamValues: Record<string, string> = {
-    z: authObject.userName,
+    z: authObject.username,
     y: authObject.webApiKey,
   };
 

@@ -11,7 +11,7 @@ import type {
  * of the number of players who have earned a specific
  * number of achievements for a given game ID.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
  * @param payload.gameId The unique game ID. If you are unsure, open the

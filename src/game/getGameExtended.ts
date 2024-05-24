@@ -12,7 +12,7 @@ import type { GameExtended, GetGameExtendedResponse } from "./models";
  * A call to this function will retrieve extended metadata
  * about a game, targeted via its unique ID.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
  * @param payload.gameId The unique game ID. If you are unsure, open the

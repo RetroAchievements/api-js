@@ -24,7 +24,7 @@ describe("Function: getClaims", () => {
   it("retrieves metadata about a requested kind of claims", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 

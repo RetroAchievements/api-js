@@ -24,7 +24,7 @@ describe("Function: getGameInfoAndUserProgress", () => {
   it("given a game ID and a username, retrieves extended metadata about the game and that user`s progress", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -82,7 +82,7 @@ describe("Function: getGameInfoAndUserProgress", () => {
     // ACT
     const response = await getGameInfoAndUserProgress(authorization, {
       gameId: 14_402,
-      userName: "xelnia",
+      username: "xelnia",
     });
 
     // ASSERT

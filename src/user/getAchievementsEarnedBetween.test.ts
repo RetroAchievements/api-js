@@ -25,7 +25,7 @@ describe("Function: getAchievementsEarnedBetween", () => {
   it("retrieves a list of user achievements earned between a set of dates", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -58,7 +58,7 @@ describe("Function: getAchievementsEarnedBetween", () => {
 
     // ACT
     const response = await getAchievementsEarnedBetween(authorization, {
-      userName: "xelnia",
+      username: "xelnia",
       fromDate: new Date("2022-10-12"),
       toDate: new Date("2022-10-13"),
     });

@@ -22,7 +22,7 @@ describe("Util: buildRequestUrl", () => {
     const requestUrl = buildRequestUrl(
       baseUrl,
       endpointUrl,
-      { userName: "TestUser", webApiKey: "mockWebApiKey" },
+      { username: "TestUser", webApiKey: "mockWebApiKey" },
       args as any
     );
 
@@ -39,7 +39,7 @@ describe("Util: buildRequestUrl", () => {
 
     // ACT
     const requestUrl = buildRequestUrl(baseUrl, endpointUrl, {
-      userName: "TestUser",
+      username: "TestUser",
       webApiKey: "mockWebApiKey",
     });
 

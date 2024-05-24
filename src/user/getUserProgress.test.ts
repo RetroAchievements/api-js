@@ -22,7 +22,7 @@ describe("Function: getUserProgress", () => {
   it(`retrieves a map of a user's progress by game IDs`, async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -53,7 +53,7 @@ describe("Function: getUserProgress", () => {
 
     // ACT
     const response = await getUserProgress(authorization, {
-      userName: "xelnia",
+      username: "xelnia",
       gameIds: [1, 14_402],
     });
 

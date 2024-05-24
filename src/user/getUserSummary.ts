@@ -11,10 +11,10 @@ import type { GetUserSummaryResponse, UserSummary } from "./models";
  * A call to this function will retrieve summary information about
  * a given user, targeted by username.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param payload.userName The user for which to retrieve the summary for.
+ * @param payload.username The user for which to retrieve the summary for.
  *
  * @param payload.recentGamesCount Optional. The number of recent games to return.
  * This defaults to 0.
@@ -26,7 +26,7 @@ import type { GetUserSummaryResponse, UserSummary } from "./models";
  * ```
  * const userSummary = await getUserSummary(
  *   authorization,
- *   { userName: "xelnia" }
+ *   { username: "xelnia" }
  * );
  * ```
  *
@@ -35,14 +35,14 @@ import type { GetUserSummaryResponse, UserSummary } from "./models";
 export const getUserSummary = async (
   authorization: AuthObject,
   payload: {
-    userName: string;
+    username: string;
     recentGamesCount?: number;
     recentAchievementsCount?: number;
   }
 ): Promise<UserSummary> => {
-  const { userName, recentGamesCount, recentAchievementsCount } = payload;
+  const { username, recentGamesCount, recentAchievementsCount } = payload;
 
-  const queryParams: Record<string, string | number> = { u: userName };
+  const queryParams: Record<string, string | number> = { u: username };
 
   if (recentGamesCount !== undefined) {
     queryParams["g"] = recentGamesCount;

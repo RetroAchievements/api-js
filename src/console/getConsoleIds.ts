@@ -5,15 +5,21 @@ import {
   serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
-import type { ConsoleId, GetConsoleIdsResponse } from "./models";
+import type { FetchedSystem, GetConsoleIdsResponse } from "./models";
 
 /**
  * A call to this function will retrieve the complete list
  * of console ID and name pairs on the RetroAchievements.org
  * platform.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
+ *
+ * @param payload.shouldOnlyRetrieveActiveSystems If true, only systems that
+ * officially support achievements will be returned.
+ *
+ * @param payload.shouldOnlyRetrieveGameSystems If true, events and hubs will
+ * not be returned.
  *
  * @example
  * ```
@@ -26,17 +32,33 @@ import type { ConsoleId, GetConsoleIdsResponse } from "./models";
  * {
  *   id: "1",
  *   name: "Mega Drive",
- *   iconUrl: "https://static.retroachievements.org/assets/images/system/md.png"
+ *   iconUrl: "https://static.retroachievements.org/assets/images/system/md.png",
+ *   active: true,
+ *   isGameSystem: true
  * }
  * ```
  */
 export const getConsoleIds = async (
-  authorization: AuthObject
-): Promise<ConsoleId[]> => {
+  authorization: AuthObject,
+  payload?: {
+    shouldOnlyRetrieveActiveSystems: boolean;
+    shouldOnlyRetrieveGameSystems: boolean;
+  }
+): Promise<FetchedSystem[]> => {
+  let callPayload: Record<string, any> | undefined;
+
+  if (payload?.shouldOnlyRetrieveActiveSystems) {
+    callPayload = { ...callPayload, a: 1 };
+  }
+  if (payload?.shouldOnlyRetrieveGameSystems) {
+    callPayload = { ...callPayload, g: 1 };
+  }
+
   const url = buildRequestUrl(
     apiBaseUrl,
     "/API_GetConsoleIDs.php",
-    authorization
+    authorization,
+    callPayload
   );
 
   const rawResponse = await call<GetConsoleIdsResponse>({ url });

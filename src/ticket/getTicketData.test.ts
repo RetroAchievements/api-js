@@ -28,7 +28,7 @@ describe("Function: getTicketData", () => {
   it("given only a ticket ID, retrieves ticket data", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -96,7 +96,7 @@ describe("Function: getTicketData", () => {
   it("given no IDs, retrieves a list of recent tickets", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -184,7 +184,7 @@ describe("Function: getTicketData", () => {
   it("can retrieve a list of the most ticketed games", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -244,7 +244,7 @@ describe("Function: getTicketData", () => {
   it("can retrieve metadata about a user's tickets", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -264,7 +264,7 @@ describe("Function: getTicketData", () => {
     );
 
     // ACT
-    const response = await getTicketData(authorization, { userName: "xelnia" });
+    const response = await getTicketData(authorization, { username: "xelnia" });
 
     // ASSERT
     expect(response).toEqual({
@@ -280,7 +280,7 @@ describe("Function: getTicketData", () => {
   it("can retrieve metadata about a game's tickets", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -314,7 +314,7 @@ describe("Function: getTicketData", () => {
   it("can retrieve metadata about an achievement's tickets", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
