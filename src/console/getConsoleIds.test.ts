@@ -6,7 +6,7 @@ import { setupServer } from "msw/node";
 import { apiBaseUrl } from "../utils/internal";
 import { buildAuthorization } from "../utils/public";
 import { getConsoleIds } from "./getConsoleIds";
-import type { ConsoleId, GetConsoleIdsResponse } from "./models";
+import type { FetchedSystem, GetConsoleIdsResponse } from "./models";
 
 const server = setupServer();
 
@@ -34,18 +34,24 @@ describe("Function: getConsoleIds", () => {
         Name: "Mega Drive",
         IconURL:
           "https://static.retroachievements.org/assets/images/system/md.png",
+        Active: true,
+        IsGameSystem: true,
       },
       {
         ID: "2",
         Name: "Nintendo 64",
         IconURL:
           "https://static.retroachievements.org/assets/images/system/n64.png",
+        Active: true,
+        IsGameSystem: true,
       },
       {
         ID: "3",
         Name: "SNES",
         IconURL:
           "https://static.retroachievements.org/assets/images/system/snes.png",
+        Active: false,
+        IsGameSystem: false,
       },
     ];
 
@@ -59,24 +65,30 @@ describe("Function: getConsoleIds", () => {
     const response = await getConsoleIds(authorization);
 
     // ASSERT
-    const expectedResponse: ConsoleId[] = [
+    const expectedResponse: FetchedSystem[] = [
       {
         id: 1,
         name: "Mega Drive",
         iconUrl:
           "https://static.retroachievements.org/assets/images/system/md.png",
+        active: true,
+        isGameSystem: true,
       },
       {
         id: 2,
         name: "Nintendo 64",
         iconUrl:
           "https://static.retroachievements.org/assets/images/system/n64.png",
+        active: true,
+        isGameSystem: true,
       },
       {
         id: 3,
         name: "SNES",
         iconUrl:
           "https://static.retroachievements.org/assets/images/system/snes.png",
+        active: false,
+        isGameSystem: false,
       },
     ];
 
