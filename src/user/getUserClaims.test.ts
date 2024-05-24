@@ -23,7 +23,7 @@ describe("Function: getUserClaims", () => {
 
   it("given a username, retrieves a list of achievement set claims for the user", async () => {
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -55,7 +55,7 @@ describe("Function: getUserClaims", () => {
 
     // ACT
     const response = await getUserClaims(authorization, {
-      userName: "Jamiras",
+      username: "Jamiras",
     });
 
     // ASSERT

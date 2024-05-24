@@ -22,7 +22,7 @@ describe("Function: getUserCompletionProgress", () => {
   it("retrieves completion progress by username", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -54,7 +54,7 @@ describe("Function: getUserCompletionProgress", () => {
 
     // ACT
     const response = await getUserCompletionProgress(authorization, {
-      userName: "xelnia",
+      username: "xelnia",
     });
 
     // ASSERT

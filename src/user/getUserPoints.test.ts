@@ -22,7 +22,7 @@ describe("Function: getUserPoints", () => {
   it("given a username, retrieves the point values associated with the user", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -38,7 +38,7 @@ describe("Function: getUserPoints", () => {
     );
 
     // ACT
-    const response = await getUserPoints(authorization, { userName: "xelnia" });
+    const response = await getUserPoints(authorization, { username: "xelnia" });
 
     // ASSERT
     expect(response).toEqual({

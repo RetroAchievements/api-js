@@ -20,7 +20,7 @@ interface GetTicketDataAllPayloadValues {
   offset?: number;
   count?: number;
   isGettingMostTicketedGames?: true;
-  userName?: string;
+  username?: string;
   gameId?: string | number;
   isGettingTicketsForUnofficialAchievements?: true;
   shouldReturnTicketsList?: true;
@@ -35,7 +35,7 @@ interface GetTicketDataAllPayloadValues {
  * A call to this function will retrieve ticket metadata information
  * about a single achievement ticket, targeted by its ticket ID.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
  * @param payload.ticketId The ID of the ticket to get information about.
@@ -59,7 +59,7 @@ export function getTicketData(
  * A call to this function will retrieve ticket metadata information
  * about the latest opened achievement tickets on RetroAchievements.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
  * @param payload.count Optional. Defaults to 10. Max is 100.
@@ -84,7 +84,7 @@ export function getTicketData(
  * A call to this function will retrieve the games on the site with
  * the highest count of opened achievement tickets.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
  * @param payload.count Optional. Defaults to 10. Max is 100.
@@ -112,17 +112,17 @@ export function getTicketData(
  * A call to this function will retrieve an achievement developer's
  * ticket stats, targeted by that developer's username.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param payload.userName The developer's account username to retrieve
+ * @param payload.username The developer's account username to retrieve
  * ticket stats for.
  *
  * @example
  * ```
  * const ticketData = await getTicketData(
  *   authorization,
- *   { userName: "xelnia" }
+ *   { username: "xelnia" }
  * );
  * ```
  *
@@ -130,7 +130,7 @@ export function getTicketData(
  */
 export function getTicketData(
   authorization: AuthObject,
-  payload: { userName: string }
+  payload: { username: string }
 ): Promise<UserTicketStats>;
 
 /**
@@ -138,7 +138,7 @@ export function getTicketData(
  * by the game's ID. If you are unsure of a game's ID, visit its page
  * on the RetroAchievements website and copy the number at the end of the URL.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
  * @param payload.gameId The game ID to fetch ticket stats for.
@@ -174,7 +174,7 @@ export function getTicketData(
  * of an achievement's ID, open its page on the RetroAchievements
  * website and copy the number at the end of the URL.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
  * @param payload.achievementId The ID of the achievement to fetch ticket
@@ -234,7 +234,7 @@ const buildGetTicketDataQueryParams = (
   const {
     ticketId,
     isGettingMostTicketedGames,
-    userName,
+    username,
     gameId,
     isGettingTicketsForUnofficialAchievements,
     shouldReturnTicketsList,
@@ -248,8 +248,8 @@ const buildGetTicketDataQueryParams = (
   } else if (isGettingMostTicketedGames) {
     queryParams["f"] = "1";
     queryParams = applyPaginationQueryParams(queryParams, payload);
-  } else if (userName) {
-    queryParams["u"] = userName;
+  } else if (username) {
+    queryParams["u"] = username;
   } else if (gameId) {
     queryParams["g"] = gameId;
 

@@ -16,7 +16,7 @@ import type {
  * how a particular user has performed/ranked on a particular
  * game, targeted by game ID.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
  * @param payload.gameId The unique game ID. If you are unsure, open the
@@ -24,14 +24,14 @@ import type {
  * URL is https://retroachievements.org/game/14402. We can see from the
  * URL that the game ID is "14402".
  *
- * @param payload.userName The user for which to retrieve the
+ * @param payload.username The user for which to retrieve the
  * game ranking metadata for.
  *
  * @example
  * ```
  * const userGameRankAndScore = await getUserGameRankAndScore(
  *   authorization,
- *   { gameId: 14402, userName: "xelnia" }
+ *   { gameId: 14402, username: "xelnia" }
  * );
  * ```
  *
@@ -51,15 +51,15 @@ import type {
  */
 export const getUserGameRankAndScore = async (
   authorization: AuthObject,
-  payload: { gameId: ID; userName: string }
+  payload: { gameId: ID; username: string }
 ): Promise<UserGameRankAndScore> => {
-  const { gameId, userName } = payload;
+  const { gameId, username } = payload;
 
   const url = buildRequestUrl(
     apiBaseUrl,
     "/API_GetUserGameRankAndScore.php",
     authorization,
-    { g: gameId, u: userName }
+    { g: gameId, u: username }
   );
 
   const rawResponse = await call<GetUserGameRankAndScoreResponse>({ url });

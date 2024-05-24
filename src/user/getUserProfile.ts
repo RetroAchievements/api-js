@@ -11,16 +11,16 @@ import type { GetUserProfileResponse, UserProfile } from "./models";
  * A call to this function will retrieve summary information about
  * a given user, targeted by username.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param payload.userName The user for which to retrieve the summary for.
+ * @param payload.username The user for which to retrieve the summary for.
  *
  * @example
  * ```
  * const userSummary = await getUserProfile(
  *   authorization,
- *   { userName: "xelnia" }
+ *   { username: "xelnia" }
  * );
  * ```
  *
@@ -29,16 +29,16 @@ import type { GetUserProfileResponse, UserProfile } from "./models";
 export const getUserProfile = async (
   authorization: AuthObject,
   payload: {
-    userName: string;
+    username: string;
   }
 ): Promise<UserProfile> => {
-  const { userName } = payload;
+  const { username } = payload;
 
   const url = buildRequestUrl(
     apiBaseUrl,
     "/API_GetUserProfile.php",
     authorization,
-    { u: userName }
+    { u: username }
   );
 
   const rawResponse = await call<GetUserProfileResponse>({ url });

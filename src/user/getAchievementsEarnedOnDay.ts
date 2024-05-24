@@ -14,10 +14,10 @@ import type {
  * A call to this function will retrieve a list of achievements
  * earned by a given user on a specified date.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param payload.userName The user for which to retrieve the
+ * @param payload.username The user for which to retrieve the
  * list of achievements for.
  *
  * @param payload.fromDate A Date object specifying when
@@ -31,7 +31,7 @@ import type {
  * const achievementsEarnedOnDay = await getAchievementsEarnedOnDay(
  *   authorization,
  *   {
- *     userName: "xelnia",
+ *     username: "xelnia",
  *     onDate: new Date("2022-10-13")
  *   }
  * );
@@ -64,16 +64,16 @@ import type {
  */
 export const getAchievementsEarnedOnDay = async (
   authorization: AuthObject,
-  payload: { userName: string; onDate: Date }
+  payload: { username: string; onDate: Date }
 ): Promise<DatedUserAchievement[]> => {
-  const { userName, onDate } = payload;
+  const { username, onDate } = payload;
 
   const url = buildRequestUrl(
     apiBaseUrl,
     "/API_GetAchievementsEarnedOnDay.php",
     authorization,
     {
-      u: userName,
+      u: username,
       // YYYY-MM-DD
       d: `${onDate.getFullYear()}-${onDate.getMonth() + 1}-${onDate.getDate()}`,
     }

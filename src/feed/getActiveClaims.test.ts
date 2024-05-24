@@ -24,7 +24,7 @@ describe("Function: getActiveClaims", () => {
   it("retrieves metadata about current active claims", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 

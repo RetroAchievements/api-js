@@ -15,19 +15,19 @@ import type { AuthObject } from "./models";
  * @example
  * ```
  * const authorization = buildAuthorization({
- *   userName: "Scott",
+ *   username: "Scott",
  *   webApiKey: "LtjCwW16nJI7cqOyPIQtXk8v1cfF0tmO"
  * });
  * ```
  */
 export const buildAuthorization = (options: AuthObject): AuthObject => {
-  if (!options.userName || !options.webApiKey) {
+  if (!options.username || !options.webApiKey) {
     throw new Error(`
       buildAuthorization() requires an object containing a
-      userName and webApiKey. eg:
+      username and webApiKey. eg:
 
       const authorization = buildAuthorization({
-        userName: "myUserName",
+        username: "myUserName",
         webApiKey: "myWebApiKey"
       })
     `);

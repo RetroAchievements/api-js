@@ -22,7 +22,7 @@ describe("Function: getUserRecentAchievements", () => {
   it("retrieves a list of recently-earned user achievements", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -54,7 +54,7 @@ describe("Function: getUserRecentAchievements", () => {
 
     // ACT
     const response = await getUserRecentAchievements(authorization, {
-      userName: "xelnia",
+      username: "xelnia",
     });
 
     // ASSERT

@@ -24,7 +24,7 @@ describe("Function: getGameExtended", () => {
   it("given a game ID, retrieves extended metadata about the game", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 

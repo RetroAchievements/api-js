@@ -22,7 +22,7 @@ describe("Function: getUserAwards", () => {
   it("retrieves a list of a target user awards", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 
@@ -57,7 +57,7 @@ describe("Function: getUserAwards", () => {
     );
 
     // ACT
-    const response = await getUserAwards(authorization, { userName: "xelnia" });
+    const response = await getUserAwards(authorization, { username: "xelnia" });
 
     // ASSERT
     expect(response).toEqual({

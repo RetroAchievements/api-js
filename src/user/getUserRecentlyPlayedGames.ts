@@ -14,10 +14,10 @@ import type {
  * A call to this function will retrieve a list of a target user's
  * recently played games, via their username.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param payload.userName The user for which to retrieve the summary for.
+ * @param payload.username The user for which to retrieve the summary for.
  *
  * @param payload.count Optional. Defaults to 10. Max is 50. How many
  * recently played games for the user to retrieve.
@@ -29,7 +29,7 @@ import type {
  * ```
  * const userRecentlyPlayedGames = await getUserRecentlyPlayedGames(
  *   authorization,
- *   { userName: "xelnia" }
+ *   { username: "xelnia" }
  * );
  * ```
  *
@@ -55,11 +55,11 @@ import type {
  */
 export const getUserRecentlyPlayedGames = async (
   authorization: AuthObject,
-  payload: { userName: string; offset?: number; count?: number }
+  payload: { username: string; offset?: number; count?: number }
 ): Promise<UserRecentlyPlayedGames> => {
-  const { userName, offset, count } = payload;
+  const { username, offset, count } = payload;
 
-  const queryParams: Record<string, string | number> = { u: userName };
+  const queryParams: Record<string, string | number> = { u: username };
 
   if (offset !== undefined) {
     queryParams["o"] = offset;

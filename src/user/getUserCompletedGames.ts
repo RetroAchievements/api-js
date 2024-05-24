@@ -17,17 +17,17 @@ import type {
  * one for the hardcore completion. These are designated by
  * the `hardcoreMode` property on each completion object.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param payload.userName The user for which to retrieve the
+ * @param payload.username The user for which to retrieve the
  * completion metadata for.
  *
  * @example
  * ```
  * const userCompletedGames = await getUserCompletedGames(
  *   authorization,
- *   { userName: "xelnia" }
+ *   { username: "xelnia" }
  * );
  * ```
  *
@@ -63,15 +63,15 @@ import type {
  */
 export const getUserCompletedGames = async (
   authorization: AuthObject,
-  payload: { userName: string }
+  payload: { username: string }
 ): Promise<UserCompletedGames> => {
-  const { userName } = payload;
+  const { username } = payload;
 
   const url = buildRequestUrl(
     apiBaseUrl,
     "/API_GetUserCompletedGames.php",
     authorization,
-    { u: userName }
+    { u: username }
   );
 
   const rawResponse = await call<GetUserCompletedGamesResponse>({ url });

@@ -22,7 +22,7 @@ describe("Function: getGameRating", () => {
   it("given a game ID, retrieves metadata about how users have rated it", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 

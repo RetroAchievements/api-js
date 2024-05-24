@@ -11,16 +11,16 @@ import type { GetUserAwardsResponse, UserAwards } from "./models";
  * A call to this function will retrieve metadata about the target user's
  * site awards, via their username.
  *
- * @param authorization An object containing your userName and webApiKey.
+ * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param payload.userName The user for which to retrieve the site awards for.
+ * @param payload.username The user for which to retrieve the site awards for.
  *
  * @example
  * ```
  * const userAwards = await getUserAwards(
  *   authorization,
- *   { userName: "xelnia" }
+ *   { username: "xelnia" }
  * )
  * ```
  *
@@ -53,11 +53,11 @@ import type { GetUserAwardsResponse, UserAwards } from "./models";
  */
 export const getUserAwards = async (
   authorization: AuthObject,
-  payload: { userName: string }
+  payload: { username: string }
 ): Promise<UserAwards> => {
-  const { userName } = payload;
+  const { username } = payload;
 
-  const queryParams: Record<string, string> = { u: userName };
+  const queryParams: Record<string, string> = { u: username };
 
   const url = buildRequestUrl(
     apiBaseUrl,

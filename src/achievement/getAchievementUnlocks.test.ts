@@ -22,7 +22,7 @@ describe("Function: getAchievementUnlocks", () => {
   it("retrieves metadata about unlocks for a target achievement", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
-      userName: "mockUserName",
+      username: "mockUserName",
       webApiKey: "mockWebApiKey",
     });
 

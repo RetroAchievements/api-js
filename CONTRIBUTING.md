@@ -18,7 +18,7 @@ pnpm install
 This project includes a `__playground.ts` file for testing any local changes. To get started, open the file and replace these lines with values pertinent to your user account on RetroAchievements:
 
 ```ts
-const userName = "myUserName";
+const username = "myUsername";
 const webApiKey = "myWebApiKey";
 ```
 

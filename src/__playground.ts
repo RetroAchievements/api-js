@@ -17,7 +17,7 @@
 import { buildAuthorization, getAchievementCount } from "./index";
 
 // MODIFY THESE VALUES.
-const userName = "myUserName";
+const username = "myUsername";
 const webApiKey = "myWebApiKey";
 
 const main = async () => {
@@ -25,13 +25,13 @@ const main = async () => {
 
   // -- Start testing stuff here --
 
-  if (userName === "myUserName" || webApiKey === "myWebApiKey") {
+  if (username === "myUsername" || webApiKey === "myWebApiKey") {
     console.error(
-      "⛔️  ERROR: In __playground.ts, modify the userName and webApiKey variables to match your RA credentials.\n"
+      "⛔️  ERROR: In __playground.ts, modify the username and webApiKey variables to match your RA credentials.\n"
     );
   }
 
-  const authorization = buildAuthorization({ userName, webApiKey });
+  const authorization = buildAuthorization({ username, webApiKey });
 
   const achievementCount = await getAchievementCount(authorization, {
     gameId: 14_402,
