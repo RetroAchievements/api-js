@@ -16,4 +16,12 @@ export interface GameInfoAndUserProgress extends GameExtended {
   numAwardedToUserHardcore: number;
   userCompletion: string;
   userCompletionHardcore: string;
+
+  highestAwardKind?:
+    | "mastered"
+    | "completed"
+    | "beaten-hardcore"
+    | "beaten-softcore"
+    | null;
+  highestAwardDate?: string;
 }

@@ -27,6 +27,9 @@ import type {
  * @param payload.username The user for which to retrieve the
  * game progress for.
  *
+ * @param payload.shouldIncludeHighestAwardMetadata Include a "HighestAwardKind"
+ * and a "HighestAwardDate" for the given user and game ID.
+ *
  * @example
  * ```
  * const gameInfoAndUserProgress = await getGameInfoAndUserProgress(
@@ -87,18 +90,27 @@ import type {
  */
 export const getGameInfoAndUserProgress = async (
   authorization: AuthObject,
-  payload: { gameId: ID; username: string }
+  payload: {
+    gameId: ID;
+    username: string;
+    shouldIncludeHighestAwardMetadata?: boolean;
+  }
 ): Promise<GameInfoAndUserProgress> => {
-  const { gameId, username } = payload;
+  const { gameId, username, shouldIncludeHighestAwardMetadata } = payload;
+
+  const params: Record<string, any> = {
+    g: gameId,
+    u: username,
+  };
+  if (shouldIncludeHighestAwardMetadata) {
+    params.a = 1;
+  }
 
   const url = buildRequestUrl(
     apiBaseUrl,
     "/API_GetGameInfoAndUserProgress.php",
     authorization,
-    {
-      g: gameId,
-      u: username,
-    }
+    params
   );
 
   const rawResponse = await call<GetGameInfoAndUserProgressResponse>({ url });

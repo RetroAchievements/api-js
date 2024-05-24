@@ -25,4 +25,12 @@ export interface GetGameInfoAndUserProgressResponse
   NumAwardedToUserHardcore: number;
   UserCompletion: string;
   UserCompletionHardcore: string;
+
+  HighestAwardKind?:
+    | "mastered"
+    | "completed"
+    | "beaten-hardcore"
+    | "beaten-softcore"
+    | null;
+  HighestAwardDate?: string;
 }
