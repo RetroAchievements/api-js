@@ -17,8 +17,8 @@
 import { buildAuthorization, getAchievementCount } from "./index";
 
 // MODIFY THESE VALUES.
-const username = "myUsername";
-const webApiKey = "myWebApiKey";
+const username: string = "";
+const webApiKey: string = "";
 
 const main = async () => {
   console.log("🚀  @retroachievements/api playground is running.\n");
