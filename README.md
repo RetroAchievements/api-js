@@ -121,11 +121,11 @@ Click the function names to open their complete docs on the docs site.
 
 ### Ticket
 
-- [Get Ticket by ID](https://api-docs.retroachievements.org/v1/tickets/get-ticket-by-id.html)
-- [Get Most Ticketed Games](https://api-docs.retroachievements.org/v1/tickets/get-most-ticketed-games.html)
-- [Get Most Recent Tickets](https://api-docs.retroachievements.org/v1/tickets/get-most-recent-tickets.html)
-- [Get Game Ticket Stats](https://api-docs.retroachievements.org/v1/tickets/get-game-ticket-stats.html)
-- [Get Developer Ticket Stats](https://api-docs.retroachievements.org/v1/tickets/get-developer-ticket-stats.html)
+- [Get Ticket by ID](https://api-docs.retroachievements.org/v1/get-ticket-data/get-ticket-by-id.html)
+- [Get Most Ticketed Games](https://api-docs.retroachievements.org/v1/get-ticket-data/get-most-ticketed-games.html)
+- [Get Most Recent Tickets](https://api-docs.retroachievements.org/v1/get-ticket-data/get-most-recent-tickets.html)
+- [Get Game Ticket Stats](https://api-docs.retroachievements.org/v1/get-ticket-data/get-game-ticket-stats.html)
+- [Get Developer Ticket Stats](https://api-docs.retroachievements.org/v1/get-ticket-data/get-developer-ticket-stats.html)
 - [Get Achievement Ticket Stats](https://api-docs.retroachievements.org/v1/get-ticket-data/get-achievement-ticket-stats.html)
 
 ## Projects Using @retroachievements/api
