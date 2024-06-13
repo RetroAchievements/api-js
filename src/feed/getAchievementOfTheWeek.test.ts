@@ -53,6 +53,7 @@ describe("Function: getAchievementOfTheWeek", () => {
         {
           User: "Tirbaba2",
           RAPoints: "72",
+          RASoftcorePoints: "72",
           DateAwarded: "2022-10-10 01:42:19",
           HardcoreMode: "1",
         },
@@ -91,6 +92,7 @@ describe("Function: getAchievementOfTheWeek", () => {
         {
           user: "Tirbaba2",
           raPoints: 72,
+          raSoftcorePoints: 72,
           dateAwarded: "2022-10-10 01:42:19",
           hardcoreMode: true,
         },
@@ -131,6 +133,7 @@ describe("Function: getAchievementOfTheWeek", () => {
         {
           User: "Tirbaba2",
           RAPoints: "72",
+          RaSoftcorePoints: "72",
           DateAwarded: "2022-10-10 01:42:19",
           HardcoreMode: "0",
         },
@@ -169,6 +172,7 @@ describe("Function: getAchievementOfTheWeek", () => {
         {
           user: "Tirbaba2",
           raPoints: 72,
+          raSoftcorePoints: 72,
           dateAwarded: "2022-10-10 01:42:19",
           hardcoreMode: false,
         },

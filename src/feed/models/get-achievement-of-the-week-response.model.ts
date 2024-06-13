@@ -21,6 +21,7 @@ export interface GetAchievementOfTheWeekResponse {
   Unlocks: Array<{
     User: string;
     RAPoints: string;
+    RASoftcorePoints: string;
     DateAwarded: string;
     HardcoreMode: string;
   }>;

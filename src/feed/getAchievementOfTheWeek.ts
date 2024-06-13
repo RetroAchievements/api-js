@@ -48,7 +48,8 @@ import type {
  *   unlocks: [
  *     {
  *       user: "Tirbaba2",
- *       rAPoints: "72",
+ *       raPoints: "72",
+ *       raSoftcorePoints: "72",
  *       dateAwarded: "2022-10-10 01:42:19",
  *       hardcoreMode: "1"
  *     }
@@ -75,6 +76,7 @@ export const getAchievementOfTheWeek = async (
       "TrueRatio",
       "TotalPlayers",
       "RAPoints",
+      "RASoftcorePoints",
       "UnlocksCount",
     ],
     shouldMapToBooleans: ["HardcoreMode"],
