@@ -133,7 +133,7 @@ describe("Function: getAchievementOfTheWeek", () => {
         {
           User: "Tirbaba2",
           RAPoints: "72",
-          RaSoftcorePoints: "72",
+          RASoftcorePoints: "72",
           DateAwarded: "2022-10-10 01:42:19",
           HardcoreMode: "0",
         },
