@@ -45,6 +45,7 @@ describe("Function: getAchievementUnlocks", () => {
         {
           User: "Tiotroll2022",
           RAPoints: "348",
+          RASoftcorePoints: "363",
           DateAwarded: "2023-01-29 21:45:41",
           HardcoreMode: "0",
         },
@@ -91,6 +92,7 @@ describe("Function: getAchievementUnlocks", () => {
         {
           user: "Tiotroll2022",
           raPoints: 348,
+          raSoftcorePoints: 363,
           dateAwarded: "2023-01-29 21:45:41",
           hardcoreMode: false,
         },
