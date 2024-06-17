@@ -75,7 +75,13 @@ export const getAchievementUnlocks = async (
   const rawResponse = await call<GetAchievementUnlocksResponse>({ url });
 
   return serializeProperties(rawResponse, {
-    shouldCastToNumbers: ["ID", "Points", "TrueRatio", "RAPoints"],
+    shouldCastToNumbers: [
+      "ID",
+      "Points",
+      "TrueRatio",
+      "RAPoints",
+      "RASoftcorePoints",
+    ],
     shouldMapToBooleans: ["HardcoreMode"],
   });
 };

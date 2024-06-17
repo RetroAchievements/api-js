@@ -1,6 +1,7 @@
 interface AchievementUnlocksResponseEntity {
   User: string;
   RAPoints: string;
+  RASoftcorePoints: string;
   DateAwarded: string;
   HardcoreMode: string;
 }

@@ -1,6 +1,7 @@
 export interface AchievementUnlockEntity {
   user: string;
   raPoints: number;
+  raSoftcorePoints: number;
   dateAwarded: string;
   hardcoreMode: boolean;
 }

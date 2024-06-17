@@ -21,6 +21,7 @@ export interface AchievementOfTheWeek {
   unlocks: Array<{
     user: string;
     raPoints: number;
+    raSoftcorePoints: number;
     dateAwarded: string;
     hardcoreMode: boolean;
   }>;
