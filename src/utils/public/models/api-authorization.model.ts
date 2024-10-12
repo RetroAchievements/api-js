@@ -7,7 +7,7 @@
 /**
  * @deprecated `username` is no longer required for web API calls. Pass a string containing just your webApiKey instead.
  */
-interface LegacyAuthObject {
+export interface AuthObject {
   /**
    * You or your app's exact username on the RetroAchievements.org website.
    * For example, https://retroachievements.org/user/Scott would have a value
@@ -23,4 +23,4 @@ interface LegacyAuthObject {
   webApiKey: string;
 }
 
-export type ApiAuthorization = string | LegacyAuthObject;
+export type ApiAuthorization = string | AuthObject;
