@@ -45,7 +45,7 @@ Learn how to authenticate and start pulling data from RetroAchievements on our d
 
 To use any endpoint function in the API, you must first be authorized by RetroAchievements. Fortunately, this is a fairly straightforward process.
 
-1. Visit [settings page](https://retroachievements.org/settings) on the RA website.
+1. Visit the [settings page](https://retroachievements.org/settings) on the RA website.
 
 2. Find the "Keys" section on the page. Copy the web API key value. **Do not expose your API key anywhere publicly.**
 
