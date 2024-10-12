@@ -5,7 +5,7 @@ import {
   call,
   serializeProperties,
 } from "../utils/internal";
-import type { AuthObject } from "../utils/public";
+import type { ApiAuthorization } from "../utils/public";
 import type {
   AchievementUnlocksMetadata,
   GetAchievementUnlocksResponse,
@@ -15,8 +15,7 @@ import type {
  * A call to this function will retrieve a list of users who
  * have earned a given achievement, targeted by the achievement's ID.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @param payload.achievementId The target achievement we want to
  * retrieve the unlocks list for. If unknown, this can be found
@@ -31,7 +30,7 @@ import type {
  * @example
  * ```
  * const achievementUnlocks = await getAchievementUnlocks(
- *   authorization,
+ *   webApiKey,
  *   { achievementId: 13876 }
  * );
  * ```
@@ -50,7 +49,7 @@ import type {
  * ```
  */
 export const getAchievementUnlocks = async (
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: { achievementId: ID; offset?: number; count?: number }
 ): Promise<AchievementUnlocksMetadata> => {
   const { achievementId, offset, count } = payload;
