@@ -4,7 +4,7 @@ import {
   call,
   serializeProperties,
 } from "../utils/internal";
-import type { AuthObject } from "../utils/public";
+import type { ApiAuthorization } from "../utils/public";
 import type {
   GetUserRecentAchievementsResponse,
   UserRecentAchievement,
@@ -15,8 +15,7 @@ import type {
  * recently earned achievements, via their username. By default, it
  * fetches achievements earned in the last hour.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @param payload.username The user for which to retrieve the recent achievements for.
  *
@@ -54,7 +53,7 @@ import type {
  * ```
  */
 export const getUserRecentAchievements = async (
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: { username: string; recentMinutes?: number }
 ): Promise<UserRecentAchievement[]> => {
   const { username, recentMinutes } = payload;

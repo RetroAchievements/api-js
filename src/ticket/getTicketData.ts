@@ -5,7 +5,7 @@ import {
   call,
   serializeProperties,
 } from "../utils/internal";
-import type { AuthObject } from "../utils/public";
+import type { ApiAuthorization } from "../utils/public";
 import type {
   AchievementTicketStats,
   GameTicketStats,
@@ -51,7 +51,7 @@ interface GetTicketDataAllPayloadValues {
  * @returns An object containing metadata about a target ticket.
  */
 export function getTicketData(
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: { ticketId: ID }
 ): Promise<TicketEntity>;
 
@@ -76,7 +76,7 @@ export function getTicketData(
  * @returns A list of the most recently opened tickets on the site.
  */
 export function getTicketData(
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload?: Partial<{ offset: number; count: number }>
 ): Promise<RecentTickets>;
 
@@ -104,7 +104,7 @@ export function getTicketData(
  * @returns A list of the most recently opened tickets on the site.
  */
 export function getTicketData(
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: { isGettingMostTicketedGames: true; offset?: number; count?: number }
 ): Promise<MostTicketedGames>;
 
@@ -129,7 +129,7 @@ export function getTicketData(
  * @returns An achievement developer's ticket stats.
  */
 export function getTicketData(
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: { username: string }
 ): Promise<UserTicketStats>;
 
@@ -160,7 +160,7 @@ export function getTicketData(
  * @returns A game's ticket stats, potentially also including the ticket list.
  */
 export function getTicketData(
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: {
     gameId: ID;
     isGettingTicketsForUnofficialAchievements?: true;
@@ -174,8 +174,7 @@ export function getTicketData(
  * of an achievement's ID, open its page on the RetroAchievements
  * website and copy the number at the end of the URL.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @param payload.achievementId The ID of the achievement to fetch ticket
  * stats for.
@@ -191,7 +190,7 @@ export function getTicketData(
  * @returns An achievement developer's ticket stats.
  */
 export function getTicketData(
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: { achievementId: ID }
 ): Promise<AchievementTicketStats>;
 
@@ -200,7 +199,7 @@ export function getTicketData(
  */
 
 export async function getTicketData(
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: GetTicketDataAllPayloadValues = {}
 ) {
   const queryParams = buildGetTicketDataQueryParams(payload);

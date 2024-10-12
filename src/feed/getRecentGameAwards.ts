@@ -4,15 +4,14 @@ import {
   call,
   serializeProperties,
 } from "../utils/internal";
-import type { AuthObject, AwardKind } from "../utils/public";
+import type { ApiAuthorization, AwardKind } from "../utils/public";
 import type { GetRecentGameAwardsResponse, RecentGameAwards } from "./models";
 
 /**
  * A call to this function will retrieve all recently granted game
  * awards across the site's userbase.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @param payload.startDate The date to fetch awards from.
  *
@@ -50,7 +49,7 @@ import type { GetRecentGameAwardsResponse, RecentGameAwards } from "./models";
  * ```
  */
 export const getRecentGameAwards = async (
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload?: Partial<{
     startDate: string;
     offset: number;

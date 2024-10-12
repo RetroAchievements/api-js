@@ -4,15 +4,14 @@ import {
   call,
   serializeProperties,
 } from "../utils/internal";
-import type { AuthObject } from "../utils/public";
+import type { ApiAuthorization } from "../utils/public";
 import type { GetUserProfileResponse, UserProfile } from "./models";
 
 /**
  * A call to this function will retrieve summary information about
  * a given user, targeted by username.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @param payload.username The user for which to retrieve the summary for.
  *
@@ -27,7 +26,7 @@ import type { GetUserProfileResponse, UserProfile } from "./models";
  * @returns An object containing profile summary metadata about a target user.
  */
 export const getUserProfile = async (
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: {
     username: string;
   }

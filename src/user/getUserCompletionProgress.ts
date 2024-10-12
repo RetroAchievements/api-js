@@ -4,7 +4,7 @@ import {
   call,
   serializeProperties,
 } from "../utils/internal";
-import type { AuthObject } from "../utils/public";
+import type { ApiAuthorization } from "../utils/public";
 import type {
   GetUserCompletionProgressResponse,
   UserCompletionProgress,
@@ -14,8 +14,7 @@ import type {
  * A call to this function will retrieve a given user's completion
  * progress, targeted by their username.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @param payload.username The user for which to retrieve the progress for.
  *
@@ -55,7 +54,7 @@ import type {
  * ```
  */
 export const getUserCompletionProgress = async (
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: { username: string; offset?: number; count?: number }
 ): Promise<UserCompletionProgress> => {
   const { username, offset, count } = payload;

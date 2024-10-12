@@ -4,15 +4,14 @@ import {
   call,
   serializeProperties,
 } from "../utils/internal";
-import type { AuthObject } from "../utils/public";
+import type { ApiAuthorization } from "../utils/public";
 import type { GetUserAwardsResponse, UserAwards } from "./models";
 
 /**
  * A call to this function will retrieve metadata about the target user's
  * site awards, via their username.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @param payload.username The user for which to retrieve the site awards for.
  *
@@ -52,7 +51,7 @@ import type { GetUserAwardsResponse, UserAwards } from "./models";
  * ```
  */
 export const getUserAwards = async (
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: { username: string }
 ): Promise<UserAwards> => {
   const { username } = payload;

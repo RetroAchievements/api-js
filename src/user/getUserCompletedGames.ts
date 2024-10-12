@@ -4,7 +4,7 @@ import {
   call,
   serializeProperties,
 } from "../utils/internal";
-import type { AuthObject } from "../utils/public";
+import type { ApiAuthorization } from "../utils/public";
 import type {
   GetUserCompletedGamesResponse,
   UserCompletedGames,
@@ -17,8 +17,7 @@ import type {
  * one for the hardcore completion. These are designated by
  * the `hardcoreMode` property on each completion object.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @param payload.username The user for which to retrieve the
  * completion metadata for.
@@ -62,7 +61,7 @@ import type {
  * ```
  */
 export const getUserCompletedGames = async (
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: { username: string }
 ): Promise<UserCompletedGames> => {
   const { username } = payload;

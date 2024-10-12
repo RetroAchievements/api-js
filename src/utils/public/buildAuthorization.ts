@@ -1,4 +1,4 @@
-import type { AuthObject } from "./models";
+import type { ApiAuthorization } from "./models";
 
 /**
  * Accepts your RetroAchievements.org username and web API key. After
@@ -20,7 +20,9 @@ import type { AuthObject } from "./models";
  * });
  * ```
  */
-export const buildAuthorization = (options: AuthObject): AuthObject => {
+export const buildAuthorization = (
+  options: ApiAuthorization
+): ApiAuthorization => {
   if (!options.username || !options.webApiKey) {
     throw new Error(`
       buildAuthorization() requires an object containing a

@@ -1,9 +1,9 @@
-import type { AuthObject } from "../public/models";
+import type { ApiAuthorization } from "../public/models";
 
 export const buildRequestUrl = (
   baseUrl: string,
   endpointUrl: string,
-  authObject: AuthObject,
+  authorization: ApiAuthorization,
   args: Record<string, string | number> = {}
 ) => {
   const concatenated = `${baseUrl}/${endpointUrl}`;
@@ -11,11 +11,13 @@ export const buildRequestUrl = (
 
   let withArgs = withoutDoubleSlashes;
 
-  // `z` and `y` are expected query params from the RA API.
-  // Authentication is handled purely by query params.
+  // `y` is an always-required query param of the RA API.
+  // Authentication is handled purely by this query param.
   const queryParamValues: Record<string, string> = {
-    z: authObject.username,
-    y: authObject.webApiKey,
+    y:
+      typeof authorization === "string"
+        ? authorization
+        : authorization.webApiKey,
   };
 
   for (const [argKey, argValue] of Object.entries(args)) {

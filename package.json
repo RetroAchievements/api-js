@@ -38,7 +38,7 @@
     "format:check": "prettier --check . '**/*.{json,md,js,ts,tsx}'",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
     "lint:fix": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx . --fix",
-    "test": "vitest run",
+    "test": "vitest run --reporter=dot",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "verify": "pnpm format:check && pnpm lint && pnpm test:coverage && pnpm build",

@@ -1,9 +1,13 @@
 /**
  * Each RetroAchievements API call is uniquely authenticated
- * using a username + API key combination. Your account's personal
- * Web API Key can be found on the Settings page.
+ * using a web API key. Your account's personal Web API Key can
+ * be found on the /settings page.
  */
-export interface AuthObject {
+
+/**
+ * @deprecated `username` is no longer required for web API calls. Pass a string containing just your webApiKey instead.
+ */
+interface LegacyAuthObject {
   /**
    * You or your app's exact username on the RetroAchievements.org website.
    * For example, https://retroachievements.org/user/Scott would have a value
@@ -18,3 +22,5 @@ export interface AuthObject {
    */
   webApiKey: string;
 }
+
+export type ApiAuthorization = string | LegacyAuthObject;

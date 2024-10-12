@@ -4,7 +4,7 @@ import {
   call,
   serializeProperties,
 } from "../utils/internal";
-import type { AuthObject } from "../utils/public";
+import type { ApiAuthorization } from "../utils/public";
 import type { FetchedSystem, GetConsoleIdsResponse } from "./models";
 
 /**
@@ -12,8 +12,7 @@ import type { FetchedSystem, GetConsoleIdsResponse } from "./models";
  * of console ID and name pairs on the RetroAchievements.org
  * platform.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @param payload.shouldOnlyRetrieveActiveSystems If true, only systems that
  * officially support achievements will be returned.
@@ -39,7 +38,7 @@ import type { FetchedSystem, GetConsoleIdsResponse } from "./models";
  * ```
  */
 export const getConsoleIds = async (
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload?: {
     shouldOnlyRetrieveActiveSystems: boolean;
     shouldOnlyRetrieveGameSystems: boolean;

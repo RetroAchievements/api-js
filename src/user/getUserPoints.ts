@@ -4,15 +4,14 @@ import {
   call,
   serializeProperties,
 } from "../utils/internal";
-import type { AuthObject } from "../utils/public";
+import type { ApiAuthorization } from "../utils/public";
 import type { GetUserPointsResponse, UserPoints } from "./models";
 
 /**
  * A call to this function will retrieve a given user's hardcore
  * and softcore points.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @param payload.username The user for which to retrieve the point totals for.
  *
@@ -33,7 +32,7 @@ import type { GetUserPointsResponse, UserPoints } from "./models";
  * ```
  */
 export const getUserPoints = async (
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: { username: string }
 ): Promise<UserPoints> => {
   const { username } = payload;

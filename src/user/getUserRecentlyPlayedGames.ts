@@ -4,7 +4,7 @@ import {
   call,
   serializeProperties,
 } from "../utils/internal";
-import type { AuthObject } from "../utils/public";
+import type { ApiAuthorization } from "../utils/public";
 import type {
   GetUserRecentlyPlayedGamesResponse,
   UserRecentlyPlayedGames,
@@ -14,8 +14,7 @@ import type {
  * A call to this function will retrieve a list of a target user's
  * recently played games, via their username.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @param payload.username The user for which to retrieve the summary for.
  *
@@ -54,7 +53,7 @@ import type {
  * ```
  */
 export const getUserRecentlyPlayedGames = async (
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: { username: string; offset?: number; count?: number }
 ): Promise<UserRecentlyPlayedGames> => {
   const { username, offset, count } = payload;

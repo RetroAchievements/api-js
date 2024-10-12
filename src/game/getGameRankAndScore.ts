@@ -5,7 +5,7 @@ import {
   call,
   serializeProperties,
 } from "../utils/internal";
-import type { AuthObject } from "../utils/public";
+import type { ApiAuthorization } from "../utils/public";
 import type {
   GameRankAndScoreEntity,
   GetGameRankAndScoreResponse,
@@ -17,8 +17,7 @@ import type {
  * points earners for a game. The game is targeted via
  * its unique ID.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @param payload.gameId The unique game ID. If you are unsure, open the
  * game's page on the RetroAchievements.org website. For example, Dragster's
@@ -44,7 +43,7 @@ import type {
  * ```
  */
 export const getGameRankAndScore = async (
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: { gameId: ID; type: "latest-masters" | "high-scores" }
 ): Promise<GameRankAndScoreEntity[]> => {
   const { gameId, type } = payload;

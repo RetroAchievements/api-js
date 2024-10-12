@@ -4,7 +4,7 @@ import {
   call,
   serializeProperties,
 } from "../utils/internal";
-import type { AuthObject } from "../utils/public";
+import type { ApiAuthorization } from "../utils/public";
 import type {
   DatedUserAchievement,
   DatedUserAchievementsResponse,
@@ -14,8 +14,7 @@ import type {
  * A call to this function will retrieve a list of achievements
  * earned by a given user on a specified date.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @param payload.username The user for which to retrieve the
  * list of achievements for.
@@ -63,7 +62,7 @@ import type {
  * ```
  */
 export const getAchievementsEarnedOnDay = async (
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: { username: string; onDate: Date }
 ): Promise<DatedUserAchievement[]> => {
   const { username, onDate } = payload;
