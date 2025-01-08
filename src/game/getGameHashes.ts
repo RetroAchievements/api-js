@@ -47,7 +47,6 @@ import type { GameHashes, GetGameHashesResponse } from "./models";
  * }
  * ```
  */
-
 export const getGameHashes = async (
   authorization: AuthObject,
   payload: { gameId: ID }
