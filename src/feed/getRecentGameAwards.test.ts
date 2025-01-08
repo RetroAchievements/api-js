@@ -49,7 +49,12 @@ describe("Function: getRecentGameAwards", () => {
     );
 
     // ACT
-    const response = await getRecentGameAwards(authorization);
+    const response = await getRecentGameAwards(authorization, {
+      startDate: "2025-01-05",
+      offset: 10,
+      count: 10,
+      desiredAwardKinds: ["completed"],
+    });
 
     const expectedResponse: RecentGameAwards = {
       count: 1,

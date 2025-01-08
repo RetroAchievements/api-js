@@ -62,7 +62,10 @@ describe("Function: getConsoleIds", () => {
     );
 
     // ACT
-    const response = await getConsoleIds(authorization);
+    const response = await getConsoleIds(authorization, {
+      shouldOnlyRetrieveActiveSystems: true,
+      shouldOnlyRetrieveGameSystems: true,
+    });
 
     // ASSERT
     const expectedResponse: FetchedSystem[] = [
