@@ -7,6 +7,7 @@ import {
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
 import type { GameHashes, GetGameHashesResponse } from "./models";
+
 /**
  * A call to this function will retrieve a list of hashes linked to a game.
  *
