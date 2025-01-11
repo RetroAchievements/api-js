@@ -75,7 +75,10 @@ describe("Function: getGameExtended", () => {
     );
 
     // ACT
-    const response = await getGameExtended(authorization, { gameId: 14_402 });
+    const response = await getGameExtended(authorization, {
+      gameId: 14_402,
+      isRequestingUnofficialAchievements: true,
+    });
 
     // ASSERT
     expect(response).toEqual({

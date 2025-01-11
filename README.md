@@ -90,6 +90,7 @@ Click the function names to open their complete docs on the docs site.
 - [`getUserRecentlyPlayedGames()`](https://api-docs.retroachievements.org/v1/get-user-recently-played-games.html) - Get a list of games a user has recently played.
 - [`getUserSummary()`](https://api-docs.retroachievements.org/v1/get-user-summary.html) - Get a user's profile metadata.
 - [`getUserCompletedGames()`](https://api-docs.retroachievements.org/v1/get-user-completed-games.html) - Deprecated function. Get hardcore and softcore completion metadata about games a user has played.
+- [`getUserWantToPlayList()`](https://api-docs.retroachievements.org/v1/get-user-want-to-play-list.html) - Get a user's "Want to Play Games" list.
 
 ### Game
 
