@@ -30,18 +30,18 @@ import type { GameHashes, GetGameHashesResponse } from "./models";
  * @returns An object containing a list of game hashes.
  * ```json
  * {
- *   "Results": [
+ *   "results": [
  *     {
- *       "MD5": "1b1d9ac862c387367e904036114c4825",
- *       "Name": "Sonic The Hedgehog (USA, Europe) (Ru) (NewGame).md",
- *       "Labels": ["nointro", "rapatches"],
- *       "PatchUrl": "https://github.com/RetroAchievements/RAPatches/raw/main/MD/Translation/Russian/1-Sonic1-Russian.zip"
+ *       "md5": "1b1d9ac862c387367e904036114c4825",
+ *       "name": "Sonic The Hedgehog (USA, Europe) (Ru) (NewGame).md",
+ *       "labels": ["nointro", "rapatches"],
+ *       "patchUrl": "https://github.com/RetroAchievements/RAPatches/raw/main/MD/Translation/Russian/1-Sonic1-Russian.zip"
  *     },
  *     {
- *       "MD5": "1bc674be034e43c96b86487ac69d9293",
- *       "Name": "Sonic The Hedgehog (USA, Europe).md",
- *       "Labels": ["nointro"],
- *       "PatchUrl": null
+ *       "md5": "1bc674be034e43c96b86487ac69d9293",
+ *       "name": "Sonic The Hedgehog (USA, Europe).md",
+ *       "labels": ["nointro"],
+ *       "patchUrl": null
  *     }
  *   ]
  * }

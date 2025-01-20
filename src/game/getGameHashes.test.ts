@@ -10,7 +10,7 @@ import type { GetGameHashesResponse } from "./models";
 
 const server = setupServer();
 
-describe("Function: getGameExtended", () => {
+describe("Function: getGameHashes", () => {
   // MSW Setup
   beforeAll(() => server.listen());
   afterEach(() => server.resetHandlers());
@@ -21,7 +21,7 @@ describe("Function: getGameExtended", () => {
     expect(getGameHashes).toBeDefined();
   });
 
-  it("given a game ID, retrieves extended metadata about the game", async () => {
+  it("given a game ID, retrieves a list of linked hashes", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
       username: "mockUserName",
