@@ -1,5 +1,5 @@
 export interface Comment {
-  User: string;
-  Submitted: string;
-  CommentText: string;
+  user: string;
+  submitted: string;
+  commentText: string;
 }

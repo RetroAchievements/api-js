@@ -1,12 +1,9 @@
+import type { Comment } from "./comment.model";
+
 interface CommentsResponseEntity {
-  Count: number;
-  Total: number;
-  Results: CommentEntity[];
+  count: number;
+  total: number;
+  results: Comment[];
 }
 
-interface CommentEntity {
-  User: string;
-  Submitted: string;
-  CommentText: string;
-}
 export type GetComments = CommentsResponseEntity;
