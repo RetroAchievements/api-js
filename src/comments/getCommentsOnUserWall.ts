@@ -19,24 +19,48 @@ import type { GetComments } from "./models";
  * ```
  * const userWallComments = await getCommentsOnUserWall(
  *   authorization,
- *   { username: "xelnia" },
+ *   { username: "xelnia", count: 4, offset: 0  },
  * );
  * ```
  *
- * @returns An array containing all the comments on the user's wall.
+ * @returns An object containing the amount of comments retrieved,
+ * the total comments, and an array of the comments themselves.
+ * ```
+ * {
+ *   count: 4,
+ *   total: 4,
+ *   results: [
+ *   {
+ *     user: "PlayTester",
+ *     submitted: "2024-07-31T11:22:23.000000Z",
+ *     commentText: "Comment 1"
+ *   },
+ *   // ...
+ *   ]
+ * }
+ * ```
  */
-
 export const getCommentsOnUserWall = async (
   authorization: AuthObject,
-  payload: { username: string }
+  payload: { username: string; offset?: number; count?: number }
 ): Promise<GetComments> => {
-  const { username } = payload;
+  const { username, offset, count } = payload;
+
+  const queryParams: Record<string, number | string> = { i: username };
+
+  if (offset) {
+    queryParams.o = offset;
+  }
+
+  if (count) {
+    queryParams.c = count;
+  }
 
   const url = buildRequestUrl(
     apiBaseUrl,
     "/API_GetComments.php",
     authorization,
-    { i: username }
+    queryParams
   );
 
   const rawResponse = await call<GetComments>({ url });

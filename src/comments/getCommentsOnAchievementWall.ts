@@ -1,3 +1,4 @@
+import type { ID } from "../utils/internal";
 import {
   apiBaseUrl,
   buildRequestUrl,
@@ -13,30 +14,61 @@ import type { GetComments } from "./models";
  * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param payload.achievementId The achievementId ID to get the comments for.
+ * @param payload.achievementId The achievement ID to get the comments for.
+ *
+ * @param payload.offset Defaults to 0. The number of entries to skip.
+ *
+ * @param payload.count Defaults to 50, has a max of 500.
  *
  * @example
  * ```
  * const achievementComments = await getCommentsOnAchievementWall(
  *   authorization,
- *   { achievementId: 321865 },
+ *   { achievementId: 321865, count: 4, offset: 0 },
  * );
  * ```
  *
- * @returns An array containing all the comments on the given achievement.
+ * @returns An object containing the amount of comments retrieved,
+ * the total comments, and an array of the comments themselves.
+ * ```
+ * {
+ *   count: 4,
+ *   total: 4,
+ *   results: [
+ *   {
+ *     user: "PlayTester",
+ *     submitted: "2024-07-31T11:22:23.000000Z",
+ *     commentText: "Comment 1"
+ *   },
+ *   // ...
+ *   ]
+ * }
+ * ```
  */
-
 export const getCommentsOnAchievementWall = async (
   authorization: AuthObject,
-  payload: { achievementId: string }
+  payload: { achievementId: ID; offset?: number; count?: number }
 ): Promise<GetComments> => {
-  const { achievementId } = payload;
+  const { achievementId, offset, count } = payload;
+
+  const queryParams: Record<string, number | string> = {
+    i: achievementId,
+    t: 2,
+  };
+
+  if (offset) {
+    queryParams.o = offset;
+  }
+
+  if (count) {
+    queryParams.c = count;
+  }
 
   const url = buildRequestUrl(
     apiBaseUrl,
     "/API_GetComments.php",
     authorization,
-    { i: achievementId, t: 2 }
+    queryParams
   );
 
   const rawResponse = await call<GetComments>({ url });
