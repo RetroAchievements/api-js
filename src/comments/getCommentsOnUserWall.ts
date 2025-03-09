@@ -5,8 +5,7 @@ import {
   serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
-
-import { GetComments } from "./models";
+import type { GetComments } from "./models";
 
 /**
  * A call to this function will retrieve a list of
@@ -37,7 +36,7 @@ import { GetComments } from "./models";
 
 export const getCommentsOnUserWall = async (
   authorization: AuthObject,
-  payload: { username: string },
+  payload: { username: string }
 ): Promise<GetComments> => {
   const { username } = payload;
 
@@ -45,7 +44,7 @@ export const getCommentsOnUserWall = async (
     apiBaseUrl,
     "/API_GetComments.php",
     authorization,
-    { i: username },
+    { i: username }
   );
 
   const rawResponse = await call<GetComments>({ url });

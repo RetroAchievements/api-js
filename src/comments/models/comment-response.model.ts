@@ -10,4 +10,3 @@ interface CommentEntity {
   CommentText: string;
 }
 export type GetComments = CommentsResponseEntity;
-// export type CommentEntity = CommentEntity;
