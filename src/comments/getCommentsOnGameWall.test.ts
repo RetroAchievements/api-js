@@ -55,7 +55,7 @@ describe("Function: getCommentsOnGameWall", () => {
     const response = await getCommentsOnGameWall(authorization, {
       gameId: 321_865,
       count: 2,
-      offset: 0,
+      offset: 2,
     });
 
     // ASSERT

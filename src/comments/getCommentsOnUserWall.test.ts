@@ -55,7 +55,7 @@ describe("Function: getCommentsOnUserWall", () => {
     const response = await getCommentsOnUserWall(authorization, {
       username: "xelnia",
       count: 2,
-      offset: 0,
+      offset: 2,
     });
 
     // ASSERT

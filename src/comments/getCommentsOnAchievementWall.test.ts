@@ -55,7 +55,7 @@ describe("Function: getCommentsOnAchievementWall", () => {
     const response = await getCommentsOnAchievementWall(authorization, {
       achievementId: 321_865,
       count: 2,
-      offset: 0,
+      offset: 2,
     });
 
     // ASSERT
