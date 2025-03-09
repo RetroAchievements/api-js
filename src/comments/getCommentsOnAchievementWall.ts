@@ -8,35 +8,35 @@ import type { AuthObject } from "../utils/public";
 import type { GetComments } from "./models";
 
 /**
- * A call to this function will retrieve a list of comments on a user's wall.
+ * A call to this function will retrieve a list of comments on a achievement.
  *
  * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param payload.username The username to get the comments wall for.
+ * @param payload.achievementId The achievementId ID to get the comments for.
  *
  * @example
  * ```
- * const userWallComments = await getCommentsOnUserWall(
+ * const achievementComments = await getCommentsOnAchievementWall(
  *   authorization,
- *   { username: "xelnia" },
+ *   { achievementId: 321865 },
  * );
  * ```
  *
- * @returns An array containing all the comments on the user's wall.
+ * @returns An array containing all the comments on the given achievement.
  */
 
-export const getCommentsOnUserWall = async (
+export const getCommentsOnAchievementWall = async (
   authorization: AuthObject,
-  payload: { username: string }
+  payload: { achievementId: string }
 ): Promise<GetComments> => {
-  const { username } = payload;
+  const { achievementId } = payload;
 
   const url = buildRequestUrl(
     apiBaseUrl,
     "/API_GetComments.php",
     authorization,
-    { i: username }
+    { i: achievementId, t: 2 }
   );
 
   const rawResponse = await call<GetComments>({ url });

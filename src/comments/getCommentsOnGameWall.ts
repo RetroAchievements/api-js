@@ -8,35 +8,35 @@ import type { AuthObject } from "../utils/public";
 import type { GetComments } from "./models";
 
 /**
- * A call to this function will retrieve a list of comments on a user's wall.
+ * A call to this function will retrieve a list of comments on a game's page.
  *
  * @param authorization An object containing your username and webApiKey.
  * This can be constructed with `buildAuthorization()`.
  *
- * @param payload.username The username to get the comments wall for.
+ * @param payload.gameId The gameId ID to get the comments for.
  *
  * @example
  * ```
  * const userWallComments = await getCommentsOnUserWall(
  *   authorization,
- *   { username: "xelnia" },
+ *   { gameId: 20294 },
  * );
  * ```
  *
- * @returns An array containing all the comments on the user's wall.
+ * @returns An array containing all the comments on the game's page.
  */
 
-export const getCommentsOnUserWall = async (
+export const getCommentsOnGameWall = async (
   authorization: AuthObject,
-  payload: { username: string }
+  payload: { gameId: number }
 ): Promise<GetComments> => {
-  const { username } = payload;
+  const { gameId } = payload;
 
   const url = buildRequestUrl(
     apiBaseUrl,
     "/API_GetComments.php",
     authorization,
-    { i: username }
+    { i: gameId, t: 1 }
   );
 
   const rawResponse = await call<GetComments>({ url });
