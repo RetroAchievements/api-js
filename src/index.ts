@@ -2,6 +2,7 @@
 
 export * from "./achievement";
 export * from "./console";
+export * from "./comments";
 export * from "./feed";
 export * from "./game";
 export * from "./ticket";
