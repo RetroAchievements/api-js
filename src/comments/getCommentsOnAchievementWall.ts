@@ -6,7 +6,7 @@ import {
   serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
-import type { GetComments } from "./models";
+import type { Comments, GetCommentsResponse } from "./models";
 
 /**
  * A call to this function will retrieve a list of comments on a achievement.
@@ -48,7 +48,7 @@ import type { GetComments } from "./models";
 export const getCommentsOnAchievementWall = async (
   authorization: AuthObject,
   payload: { achievementId: ID; offset?: number; count?: number }
-): Promise<GetComments> => {
+): Promise<Comments> => {
   const { achievementId, offset, count } = payload;
 
   const queryParams: Record<string, number | string> = {
@@ -71,7 +71,7 @@ export const getCommentsOnAchievementWall = async (
     queryParams
   );
 
-  const rawResponse = await call<GetComments>({ url });
+  const rawResponse = await call<GetCommentsResponse>({ url });
 
   return serializeProperties(rawResponse, {
     shouldCastToNumbers: ["Count", "Total"],

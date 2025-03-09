@@ -1,2 +1,2 @@
-export * from "./comment.model";
-export * from "./comment-response.model";
+export * from "./comments.model";
+export * from "./get-comments-response";
