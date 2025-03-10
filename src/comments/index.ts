@@ -1,3 +1,4 @@
+export * from "./getComments";
 export * from "./getCommentsOnAchievementWall";
 export * from "./getCommentsOnGameWall";
 export * from "./getCommentsOnUserWall";
