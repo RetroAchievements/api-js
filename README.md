@@ -119,9 +119,7 @@ Click the function names to open their complete docs on the docs site.
 
 ### Comment
 
-- [`getCommentsOnAchievementWall()`](https://api-docs.retroachievements.org/v1/get-comments-on-achievement-wall.html) - Get the comments left on an achievement's wall.
-- [`getCommentsOnGameWall()`](https://api-docs.retroachievements.org/v1/get-comments-on-game-wall.html) - Get the comments left on a game's wall.
-- [`getCommentsOnUserWall()`](https://api-docs.retroachievements.org/v1/get-comments-on-user-wall.html) - Get the comments left on a user's wall.
+- [`getComments()`](https://api-docs.retroachievements.org/v1/get-comments.html) - Get the comments left an achievement, game, or user wall.
 
 ### Event
 
