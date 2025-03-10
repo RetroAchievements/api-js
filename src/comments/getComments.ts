@@ -18,6 +18,9 @@ import type { Comments, GetCommentsResponse } from "./models";
  * be a string (the username), and for game and achievement walls, this will be a
  * the ID of the object in question.
  *
+ * @param payload.kind What kind of identifier was used. This corresponds to 1 for a game,
+ * 2 for an achievement, and 3 for a user. Required if type is 1 or 2.
+ *
  * @param payload.offset Defaults to 0. The number of entries to skip.
  *
  * @param payload.count Defaults to 50, has a max of 500.
@@ -56,11 +59,19 @@ import type { Comments, GetCommentsResponse } from "./models";
  */
 export const getComments = async (
   authorization: AuthObject,
-  payload: { identifier: ID | string; offset?: number; count?: number }
+  payload: { identifier: ID; kind?: number; offset?: number; count?: number }
 ): Promise<Comments> => {
-  const { identifier, offset, count } = payload;
+  const { identifier, kind, offset, count } = payload;
 
-  const queryParams: Record<string, number | string> = { i: identifier, t: 1 };
+  const queryParams: Record<string, number | string> = { i: identifier };
+
+  if (kind) {
+    queryParams.t = kind;
+  } else if (typeof identifier === "number") {
+    throw new TypeError(
+      "'kind' must be specified when looking up an achievement or game."
+    );
+  }
 
   if (offset) {
     queryParams.o = offset;

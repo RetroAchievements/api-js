@@ -77,7 +77,7 @@ describe("Function: getComments", () => {
     expect(response).toEqual(expectedResponse);
   });
 
-  it("retrieves the comments on an game or achievement", async () => {
+  it("retrieves the comments on an game", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
       username: "mockUserName",
@@ -110,6 +110,7 @@ describe("Function: getComments", () => {
     // ACT
     const response = await getComments(authorization, {
       identifier: 321_865,
+      kind: 1,
     });
 
     // ASSERT
@@ -133,7 +134,7 @@ describe("Function: getComments", () => {
     expect(response).toEqual(expectedResponse);
   });
 
-  it("retrieves the comments on an game or achievement, respecting count", async () => {
+  it("retrieves the comments on an achievement, respecting count", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
       username: "mockUserName",
@@ -167,6 +168,7 @@ describe("Function: getComments", () => {
     const response = await getComments(authorization, {
       identifier: 321_865,
       count: 2,
+      kind: 2,
     });
 
     // ASSERT
@@ -190,7 +192,7 @@ describe("Function: getComments", () => {
     expect(response).toEqual(expectedResponse);
   });
 
-  it("retrieves the comments on an game or achievement, respecting offset", async () => {
+  it("retrieves the comments on an game, respecting offset", async () => {
     // ARRANGE
     const authorization = buildAuthorization({
       username: "mockUserName",
@@ -219,6 +221,7 @@ describe("Function: getComments", () => {
     const response = await getComments(authorization, {
       identifier: 321_865,
       offset: 1,
+      kind: 1,
     });
 
     // ASSERT
@@ -235,5 +238,40 @@ describe("Function: getComments", () => {
     };
 
     expect(response).toEqual(expectedResponse);
+  });
+
+  it("warns the developer when they don't specify kind for achievements/games", async () => {
+    // ARRANGE
+    const authorization = buildAuthorization({
+      username: "mockUserName",
+      webApiKey: "mockWebApiKey",
+    });
+
+    const mockResponse: GetCommentsResponse = {
+      Count: 1,
+      Total: 2,
+      Results: [
+        {
+          User: "PlayTester",
+          Submitted: "2024-07-31T11:22:23.000000Z",
+          CommentText: "Comment 2",
+        },
+      ],
+    };
+
+    server.use(
+      http.get(`${apiBaseUrl}/API_GetComments.php`, () =>
+        HttpResponse.json(mockResponse)
+      )
+    );
+
+    // ACT
+    const response = getComments(authorization, {
+      identifier: 321_865,
+      offset: 1,
+    });
+
+    // ASSERT
+    await expect(response).rejects.toThrow(TypeError);
   });
 });
