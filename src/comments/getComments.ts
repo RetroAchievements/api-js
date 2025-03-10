@@ -30,7 +30,7 @@ import type { Comments, GetCommentsResponse } from "./models";
  * // Retrieving game/achievement comments
  * const gameWallComments = await getComments(
  *   authorization,
- *   { identifier: 20294, count: 4, offset: 0 },
+ *   { identifier: 20294, kind: 1 count: 4, offset: 0 },
  * );
  *
  * // Retrieving comments on a user's wall
