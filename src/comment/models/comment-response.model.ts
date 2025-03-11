@@ -1,13 +1,7 @@
-interface RawComment {
-  User: string;
-  Submitted: string;
-  CommentText: string;
-}
+import type { CommentEntity } from "./comment-entity.model";
 
-interface RawCommentsResponseEntity {
-  Count: number;
-  Total: number;
-  Results: RawComment[];
+export interface CommentsResponse {
+  count: number;
+  total: number;
+  results: CommentEntity[];
 }
-
-export type GetCommentsResponse = RawCommentsResponseEntity;

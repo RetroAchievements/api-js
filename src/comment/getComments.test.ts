@@ -6,7 +6,7 @@ import { setupServer } from "msw/node";
 import { apiBaseUrl } from "../utils/internal";
 import { buildAuthorization } from "../utils/public";
 import { getComments } from "./getComments";
-import type { Comments, GetCommentsResponse } from "./models";
+import type { CommentsResponse, GetCommentsResponse } from "./models";
 
 const server = setupServer();
 
@@ -57,7 +57,7 @@ describe("Function: getComments", () => {
     });
 
     // ASSERT
-    const expectedResponse: Comments = {
+    const expectedResponse: CommentsResponse = {
       count: 2,
       total: 2,
       results: [
@@ -110,11 +110,11 @@ describe("Function: getComments", () => {
     // ACT
     const response = await getComments(authorization, {
       identifier: 321_865,
-      kind: 1,
+      kind: "game",
     });
 
     // ASSERT
-    const expectedResponse: Comments = {
+    const expectedResponse: CommentsResponse = {
       count: 2,
       total: 2,
       results: [
@@ -168,11 +168,11 @@ describe("Function: getComments", () => {
     const response = await getComments(authorization, {
       identifier: 321_865,
       count: 2,
-      kind: 2,
+      kind: "achievement",
     });
 
     // ASSERT
-    const expectedResponse: Comments = {
+    const expectedResponse: CommentsResponse = {
       count: 2,
       total: 4,
       results: [
@@ -221,11 +221,11 @@ describe("Function: getComments", () => {
     const response = await getComments(authorization, {
       identifier: 321_865,
       offset: 1,
-      kind: 1,
+      kind: "game",
     });
 
     // ASSERT
-    const expectedResponse: Comments = {
+    const expectedResponse: CommentsResponse = {
       count: 1,
       total: 2,
       results: [

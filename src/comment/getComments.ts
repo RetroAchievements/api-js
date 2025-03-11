@@ -6,7 +6,7 @@ import {
   serializeProperties,
 } from "../utils/internal";
 import type { AuthObject } from "../utils/public";
-import type { Comments, GetCommentsResponse } from "./models";
+import type { CommentsResponse, GetCommentsResponse } from "./models";
 
 const kindMap: Record<"game" | "achievement" | "user", number> = {
   game: 1,
@@ -71,7 +71,7 @@ export const getComments = async (
     offset?: number;
     count?: number;
   }
-): Promise<Comments> => {
+): Promise<CommentsResponse> => {
   const { identifier, kind, offset, count } = payload;
 
   const queryParams: Record<string, number | string> = { i: identifier };
