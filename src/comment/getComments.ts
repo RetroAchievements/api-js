@@ -8,6 +8,12 @@ import {
 import type { AuthObject } from "../utils/public";
 import type { Comments, GetCommentsResponse } from "./models";
 
+const kindMap: Record<"game" | "achievement" | "user", number> = {
+  game: 1,
+  achievement: 2,
+  user: 3,
+};
+
 /**
  * A call to this function will retrieve a list of comments on a particular target.
  *
@@ -18,8 +24,8 @@ import type { Comments, GetCommentsResponse } from "./models";
  * be a string (the username), and for game and achievement walls, this will be a
  * the ID of the object in question.
  *
- * @param payload.kind What kind of identifier was used. This corresponds to 1 for a game,
- * 2 for an achievement, and 3 for a user. Required if type is 1 or 2.
+ * @param payload.kind What kind of identifier was used. This can be "game",
+ * "achievement", or "user".
  *
  * @param payload.offset Defaults to 0. The number of entries to skip.
  *
@@ -30,7 +36,7 @@ import type { Comments, GetCommentsResponse } from "./models";
  * // Retrieving game/achievement comments
  * const gameWallComments = await getComments(
  *   authorization,
- *   { identifier: 20294, kind: 1, count: 4, offset: 0 },
+ *   { identifier: 20294, kind: 'game', count: 4, offset: 0 },
  * );
  *
  * // Retrieving comments on a user's wall
@@ -59,14 +65,19 @@ import type { Comments, GetCommentsResponse } from "./models";
  */
 export const getComments = async (
   authorization: AuthObject,
-  payload: { identifier: ID; kind?: number; offset?: number; count?: number }
+  payload: {
+    identifier: ID;
+    kind?: "game" | "achievement" | "user";
+    offset?: number;
+    count?: number;
+  }
 ): Promise<Comments> => {
   const { identifier, kind, offset, count } = payload;
 
   const queryParams: Record<string, number | string> = { i: identifier };
 
   if (kind) {
-    queryParams.t = kind;
+    queryParams.t = kindMap[kind];
   } else if (typeof identifier === "number") {
     throw new TypeError(
       "'kind' must be specified when looking up an achievement or game."
