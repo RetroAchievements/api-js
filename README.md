@@ -117,6 +117,10 @@ Click the function names to open their complete docs on the docs site.
 - [`getRecentGameAwards()`](https://api-docs.retroachievements.org/v1/get-recent-game-awards.html) - Get all recent mastery, completion, and beaten awards earned on the site.
 - [`getTopTenUsers()`](https://api-docs.retroachievements.org/v1/get-top-ten-users.html) - Get the list of top ten points earners.
 
+### Comment
+
+- [`getComments()`](https://api-docs.retroachievements.org/v1/get-comments.html) - Get the comments left an achievement, game, or user wall.
+
 ### Event
 
 - [`getAchievementOfTheWeek()`](https://api-docs.retroachievements.org/v1/get-achievement-of-the-week.html) - Get comprehensive metadata about the current Achievement of the Week.
