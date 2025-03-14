@@ -5,15 +5,14 @@ import {
   call,
   serializeProperties,
 } from "../utils/internal";
-import type { AuthObject } from "../utils/public";
+import type { ApiAuthorization } from "../utils/public";
 import type { GameList, GetGameListResponse } from "./models";
 /**
  * A call to this function will retrieve the complete list
  * of games for a specified console on the RetroAchievements.org
  * platform.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @param payload.consoleId The unique console ID to retrieve a list of
  * games from. The list of consoleIds can be retrieved using the `getConsoleIds()`
@@ -53,7 +52,7 @@ import type { GameList, GetGameListResponse } from "./models";
  * ```
  */
 export const getGameList = async (
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: {
     consoleId: ID;
     shouldOnlyRetrieveGamesWithAchievements?: boolean;

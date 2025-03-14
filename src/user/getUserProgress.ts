@@ -5,15 +5,14 @@ import {
   call,
   serializeProperties,
 } from "../utils/internal";
-import type { AuthObject } from "../utils/public";
+import type { ApiAuthorization } from "../utils/public";
 import type { GetUserProgressResponse, UserProgress } from "./models";
 
 /**
  * A call to this function will retrieve a given user's
  * progress on a given list of games, targeted by game ID.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @param payload.username The user for which to retrieve the progress for.
  *
@@ -52,7 +51,7 @@ import type { GetUserProgressResponse, UserProgress } from "./models";
  * ```
  */
 export const getUserProgress = async (
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: { username: string; gameIds: ID[] }
 ): Promise<UserProgress> => {
   const { username, gameIds } = payload;

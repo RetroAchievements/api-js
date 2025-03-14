@@ -28,7 +28,7 @@ describe("Util: buildRequestUrl", () => {
 
     // ASSERT
     expect(requestUrl).toEqual(
-      "https://retroachievements.org/API/myBazValue/API_GetConsoleIDs.php?z=TestUser&y=mockWebApiKey&limit=10&offset=2"
+      "https://retroachievements.org/API/myBazValue/API_GetConsoleIDs.php?y=mockWebApiKey&limit=10&offset=2"
     );
   });
 
@@ -45,7 +45,7 @@ describe("Util: buildRequestUrl", () => {
 
     // ASSERT
     expect(requestUrl).toEqual(
-      "https://retroachievements.org/API/:baz/API_GetConsoleIDs.php?z=TestUser&y=mockWebApiKey"
+      "https://retroachievements.org/API/:baz/API_GetConsoleIDs.php?y=mockWebApiKey"
     );
   });
 });
