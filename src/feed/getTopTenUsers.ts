@@ -1,5 +1,5 @@
 import { apiBaseUrl, buildRequestUrl, call } from "../utils/internal";
-import type { AuthObject } from "../utils/public";
+import type { ApiAuthorization } from "../utils/public";
 import type {
   GetTopTenUsersResponse,
   TopTenUsers,
@@ -10,8 +10,7 @@ import type {
  * A call to this function will retrieve the current top ten users
  * on the site.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @example
  * ```
@@ -28,7 +27,7 @@ import type {
  * ```
  */
 export const getTopTenUsers = async (
-  authorization: AuthObject
+  authorization: ApiAuthorization
 ): Promise<TopTenUsers> => {
   const url = buildRequestUrl(
     apiBaseUrl,

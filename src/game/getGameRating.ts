@@ -5,15 +5,14 @@ import {
   call,
   serializeProperties,
 } from "../utils/internal";
-import type { AuthObject } from "../utils/public";
+import type { ApiAuthorization } from "../utils/public";
 import type { GameRating, GetGameRatingResponse } from "./models";
 
 /**
  * A call to this function will retrieve metadata about
  * how users have rated the game and its set.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @param payload.gameId The unique game ID. If you are unsure, open the
  * game's page on the RetroAchievements.org website. For example, Dragster's
@@ -42,7 +41,7 @@ import type { GameRating, GetGameRatingResponse } from "./models";
  * ```
  */
 export const getGameRating = async (
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: { gameId: ID }
 ): Promise<GameRating> => {
   const { gameId } = payload;

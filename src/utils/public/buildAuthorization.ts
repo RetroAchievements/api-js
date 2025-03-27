@@ -1,4 +1,4 @@
-import type { AuthObject } from "./models";
+import type { ApiAuthorization } from "./models";
 
 /**
  * Accepts your RetroAchievements.org username and web API key. After
@@ -19,9 +19,19 @@ import type { AuthObject } from "./models";
  *   webApiKey: "LtjCwW16nJI7cqOyPIQtXk8v1cfF0tmO"
  * });
  * ```
+ *
+ * @deprecated You can just pass your API key directly to the functions instead, eg:
+ * ```ts
+ * const game = await getGame(webApiKey, { gameId: 14402 });
+ * ```
  */
-export const buildAuthorization = (options: AuthObject): AuthObject => {
-  if (!options.username || !options.webApiKey) {
+export const buildAuthorization = (
+  options: ApiAuthorization
+): ApiAuthorization => {
+  if (
+    typeof options !== "string" &&
+    (!options.username || !options.webApiKey)
+  ) {
     throw new Error(`
       buildAuthorization() requires an object containing a
       username and webApiKey. eg:

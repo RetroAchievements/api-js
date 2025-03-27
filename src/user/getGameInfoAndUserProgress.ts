@@ -5,7 +5,7 @@ import {
   call,
   serializeProperties,
 } from "../utils/internal";
-import type { AuthObject } from "../utils/public";
+import type { ApiAuthorization } from "../utils/public";
 import type {
   GameInfoAndUserProgress,
   GetGameInfoAndUserProgressResponse,
@@ -16,8 +16,7 @@ import type {
  * about a game, in addition to a user's progress about a game.
  * This is targeted via a game's unique ID and a given username.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @param payload.gameId The unique game ID. If you are unsure, open the
  * game's page on the RetroAchievements.org website. For example, Dragster's
@@ -89,7 +88,7 @@ import type {
  * ```
  */
 export const getGameInfoAndUserProgress = async (
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: {
     gameId: ID;
     username: string;

@@ -1,2 +1,2 @@
-export * from "./auth-object.model";
+export * from "./api-authorization.model";
 export * from "./award-kind.model";

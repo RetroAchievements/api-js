@@ -5,15 +5,14 @@ import {
   call,
   serializeProperties,
 } from "../utils/internal";
-import type { AuthObject } from "../utils/public";
+import type { ApiAuthorization } from "../utils/public";
 import type { AchievementCount, GetAchievementCountResponse } from "./models";
 
 /**
  * A call to this function will retrieve the list of
  * achievement IDs for a game, targeted by game ID.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @param payload.gameId The unique game ID. If you are unsure, open the
  * game's page on the RetroAchievements.org website. For example, Dragster's
@@ -35,7 +34,7 @@ import type { AchievementCount, GetAchievementCountResponse } from "./models";
  * ```
  */
 export const getAchievementCount = async (
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: { gameId: ID }
 ): Promise<AchievementCount> => {
   const { gameId } = payload;
