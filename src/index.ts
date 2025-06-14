@@ -5,6 +5,7 @@ export * from "./comment";
 export * from "./console";
 export * from "./feed";
 export * from "./game";
+export * from "./leaderboard";
 export * from "./ticket";
 export * from "./user";
 export * from "./utils/public";
