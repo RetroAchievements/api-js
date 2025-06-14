@@ -25,13 +25,13 @@ import type {
  *
  * @example
  * ```
- * const wantToPlayList = await getLeaderboardEntries(
+ * const leaderboardEntries = await getLeaderboardEntries(
  *   authorization,
  *   { leaderboardId: 14402 }
  * );
  * ```
  *
- * @returns An object containing a user's list of "Want to Play Games".
+ * @returns An object containing a leaderboards entries.
  * ```json
  * {
  *   "count": 100,
