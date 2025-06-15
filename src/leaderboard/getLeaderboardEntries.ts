@@ -31,7 +31,7 @@ import type {
  * );
  * ```
  *
- * @returns An object containing a leaderboards entries.
+ * @returns An object containing a leaderboard's entries.
  * ```json
  * {
  *   "count": 100,
