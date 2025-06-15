@@ -101,6 +101,10 @@ Click the function names to open their complete docs on the docs site.
 - [`getAchievementDistribution()`](https://api-docs.retroachievements.org/v1/get-achievement-distribution.html) - Get how many players have unlocked how many achievements for a game.
 - [`getGameRankAndScore()`](https://api-docs.retroachievements.org/v1/get-game-rank-and-score.html) - Get a list of either the latest masters or highest hardcore points earners for a game.
 
+### Leaderboard
+
+- [`getLeaderboardEntries()`](https://api-docs.retroachievements.org/v1/get-leaderboard-entries.html) - Get a given leaderboard's entries.
+
 ### System
 
 - [`getConsoleIds()`](https://api-docs.retroachievements.org/v1/get-console-ids.html) - Get the complete list of console ID and name pairs on the site.
