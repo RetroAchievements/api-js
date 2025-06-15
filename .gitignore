@@ -127,3 +127,6 @@ website/build
 .temp
 .vite_opt_cache
 cache
+
+# Claude
+.claude
