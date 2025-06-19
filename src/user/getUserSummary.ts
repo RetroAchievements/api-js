@@ -4,15 +4,14 @@ import {
   call,
   serializeProperties,
 } from "../utils/internal";
-import type { AuthObject } from "../utils/public";
+import type { ApiAuthorization } from "../utils/public";
 import type { GetUserSummaryResponse, UserSummary } from "./models";
 
 /**
  * A call to this function will retrieve summary information about
  * a given user, targeted by username.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @param payload.username The user for which to retrieve the summary for.
  *
@@ -33,7 +32,7 @@ import type { GetUserSummaryResponse, UserSummary } from "./models";
  * @returns An object containing summary metadata about a target user.
  */
 export const getUserSummary = async (
-  authorization: AuthObject,
+  authorization: ApiAuthorization,
   payload: {
     username: string;
     recentGamesCount?: number;

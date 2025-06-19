@@ -4,15 +4,14 @@ import {
   call,
   serializeProperties,
 } from "../utils/internal";
-import type { AuthObject } from "../utils/public";
+import type { ApiAuthorization } from "../utils/public";
 import type { GetSetClaimsResponse, SetClaim } from "./models";
 
 /**
  * A call to this function returns information about all
  * (1000 max) active set claims.
  *
- * @param authorization An object containing your username and webApiKey.
- * This can be constructed with `buildAuthorization()`.
+ * @param authorization Your web API key retrieved from retroachievements.org/settings.
  *
  * @example
  * ```
@@ -45,7 +44,7 @@ import type { GetSetClaimsResponse, SetClaim } from "./models";
  * ```
  */
 export const getActiveClaims = async (
-  authorization: AuthObject
+  authorization: ApiAuthorization
 ): Promise<SetClaim[]> => {
   const url = buildRequestUrl(
     apiBaseUrl,
