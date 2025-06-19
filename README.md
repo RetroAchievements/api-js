@@ -104,6 +104,7 @@ Click the function names to open their complete docs on the docs site.
 ### Leaderboard
 
 - [`getLeaderboardEntries()`](https://api-docs.retroachievements.org/v1/get-leaderboard-entries.html) - Get a given leaderboard's entries.
+- [`getUserGameLeaderboards()`](https://api-docs.retroachievements.org/v1/get-user-game-leaderboards.html) - Get a user's list of leaderboards for a given game.
 
 ### System
 
