@@ -45,29 +45,20 @@ Learn how to authenticate and start pulling data from RetroAchievements on our d
 
 To use any endpoint function in the API, you must first be authorized by RetroAchievements. Fortunately, this is a fairly straightforward process.
 
-1. Visit [your control panel](https://retroachievements.org/controlpanel.php) on the RA website.
+1. Visit the [settings page](https://retroachievements.org/settings) on the RA website.
 
 2. Find the "Keys" section on the page. Copy the web API key value. **Do not expose your API key anywhere publicly.**
 
-3. You can now create your authorization object using your web API key.
-
-```ts
-import { buildAuthorization } from "@retroachievements/api";
-
-const username = "<your username on RA>";
-const webApiKey = "<your web API key>";
-
-const authorization = buildAuthorization({ username, webApiKey });
-```
-
-4. You now have all you need to use any function in the API. Each function takes this authorization object as its first argument. Here's an example:
+3. You now have all you need to use any function from the API. Each function takes this web API key as its first argument. Here's an example:
 
 ```ts
 import { getGame } from "@retroachievements/api";
 
+const webApiKey = "<your web API key>";
+
 // This returns basic metadata about the game on this page:
 // https://retroachievements.org/game/14402
-const game = await getGame(authorization, { gameId: 14402 });
+const game = await getGame(webApiKey, { gameId: 14402 });
 ```
 
 ## API
