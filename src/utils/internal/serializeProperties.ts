@@ -62,6 +62,9 @@ const naiveCamelCase = (originalValue: string) => {
   let camelCased =
     originalValue.charAt(0).toLowerCase() + originalValue.slice(1);
 
+  // "authorULId" -> "authorUlid"
+  camelCased = camelCased.replaceAll("ULID", "Ulid");
+
   // "gameID" -> "gameId"
   camelCased = camelCased.replaceAll("ID", "Id");
 

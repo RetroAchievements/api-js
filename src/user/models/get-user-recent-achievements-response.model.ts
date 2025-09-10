@@ -1,3 +1,5 @@
+import type { AchievementType } from "../../achievement";
+
 interface GetUserRecentAchievementsEntity {
   Date: string;
   HardcoreMode: 0 | 1;
@@ -6,7 +8,10 @@ interface GetUserRecentAchievementsEntity {
   Description: string;
   BadgeName: string;
   Points: number;
+  TrueRatio: number;
+  Type: AchievementType;
   Author: string;
+  AuthorULID: string;
   GameTitle: string;
   GameIcon: string;
   GameID: number;
