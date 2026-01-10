@@ -70,6 +70,6 @@ export const getUsersIFollow = async (
 
   return serializeProperties(rawResponse, {
     shouldCastToNumbers: ["Points", "PointsSoftcore"],
-    shouldMapToBooleans: ["AmIFollowing"],
+    shouldMapToBooleans: ["IsFollowingMe"],
   });
 };
