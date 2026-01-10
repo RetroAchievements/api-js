@@ -3,6 +3,7 @@ export * from "./getAchievementDistribution";
 export * from "./getGame";
 export * from "./getGameExtended";
 export * from "./getGameHashes";
+export * from "./getGameProgression";
 export * from "./getGameRankAndScore";
 export * from "./getGameRating";
 export * from "./models";
