@@ -58,13 +58,11 @@ import type {
  */
 export const getUserGameLeaderboards = async (
   authorization: AuthObject,
-  payload: { gameId: ID; username?: string; offset?: number; count?: number }
+  payload: { gameId: ID; username: string; offset?: number; count?: number }
 ): Promise<UserGameLeaderboards> => {
   const queryParams: Record<string, any> = {};
   queryParams.i = payload.gameId;
-  if (payload?.username) {
-    queryParams.u = payload.username;
-  }
+  queryParams.u = payload.username;
   if (payload?.offset) {
     queryParams.o = payload.offset;
   }
