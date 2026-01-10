@@ -19,9 +19,9 @@ import type { GameProgression, GetGameProgressionResponse } from "./models";
  * URL is https://retroachievements.org/game/14402. We can see from the
  * URL that the game ID is "14402".
  *
- * @param payload.hardcore Optional. By default, set to false, with both
- * softcore and hardcore tallies returned in the response. If this option
- * is set to true, only hardcore unlocks will be included in the totals.
+ * @param payload.hardcore Optional. If set to true, the player sampling
+ * for median calculations will prefer players based on their hardcore
+ * unlock count rather than their total unlock count.
  *
  * @example
  * ```
