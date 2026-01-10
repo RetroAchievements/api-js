@@ -8,7 +8,7 @@ import type { GetUsersIFollowResponse, UsersIFollow } from "./models";
 
 const server = setupServer();
 
-describe("Funcion: getUsersIFollow", () => {
+describe("Function: getUsersIFollow", () => {
   // MSW Setup
   beforeAll(() => server.listen());
   afterEach(() => server.resetHandlers());
