@@ -97,6 +97,7 @@ Click the function names to open their complete docs on the docs site.
 - [`getGame()`](https://api-docs.retroachievements.org/v1/get-game.html) - Get basic metadata about a game.
 - [`getGameExtended()`](https://api-docs.retroachievements.org/v1/get-game-extended.html) - Get extended metadata about a game.
 - [`getGameHashes()`](https://api-docs.retroachievements.org/v1/get-game-hashes.html) - Get a list of hashes linked to a game.
+- [`getGameProgression()`](https://api-docs.retroachievements.org/v1/get-game-progression.html) - Get information about the average time to unlock achievements in a game.
 - [`getAchievementCount()`](https://api-docs.retroachievements.org/v1/get-achievement-count.html) - Get the list of achievement IDs for a game.
 - [`getAchievementDistribution()`](https://api-docs.retroachievements.org/v1/get-achievement-distribution.html) - Get how many players have unlocked how many achievements for a game.
 - [`getGameRankAndScore()`](https://api-docs.retroachievements.org/v1/get-game-rank-and-score.html) - Get a list of either the latest masters or highest hardcore points earners for a game.
