@@ -11,6 +11,7 @@ export * from "./getUserProfile";
 export * from "./getUserProgress";
 export * from "./getUserRecentAchievements";
 export * from "./getUserRecentlyPlayedGames";
+export * from "./getUsersIFollow";
 export * from "./getUserSummary";
 export * from "./getUserWantToPlayList";
 export * from "./models";
