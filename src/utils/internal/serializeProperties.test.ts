@@ -114,28 +114,34 @@ describe("Util: serializeProperties", () => {
     });
   });
 
-  it("can be instructed to map values of certain keys to booleans", () => {
-    // ARRANGE
-    const originalObject = {
-      UserName: "xelnia",
-      HardcoreMode: "0",
-      Metadata: {
-        IsCoolGuy: "1",
-      },
-    };
+  it.each([
+    { hardcoreMode: "0", isCoolGuy: "1" },
+    { hardcoreMode: false, isCoolGuy: true },
+  ])(
+    "can be instructed to map values of certain keys to booleans such as the value '$hardcoreMode' and '$isCoolGuy'",
+    ({ hardcoreMode, isCoolGuy }) => {
+      // ARRANGE
+      const originalObject = {
+        UserName: "xelnia",
+        HardcoreMode: hardcoreMode,
+        Metadata: {
+          IsCoolGuy: isCoolGuy,
+        },
+      };
 
-    // ACT
-    const sanitizedObject = serializeProperties(originalObject, {
-      shouldMapToBooleans: ["HardcoreMode", "IsCoolGuy"],
-    });
+      // ACT
+      const sanitizedObject = serializeProperties(originalObject, {
+        shouldMapToBooleans: ["HardcoreMode", "IsCoolGuy"],
+      });
 
-    // ASSERT
-    expect(sanitizedObject).toEqual({
-      userName: "xelnia",
-      hardcoreMode: false,
-      metadata: {
-        isCoolGuy: true,
-      },
-    });
-  });
+      // ASSERT
+      expect(sanitizedObject).toEqual({
+        userName: "xelnia",
+        hardcoreMode: false,
+        metadata: {
+          isCoolGuy: true,
+        },
+      });
+    }
+  );
 });
