@@ -92,6 +92,7 @@ Click the function names to open their complete docs on the docs site.
 - [`getUserCompletedGames()`](https://api-docs.retroachievements.org/v1/get-user-completed-games.html) - Deprecated function. Get hardcore and softcore completion metadata about games a user has played.
 - [`getUserWantToPlayList()`](https://api-docs.retroachievements.org/v1/get-user-want-to-play-list.html) - Get a user's "Want to Play Games" list.
 - [`getUsersIFollow()`](https://api-docs.retroachievements.org/v1/get-users-i-follow.html) - Get the caller's "Following" users list.
+- [`getUserSetRequests()`](https://api-docs.retroachievements.org/v1/get-user-set-requests.html) - Get a given user's set requests, maximum total requests, and points until next request.
 
 ### Game
 
