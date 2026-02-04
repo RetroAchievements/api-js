@@ -10,7 +10,7 @@ export interface GameLeaderboards {
     author: string;
     authorUlid: string;
     state: "active" | "disabled" | "unpublished";
-    topEntry: {
+    topEntry?: {
       user: string;
       ulid: string;
       score: number;

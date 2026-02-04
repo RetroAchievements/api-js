@@ -10,7 +10,7 @@ export interface GetGameLeaderboardsResponse {
     Author: string;
     AuthorULID: string;
     State: "active" | "disabled" | "unpublished";
-    TopEntry: {
+    TopEntry?: {
       User: string;
       ULID: string;
       Score: number;
