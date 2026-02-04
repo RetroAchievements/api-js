@@ -17,7 +17,7 @@
 
 ✅ &nbsp;Modular by design and supports tree-shaking.  
 ✅ &nbsp;Officially-supported, aligns 1:1 with the RAWeb API.  
-✅ &nbsp;Supports Node environments (16 and above).  
+✅ &nbsp;Supports Node environments (24 and above).  
 ✅ &nbsp;Ships with TypeScript support and types.  
 ✅ &nbsp;Automatically maps types and properties from RAWeb PHP calls.  
 ✅ &nbsp;Small, <3Kb.
