@@ -21,7 +21,7 @@ import type {
  * for.
  *
  * @param payload.requestListType An optional parameter to filter set requests
- * by their current status. If omittted, the API will return only active
+ * by their current status. If omitted, the API will return only active
  * requests.
  *
  * @example
