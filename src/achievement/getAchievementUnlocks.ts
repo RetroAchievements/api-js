@@ -57,11 +57,11 @@ export const getAchievementUnlocks = async (
 
   const queryParams: Record<string, number | string> = { a: achievementId };
 
-  if (offset) {
+  if (offset !== undefined) {
     queryParams.o = offset;
   }
 
-  if (count) {
+  if (count !== undefined) {
     queryParams.c = count;
   }
 
