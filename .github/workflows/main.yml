@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: ["20.x"]
+        node: ["24.x"]
 
     steps:
       - name: Checkout repo
