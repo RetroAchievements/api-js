@@ -17,7 +17,7 @@
 
 ✅ &nbsp;Modular by design and supports tree-shaking.  
 ✅ &nbsp;Officially-supported, aligns 1:1 with the RAWeb API.  
-✅ &nbsp;Supports Node environments (16 and above).  
+✅ &nbsp;Supports Node environments (24 and above).  
 ✅ &nbsp;Ships with TypeScript support and types.  
 ✅ &nbsp;Automatically maps types and properties from RAWeb PHP calls.  
 ✅ &nbsp;Small, <3Kb.
@@ -91,7 +91,9 @@ Click the function names to open their complete docs on the docs site.
 - [`getUserSummary()`](https://api-docs.retroachievements.org/v1/get-user-summary.html) - Get a user's profile metadata.
 - [`getUserCompletedGames()`](https://api-docs.retroachievements.org/v1/get-user-completed-games.html) - Deprecated function. Get hardcore and softcore completion metadata about games a user has played.
 - [`getUserWantToPlayList()`](https://api-docs.retroachievements.org/v1/get-user-want-to-play-list.html) - Get a user's "Want to Play Games" list.
+- [`getUsersFollowingMe()`](https://api-docs.retroachievements.org/v1/get-users-following-me.html) - Get the caller's "Followers" users list.
 - [`getUsersIFollow()`](https://api-docs.retroachievements.org/v1/get-users-i-follow.html) - Get the caller's "Following" users list.
+- [`getUserSetRequests()`](https://api-docs.retroachievements.org/v1/get-user-set-requests.html) - Get a given user's set requests, maximum total requests, and points until next request.
 
 ### Game
 

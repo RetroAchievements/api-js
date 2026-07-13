@@ -3,3 +3,4 @@ dist
 website/.docusaurus
 website/build
 pnpm-lock.yaml
+src/set-version.js
